@@ -38,7 +38,7 @@ class seasonData(models.Model):
     pts = models.FloatField(blank=True, null=True)
     awards = models.JSONField(blank=True, null=True)
     country = models.CharField(max_length=100, default='USA', null=True)
-
+    #add career high for points in game as json w/ date
     class Meta:
         unique_together = ['player_id', 'season_id', 'team_id']
 

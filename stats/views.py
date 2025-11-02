@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
-from django.db.models import Q
+from django.core.exceptions import FieldError
+from django.db.models import Q, F, FloatField, ExpressionWrapper
 from .models import seasonData
 
 
@@ -105,19 +106,35 @@ def leaderboard(request, stat):
         'assists': 'ast',
         'blocks': 'blk',
         'steals': 'stl',
+        'ppg': 'pts',
+        'rpg': 'reb',
+        'apg': 'ast',
+        'bpg': 'blk',
+        'spg': 'stl',
     }
 
     db_field = stat_map.get(stat.lower())
     if not db_field:
         from django.http import Http404
         raise Http404(f"Unknown leaderboard stat: {stat}")
+    
+    is_per_game = stat.lower().endswith('pg')
 
-    entries = seasonData.objects.order_by(f'-{db_field}')[:100]
+    if is_per_game:
+        entries = seasonData.objects.annotate(
+            avg = ExpressionWrapper(
+                F(db_field) * 1.0 / F('gp'),
+                output_field=FloatField()
+            )
+        ).order_by('-avg')[:100]
+    else:
+        entries = seasonData.objects.order_by(f'-{db_field}')[:100]
 
     context = {
         'entries': entries,
         'stat': stat,
         'stat_field': db_field,
+        'per': is_per_game,
     }
     return render(request, 'leaderboard.html', context)
 

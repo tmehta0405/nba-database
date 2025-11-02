@@ -4,7 +4,6 @@ import time
 from pathlib import Path
 from django.conf import settings
 import pandas as pd
-
 from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.static import players
 from stats.models import seasonData

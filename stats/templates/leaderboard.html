@@ -5,14 +5,22 @@
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/leaderboard.css' %}">{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
-<h1>{{ stat|capfirst }} Leaderboard</h1>
+{%if per%}
+    <h1>{{ stat|caps }} Leaderboard</h1>
+{%else%}
+    <h1>{{stat|capfirst}} Leaderboard</h1>
+{%endif%}
 <div class='leaderboard-container'>
     <table class="leaderboard-table">
         <thead>
             <tr>
                 <th>Rank</th>
                 <th>Player</th>
-                <th>{{ stat|capfirst }}</th>
+                {%if per%}
+                    <th>{{ stat|caps }}</th>
+                {%else%}
+                    <th>{{stat|capfirst}}</th>
+                {%endif%}
                 <th>Season</th>
             </tr>
         </thead>
@@ -21,7 +29,11 @@
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ entry.player_name }}</td>
-                <td>{{ entry|getstat:stat_field|floatformat:0 }}</td>
+                {%if per%}
+                    <td>{{ entry.avg|floatformat:1}}</td>
+                {%else%}
+                    <td>{{ entry|getstat:stat_field|floatformat }}</td>
+                {%endif%}
                 <td>{{ entry.season }}</td>
             </tr>
         {% endfor %}

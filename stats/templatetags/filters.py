@@ -69,6 +69,13 @@ def teamduration(model, team):
 def title(value):
     return value.title()
 
+@register.filter
+def caps(value):
+    return value.upper()
+
+@register.filter
+def endswith(string, value):
+    return string.endswith(value)
 
 @register.filter
 def getstat(obj, name):
@@ -80,6 +87,15 @@ def getstat(obj, name):
 @register.simple_tag
 def teamstats(model, attr, team): 
     return int(sum([getattr(sn, attr) or 0 for sn in model if sn.team_abbreviation == team]))
+
+@register.simple_tag
+def pgstats(model, attr, games): #GET STAT AND DIVIDE
+    try:
+        stat = getattr(model, attr, 0)
+    except Exception:
+        stat = 0
+
+    return f"{(stat / games):.1f}"
 
 @register.filter
 def checkawards(model):

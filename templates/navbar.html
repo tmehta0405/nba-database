@@ -13,13 +13,24 @@
             <p class='navbar-item navbar-dropdown'>Leaderboards</p>
             <div class='dropdown-content'>
                 <div class='dropdown-content-section'>
-                    <h3>PRABS</h3>
+                    <h3>PRASB</h3>
                     <div class='dropdown-content-links'>
                         <a href="{% url 'leaderboard' 'points' %}" class='dropdown-link'>Points</a>
                         <a href="{% url 'leaderboard' 'rebounds' %}" class='dropdown-link'>Rebounds</a>
                         <a href="{% url 'leaderboard' 'assists' %}" class='dropdown-link'>Assists</a>
-                        <a href="{% url 'leaderboard' 'blocks' %}" class='dropdown-link'>Blocks</a>
                         <a href="{% url 'leaderboard' 'steals' %}" class='dropdown-link'>Steals</a>
+                        <a href="{% url 'leaderboard' 'blocks' %}" class='dropdown-link'>Blocks</a>
+                    </div>
+                </div>
+                <div class='hr'></div>
+                <div class='dropdown-content-section'>
+                    <h3>Per Game</h3>
+                    <div class='dropdown-content-links'>
+                        <a href="{% url 'leaderboard' 'ppg' %}" class='dropdown-link'>PPG</a>
+                        <a href="{% url 'leaderboard' 'rpg' %}" class='dropdown-link'>RPG</a>
+                        <a href="{% url 'leaderboard' 'apg' %}" class='dropdown-link'>APG</a>
+                        <a href="{% url 'leaderboard' 'spg' %}" class='dropdown-link'>SPG</a>
+                        <a href="{% url 'leaderboard' 'bpg' %}" class='dropdown-link'>BPG</a>
                     </div>
                 </div>
                 <div class='hr'></div>

@@ -37,8 +37,6 @@ node_modules/
 .cache
 .pytest_cache/
 *~
-
-# Secrets / service account files
 nba_cache/service_account.json
 .env
 
