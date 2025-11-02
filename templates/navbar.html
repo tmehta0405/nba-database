@@ -1,0 +1,79 @@
+{%load static%}
+<link rel='stylesheet' type='text/css' href="{% static 'stats/css/navbar.css' %}">
+<script src="{% static 'stats/js/navbar.js' %}"></script>
+<div class='navbar'>
+    <div class='left-align'>
+        <div class='logo-container'>
+            <img src="{%static 'stats/img/databall_logo.png'%}" class='navbar-logo'>
+            <a href='/' class='navbar-item'>
+                DataBall
+            </a>
+        </div>
+        <div class='dropdown-container'>
+            <p class='navbar-item navbar-dropdown'>Leaderboards</p>
+            <div class='dropdown-content'>
+                <div class='dropdown-content-section'>
+                    <h3>PRABS</h3>
+                    <div class='dropdown-content-links'>
+                        <a href="{% url 'leaderboard' 'points' %}" class='dropdown-link'>Points</a>
+                        <a href="{% url 'leaderboard' 'rebounds' %}" class='dropdown-link'>Rebounds</a>
+                        <a href="{% url 'leaderboard' 'assists' %}" class='dropdown-link'>Assists</a>
+                        <a href="{% url 'leaderboard' 'blocks' %}" class='dropdown-link'>Blocks</a>
+                        <a href="{% url 'leaderboard' 'steals' %}" class='dropdown-link'>Steals</a>
+                    </div>
+                </div>
+                <div class='hr'></div>
+                <div class='dropdown-content-section'>
+                    <h3>Other</h3>
+                    <div class='dropdown-content-links'>
+                        <a href="{%url 'region'%}" class='dropdown-link'>Region</a>
+                        <a href='/' class='dropdown-link'>College</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='dropdown-container'>
+            <p class='navbar-item navbar-dropdown'>Awards by Year</p>
+            <div class='dropdown-content'>
+                <div class='dropdown-content-section'>
+                    <h3>Main Awards</h3>
+                    <div class='dropdown-content-links'>
+                        <a href='/' class='dropdown-link'>MVP</a> 
+                        <a href='/' class='dropdown-link'>FMVP</a>
+                        <a href='/' class='dropdown-link'>DPOY</a>
+                    </div>
+                </div>
+                <div class='hr'></div>
+                <div class='dropdown-content-section'>
+                    <h3>League Leaders</h3>
+                    <div class='dropdown-content-links'>
+                        <a href="/" class='dropdown-link'>Points</a>
+                        <a href='/' class='dropdown-link'>Rebounds</a> 
+                        <a href='/' class='dropdown-link'>Assists</a> 
+                        <a href='/' class='dropdown-link'>Steals</a> 
+                        <a href='/' class='dropdown-link'>Blocks</a> 
+                    </div>
+                </div>
+                <div class='hr'></div>
+                <div class='dropdown-content-section'>
+                    <h3>All-NBA</h3>
+                    <div class='dropdown-content-links'>
+                        <a href="/" class='dropdown-link'>All Stars</a>
+                        <a href='/' class='dropdown-link'>All Defensive</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='dropdown-container'>
+            <p class='navbar-item navbar-dropdown'>Scores</p> <!--MAKE DYNAMIC W NBAAPI-->
+        </div>
+    </div>
+    <div class='right-align'>
+        <a href="{%url 'search'%}">
+            <div class='search-container'>
+                <ion-icon name="search" class='search-icon'></ion-icon>
+            </div>
+        </a>
+    </div>
+</div>
+<hr class='nhr'>

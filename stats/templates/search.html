@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% load static %}
+{% block title %}DataBall | Search{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/search.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'stats/js/search.js' %}"></script>{% endblock %}
+{% block content %}
+<div class='container'>
+    <div class='home-container'>
+        <a href="\" class="back-button"><ion-icon name="arrow-back-outline"></ion-icon></a>
+        <h1>Search for a Player</h1>
+        <div class='search-box'>
+            <form method='get' action='/' id='searchForm'>
+                <div class='search-input-wrapper'>
+                    <div class='search-container'>
+                        <input type='text' id='searchInput' name='search-bar' placeholder='Search...' autocomplete='off'>
+                        <button type='submit' name='submit'>
+                            <ion-icon name="search" class='search-icon'></ion-icon>
+                        </button>
+                    </div>
+                    <div id='suggestions' class='suggestions-dropdown'></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

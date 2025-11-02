@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+{% load static %}
+{% load filters %}
+{% block title %}DataBall | Points Leaderboard{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/leaderboard.css' %}">{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<h1>{{ stat|capfirst }} Leaderboard</h1>
+<div class='leaderboard-container'>
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>{{ stat|capfirst }}</th>
+                <th>Season</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entry in entries %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ entry.player_name }}</td>
+                <td>{{ entry|getstat:stat_field|floatformat:0 }}</td>
+                <td>{{ entry.season }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

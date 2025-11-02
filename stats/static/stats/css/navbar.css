@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+.nhr {
+    margin-top: 0;
+    border: none;
+    height: 2px;
+    background-color: #fafafa;
+}
+
+.navbar-logo {
+    width: 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.dropdown-content-section h3 {
+    font-family: 'Fredoka';
+    font-weight: 500;
+    color: #fafafa;
+}
+
+.hr {
+    border-bottom: 2px solid #6e6e79;
+}
+
+.left-align {
+    display: flex;
+    align-items: left;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.right-align {
+    display: flex;
+    align-items: right;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #272729;
+    padding: 8px 30px;
+    height: 65px;
+}
+
+.navbar-item {
+    font-family: 'Fredoka';
+    font-weight: 450;
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.navbar-dropdown {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #2e2e2f;
+    margin-top: 1px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border-radius: 8px;
+    border: 2px solid #6e6e79;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-7px);
+    transition: .3s;
+    pointer-events: none;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.dropdown-content-section {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.dropdown-content-links {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.dropdown-content .dropdown-link {
+    font-family: 'Fredoka';
+    font-weight: 450;
+    font-size: 16px;
+    color: #fafafa;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.dropdown-link:hover {
+    transform: translateY(-2px);
+}
+
+.search-icon {
+    color: white;
+    font-size: 1.5em;
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.dropdown-container.active .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-container.active .navbar-dropdown {
+    transform: translateY(-2px);
+}
+
+.search-container {
+    background-color: #27272a;
+    border: none;
+    border-radius: 10px;
+    height: 36px;
+    aspect-ratio: 1 / 1;
+    transition: 0.3s;
+    cursor: pointer;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center; 
+}
+
+.search-container:hover {
+    background-color: #52525b;
+}
+
