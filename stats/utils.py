@@ -362,10 +362,10 @@ with transaction.atomic():
         for index, award in enumerate(descriptions):
             if award == 'all-defensive team' and index < len(all_nba_num):
                 awards_dict[f"DEF{all_nba_num[index]}"] = True
-            elif award == 'all-nba' and index < len(all_nba_num):
-                awards_dict[f"NBA{all_nba_num[index]}"] = True
             elif award == 'all-rookie team' and index < len(all_nba_num):
                 awards_dict[f"ROOK{all_nba_num[index]}"] = True
+            elif award == 'all-nba' and index < len(all_nba_num):
+                awards_dict[f"NBA{all_nba_num[index]}"] = True
         
         if season in season_leaders_dict:
             leaders = season_leaders_dict[season]

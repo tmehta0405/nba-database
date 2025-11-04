@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from decouple import config 
 from pathlib import Path
+from celery.schedules import crontab
+from datetime import timedelta
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'stats',
 ]
+
+CELERY_BEAT_SCHEDULE = {
+    'update_stats': {
+        'task': 'stats.tasks.update_nba_stats',
+        'schedule': timedelta(hours=1)
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
