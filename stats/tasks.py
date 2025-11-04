@@ -7,6 +7,8 @@ import pandas as pd
 from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.static import players
 from stats.models import seasonData
+from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime
 
 pd.set_option('future.no_silent_downcasting', True)
 
@@ -233,3 +235,8 @@ def clear_cache():
         CACHE_FILE.unlink()
         return "Cache cleared"
     return "No cache file found"
+
+def start():
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(update_nba_stats, 'interval', hours=1)
+    scheduler.start()

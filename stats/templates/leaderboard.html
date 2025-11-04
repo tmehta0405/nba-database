@@ -22,19 +22,21 @@
                     <th>{{stat|capfirst}}</th>
                 {%endif%}
                 <th>Season</th>
+                <th>Team</th>
             </tr>
         </thead>
         <tbody>
         {% for entry in entries %}
             <tr>
                 <td>{{ forloop.counter }}</td>
-                <td>{{ entry.player_name }}</td>
+                <td><a href="{%url 'player_stats' player_name=entry.player_name%}">{{ entry.player_name }}</a></td>
                 {%if per%}
                     <td>{{ entry.avg|floatformat:1}}</td>
                 {%else%}
                     <td>{{ entry|getstat:stat_field|floatformat }}</td>
                 {%endif%}
                 <td>{{ entry.season }}</td>
+                <td>{{ entry.team_abbreviation }}</td>
             </tr>
         {% endfor %}
         </tbody>

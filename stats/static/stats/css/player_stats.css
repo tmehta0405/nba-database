@@ -114,7 +114,6 @@ h1 {
 
 .content-table tbody .season-stat {
     color: #fafafa;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.082);
 }
 
 .content-table tbody .season-stat:nth-of-type(even) {
@@ -145,6 +144,17 @@ h2 {
     color: #fafafa;
     font-weight: 500;
     text-align: left;
+}
+
+.content-table tbody .season-stat {
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+.content-table tbody .season-stat:hover {
+    transition: .3s;
+    border-left: 2px solid #fafafa;
+    transform: translateX(2px);
 }
 
 .table-container {

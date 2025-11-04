@@ -50,6 +50,12 @@ h1 {
     white-space: nowrap;
 }
 
+.leaderboard-table tbody tr td a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+
 .leaderboard-table th:first-child,
 .leaderboard-table td:first-child {
     min-width: 80px;
@@ -57,7 +63,14 @@ h1 {
 
 .leaderboard-table tbody tr {
     color: #fafafa;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.082);
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+.leaderboard-table tbody tr:hover {
+    transition: .3s;
+    border-left: 2px solid #fafafa;
+    transform: translateX(2px);
 }
 
 .leaderboard-table tbody tr:nth-of-type(even) {
