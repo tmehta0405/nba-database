@@ -138,3 +138,5 @@ def leaderboard(request, stat):
     }
     return render(request, 'leaderboard.html', context)
 
+def college(request):
+    return render(request, 'college.html')

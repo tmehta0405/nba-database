@@ -1,6 +1,5 @@
 from django import template
 import numpy as np
-from stats.models import seasonData
 
 register = template.Library()
 
@@ -22,14 +21,6 @@ def getregions(model):
 def getplayers(model, region):
     return [i.player_name for i in model if i.country == region]
 
-@register.filter
-def sumawards(model, award):
-    count = 0
-    raw = [i.awards for i in model if i.awards] #list of json objects
-    for d in raw:
-        if d[award]:
-            count += 1
-    return count
 
 @register.filter
 def lformat(value):
@@ -89,7 +80,7 @@ def teamstats(model, attr, team):
     return int(sum([getattr(sn, attr) or 0 for sn in model if sn.team_abbreviation == team]))
 
 @register.simple_tag
-def pgstats(model, attr, games): #GET STAT AND DIVIDE
+def pgstats(model, attr, games):
     try:
         stat = getattr(model, attr, 0)
     except Exception:
@@ -103,3 +94,24 @@ def checkawards(model):
         if i.awards:
             return True
     return False
+
+@register.filter
+def sumawards(model):
+    awardDict = {}
+    flist = []
+    for s in model:
+        for a in s.awards:
+            if a in awardDict:
+                awardDict[a] += 1
+            else:
+                awardDict[a] = 1 
+    
+    for a in awardDict:
+        if a != 'season':
+            if awardDict[a] != 1:
+                flist.append(f"{awardDict[a]}x {a}")
+            else:
+                flist.append(f"{a}")
+
+    return flist
+

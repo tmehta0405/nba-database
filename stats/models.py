@@ -38,9 +38,16 @@ class seasonData(models.Model):
     pts = models.FloatField(blank=True, null=True)
     awards = models.JSONField(blank=True, null=True)
     country = models.CharField(max_length=100, default='USA', null=True)
+    school = models.CharField(max_length=100, null=True)
+    bday = models.CharField(max_length=20, null=True)
+    height = models.CharField(max_length=10, null=True)
+    weight = models.CharField(max_length=10, null=True)
+    draft_year = models.CharField(max_length=10, null=True)
+    draft_round = models.CharField(max_length=10, null=True)
+    draft_pick = models.CharField(max_length=10, null=True)
     #add career high for points in game as json w/ date
     class Meta:
         unique_together = ['player_id', 'season_id', 'team_id']
 
     def __str__(self):
-        return f"{self.player_name} - {self.season_id} - {self.team_id}"
+        return f"{self.player_name} - {self.season_id} - {self.player_id}"

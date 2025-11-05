@@ -11,6 +11,10 @@
     width: 40px;
 }
 
+.navbar-logo-text {
+    font-size: 18px;
+}
+
 .logo-container {
     display: flex;
     align-items: center;
