@@ -168,31 +168,54 @@ h2 {
 
 .total-awards-container {   
     margin-top: 5px;
+    background-color: #27272a;
     border: 2px solid #6e6e79;
-    border-top-left-radius: 35px;
-    border-bottom-right-radius: 35px;
-    border-top-right-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border-radius: 20px;
     display: flex;
     padding: 20px;
     gap: 2px;
     flex-direction: column;
     transition: all .3s ease;
-    width: 45%;
 }
 
-.total-awards-container:hover {
-    background-color: #27272a;
-}
 
 .total-awards .total-awards-container div {
     text-align: center;
     color: #fafafa;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
-.total-awards .total-awards-container div:hover {
-    font-size: 18px;
+.general-stats-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #27272a;
+    border: 2px solid #52525b;
+    border-radius: 10px;
+    color: #fafafa;
+    text-align: center;
+    padding: 20px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+    gap: 20px;
+}
+
+.center-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center p {
+    color: #fafafa;
+    font-family: 'Fredoka';
+    margin-bottom: 5px;
 }
 
 

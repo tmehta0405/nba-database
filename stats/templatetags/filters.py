@@ -118,3 +118,17 @@ def sumawards(model):
 
     return flist
 
+@register.filter
+def generalstats(model, stat):
+    for s in model:
+        if stat in ['Country', 'School', 'Birthday', 'Height', 'Weight', 'Drafted']:
+            statmap = {
+                'Country': s.country,
+                'School': s.school,
+                'Birthday': s.bday,
+                'Height': s.height,
+                'Weight': s.weight,
+                'Drafted': f"Round {s.draft_round}, Pick {s.draft_pick} ({s.draft_year})"
+            }
+
+            return f"{stat}: {statmap[stat]}"

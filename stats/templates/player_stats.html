@@ -2,11 +2,36 @@
 {% load static %}
 {% block title %}DataBall | {{ player_name|title }}{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/player_stats.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'stats/js/player_stats.js' %}"></script>{% endblock %}
 {% block content %}
 {% load filters %}
 <div class='header'>
     <a href="{%url 'search'%}" class="back-button"><ion-icon name="arrow-back-outline"></ion-icon></a>
     <h1>{{ player_name|title }}</h1>
+</div>
+<div class='center'>
+    <div class='center-item'>
+        <p>general stats</p>
+        <div class='general-stats-container'>
+            <p>{{seasons|generalstats:'Country'}}</p>
+            <p>{{seasons|generalstats:'School'}}</p>
+            <p>{{seasons|generalstats:'Birthday'}}</p>
+            <p>{{seasons|generalstats:'Height'}}</p>
+            <p>{{seasons|generalstats:'Weight'}}</p>
+            <p>{{seasons|generalstats:'Drafted'}}</p>
+        </div>
+    </div>
+    {%if seasons|checkawards%}
+    <div class='center-item'>
+        <p>total awards</p>
+        <div class='general-stats-container'>
+            {%for entry in seasons|sumawards%}
+                <div class='award-total'>{{entry}}</div>
+            {%endfor%}
+        </div>
+        <div class='award-info'></div>
+    </div>
+    {%endif%}
 </div>
 <div class='container'>
     <div class='player-container'>
@@ -214,15 +239,6 @@
                     </tbody>
                 </table>
             </div>  
-            <div class='total-awards'>
-                <h2>Total Awards</h2>
-                <div class='total-awards-container'>
-                    {%for entry in seasons|sumawards%}
-                        <div>{{entry}}</div>
-                    {%endfor%}
-                </div>
-                <div class='award-info'></div>
-            </div>
             {%endif%}
         </div>
     </div>
