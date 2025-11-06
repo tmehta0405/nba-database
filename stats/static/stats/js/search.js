@@ -126,13 +126,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function createFish() {
     const fish = document.createElement('i');
-    fish.className = 'fas fa-fish fish';
+    fish.className = 'fas fa-solid fa-basketball fish';
     fish.style.top = Math.random() * 100 + '%';
     fish.style.setProperty('--wave', (Math.random() * 100 - 50) + 'px');
     const duration = Math.random() * 4 + 6;
     fish.style.animationDuration = duration + 's';
     fish.style.animationDelay = Math.random() * 2 + 's';
-    fish.style.fontSize = (Math.random() * 15 + 10) + 'px';
+    fish.style.fontSize = (Math.random() * 15 + 20) + 'px';
     fish.style.color = Math.random() > 0.5 ? '#272729' : '#3f4045';
     
     if (Math.random() > 0.5) {

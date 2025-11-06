@@ -1,0 +1,9 @@
+{% extends "template.html" %}
+{% load static %}
+{% block title %}DataBall | {{college|capfirst}}{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/college.css' %}">{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<h1>College Info</h1>
+
+{% endblock %}

@@ -99,6 +99,7 @@ def checkawards(model):
 def sumawards(model):
     awardDict = {}
     flist = []
+    order = ['MVP', 'FMVP', 'CHAMP', 'CFMVP', 'AS', 'NBA1', 'NBA2', 'NBA3', 'DPOY', 'DEF1', 'DEF2', 'PC', 'RC', 'AC', 'SC', 'BC', 'ROY', 'ROOK1', 'ROOK2', 'ISTMVP', 'NBACUP', 'CPOY', '6MOY']
     for s in model:
         for a in s.awards:
             if a in awardDict:
@@ -106,10 +107,12 @@ def sumawards(model):
             else:
                 awardDict[a] = 1 
     
-    for a in awardDict:
+    orderedDict = {k: awardDict[k] for k in order if k in awardDict}
+    
+    for a in orderedDict:
         if a != 'season':
-            if awardDict[a] != 1:
-                flist.append(f"{awardDict[a]}x {a}")
+            if orderedDict[a] != 1:
+                flist.append(f"{orderedDict[a]}x {a}")
             else:
                 flist.append(f"{a}")
 

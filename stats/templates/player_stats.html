@@ -218,9 +218,10 @@
                 <h2>Total Awards</h2>
                 <div class='total-awards-container'>
                     {%for entry in seasons|sumawards%}
-                        <p>{{entry}}</p>
+                        <div>{{entry}}</div>
                     {%endfor%}
                 </div>
+                <div class='award-info'></div>
             </div>
             {%endif%}
         </div>

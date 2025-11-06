@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.core.exceptions import FieldError
 from django.db.models import Q, F, FloatField, ExpressionWrapper
 from .models import seasonData
+import numpy as np
 
 
 def home(request):
@@ -138,5 +139,14 @@ def leaderboard(request, stat):
     }
     return render(request, 'leaderboard.html', context)
 
-def college(request):
-    return render(request, 'college.html')
+def colleges(request):
+    c = np.unique(np.array(seasonData.objects.exclude(school__isnull=True).values_list(
+        'school', flat=True
+    )))
+    context = {
+        'colleges': c
+    }
+    return render(request, 'colleges.html', context)
+
+def college_info(request, college):
+    return render(request, 'college_info.html')
