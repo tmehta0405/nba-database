@@ -113,6 +113,8 @@ def sumawards(model):
     order = ['MVP', 'FMVP', 'CHAMP', 'CFMVP', 'AS', 'NBA1', 'NBA2', 'NBA3', 'DPOY', 'DEF1', 'DEF2', 'PC', 'RC', 'AC', 'SC', 'BC', 'ROY', 'ROOK1', 'ROOK2', 'ISTMVP', 'NBACUP', 'CPOY', '6MOY']
     for s in model:
         if s.season not in seasons:
+            if not s or not getattr(s, 'awards', None):
+                continue
             for a in s.awards:
                 if a in awardDict:
                     awardDict[a] += 1
@@ -146,15 +148,26 @@ def getaward(entry):
 def generalstats(model, stat):
     for s in model:
         if stat in ['Country', 'School', 'Birthday', 'Height', 'Weight', 'Drafted']:
-            meters = f"{(int(s.height.split('-')[0]) * 12 + int(s.height.split('-')[1])) * 0.0254:.2f}"
-            kg = f"{.453592 * int(s.weight):.2f}"
             statmap = {
                 'Country': s.country,
                 'School': s.school,
                 'Birthday': s.bday,
-                'Height': f'{s.height.replace("-", "'")}"\t({meters}m)',
-                'Weight': f"{s.weight}lbs\t({kg}kg)",
+                'Height': s.height,
+                'Weight': f"{s.weight}lbs",
                 'Drafted': f"Round {s.draft_round}, Pick {s.draft_pick} ({s.draft_year})"
             }
-
-            return f"{stat}: {statmap[stat]}"
+            if (s.draft_round == None or s.draft_pick == None) and stat == 'Drafted':
+                return s.draft_year
+            else:
+                return f"{statmap[stat]}"
+            
+@register.filter
+def formatheight(height):
+    return f'{height.replace("-", "'")}"'
+    
+@register.filter
+def si(value):
+    if "-" in value:
+        return f"{(int(value.split('-')[0]) * 12 + int(value.split('-')[1])) * 0.0254:.2f}m"
+    else:
+        return f"{.453592 * int(value[:3]):.2f}kg"

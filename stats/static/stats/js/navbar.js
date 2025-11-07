@@ -21,5 +21,4 @@ document.addEventListener('DOMContentLoaded', function() {
             container.classList.remove('active')
         })
     })
-
 });

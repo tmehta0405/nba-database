@@ -220,7 +220,7 @@ function revealPlayer() {
                 revealDiv.style.display = 'block';
                 requestAnimationFrame(() => {
                     revealDiv.classList.add('show');
-                    revealDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    revealDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });          
                 });
             } else {
                 playersList.innerHTML = `<div class="player-item"><strong>${data.message || 'No birthdays today'}</strong></div>`;

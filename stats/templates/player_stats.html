@@ -11,19 +11,43 @@
 </div>
 <div class='center'>
     <div class='center-item'>
-        <p>general stats</p>
+        <h2>general stats</h2>
         <div class='general-stats-container'>
-            <p>{{seasons|generalstats:'Country'}}</p>
-            <p>{{seasons|generalstats:'School'}}</p>
-            <p>{{seasons|generalstats:'Birthday'}}</p>
-            <p>{{seasons|generalstats:'Height'}}</p>
-            <p>{{seasons|generalstats:'Weight'}}</p>
-            <p>{{seasons|generalstats:'Drafted'}}</p>
+            <div class='general-stat'>
+                <p>country</p>
+                <div class='general-stat-item'>{{seasons|generalstats:'Country'}}</div>
+            </div>
+            <div class='general-stat'>
+                <p>school</p>
+                <div class='general-stat-item'>{{seasons|generalstats:'School'}}</div>
+            </div>
+            <div class='general-stat'>
+                <p>birthday</p>
+                <div class='general-stat-item'>{{seasons|generalstats:'Birthday'}}</div>
+            </div>
+            <div class='general-stat'>
+                <p>height</p>
+                <div class='hw-container'>
+                    <div class='general-stat-item'>{{seasons|generalstats:'Height'|formatheight}}</div>
+                    <div class='general-stat-item'>{{seasons|generalstats:'Height'|si}}</div>
+                </div>
+            </div>
+            <div class='general-stat'>
+                <p>weight</p>
+                <div class='hw-container'>
+                    <div class='general-stat-item'>{{seasons|generalstats:'Weight'}}</div>
+                    <div class='general-stat-item'>{{seasons|generalstats:'Weight'|si}}</div>
+                </div>
+            </div>
+            <div class='general-stat'>
+                <p>drafted</p>
+                <div class='general-stat-item'>{{seasons|generalstats:'Drafted'}}</div>
+            </div>
         </div>
     </div>
     {%if seasons|checkawards%}
     <div class='center-item'>
-        <p>total awards</p>
+        <h2>total awards</h2>
         <div class='total-awards-container'>
             {%for entry in seasons|sumawards%}
                 <div class='award-item'>
