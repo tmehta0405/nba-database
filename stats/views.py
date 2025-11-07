@@ -3,6 +3,8 @@ from django.http import JsonResponse
 from django.core.exceptions import FieldError
 from django.db.models import Q, F, FloatField, ExpressionWrapper
 from .models import seasonData
+from datetime import datetime
+import random
 import numpy as np
 
 
@@ -86,14 +88,23 @@ def search_suggestions(request):
 def player_stats(request, player_name):
     seasons = seasonData.objects.filter(
         player_name__iexact=player_name
-    ).order_by('season')
+    ).order_by('season', '-team_abbreviation')
     
     if not seasons.exists():
         return render(request, 'player_not_found.html', {'player_name': player_name})
     
+    seen_seasons = set()
+    seasons_list = list(seasons)
+    for season in seasons_list:
+        if season.season not in seen_seasons:
+            season.show_awards = True #type: ignore
+            seen_seasons.add(season.season)
+        else:
+            season.show_awards = False #type: ignore
+
     context = {
         'player_name': player_name,
-        'seasons': seasons,
+        'seasons': seasons_list,
     }
     return render(request, 'player_stats.html', context)
 
@@ -150,3 +161,23 @@ def colleges(request):
 
 def college_info(request, college):
     return render(request, 'college_info.html')
+
+def get_birthday_player(request):
+    today = datetime.now()
+    month = today.strftime("%m")
+    day = today.strftime("%d")
+    date_pattern = f"-{month}-{day}"
+    players_qs = seasonData.objects.filter(bday__contains=date_pattern)
+    players = list(players_qs.values('player_name', 'bday').distinct())
+
+    unique_players = []
+    seen = set()
+    for p in players:
+        name = p.get('player_name')
+        if name and name not in seen:
+            seen.add(name)
+            unique_players.append({'player_name': name, 'birthday': p.get('bday')})
+
+    if unique_players:
+        return JsonResponse({'success': True, 'players': unique_players})
+    return JsonResponse({'success': False, 'message': 'No NBA players were born today!'})

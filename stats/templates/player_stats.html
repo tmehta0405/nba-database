@@ -232,7 +232,7 @@
                     </thead>
                     <tbody>
                         {% for season in seasons %}
-                            {%if season.awards%} 
+                            {%if season.awards and season.show_awards%} 
                                 <tr class='season-stat'>
                                     <td>{{ season.season }}</td>
                                     <td>{{ season.awards|renderawards }}</td>

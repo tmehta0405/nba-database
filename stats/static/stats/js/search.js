@@ -201,3 +201,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function revealPlayer() {
+    fetch('/api/birthday-player')
+        .then(response => response.json())
+        .then(data => {
+            const revealDiv = document.getElementById('player-reveal');
+            const playersList = revealDiv.querySelector('.players-list');
+            
+            if (data.success && data.players && data.players.length > 0) {
+                playersList.innerHTML = data.players.map(player => `
+                    <a href="/player/${encodeURIComponent(player.player_name)}/" class="player-item">
+                        <strong>${player.player_name}</strong>
+                        <span class="bday">${player.birthday.substring(0, 4)}</span>
+                    </a>
+                `).join('');
+                
+                revealDiv.style.display = 'block';
+                requestAnimationFrame(() => {
+                    revealDiv.classList.add('show');
+                    revealDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            } else {
+                playersList.innerHTML = `<div class="player-item"><strong>${data.message || 'No birthdays today'}</strong></div>`;
+                revealDiv.style.display = 'block';
+                requestAnimationFrame(() => {
+                    revealDiv.classList.add('show');
+                });
+            }
+        });
+}

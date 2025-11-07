@@ -100,6 +100,10 @@ def filterseasons(model):
     cache = []
     cache = [i.season for i in model if i.season not in cache]
 
+@register.filter
+def dupe(model, entry):
+    #no clue
+    return True # placeholder
 
 @register.filter
 def sumawards(model):
@@ -142,12 +146,14 @@ def getaward(entry):
 def generalstats(model, stat):
     for s in model:
         if stat in ['Country', 'School', 'Birthday', 'Height', 'Weight', 'Drafted']:
+            meters = f"{(int(s.height.split('-')[0]) * 12 + int(s.height.split('-')[1])) * 0.0254:.2f}"
+            kg = f"{.453592 * int(s.weight):.2f}"
             statmap = {
                 'Country': s.country,
                 'School': s.school,
                 'Birthday': s.bday,
-                'Height': s.height,
-                'Weight': s.weight,
+                'Height': f'{s.height.replace("-", "'")}"\t({meters}m)',
+                'Weight': f"{s.weight}lbs\t({kg}kg)",
                 'Drafted': f"Round {s.draft_round}, Pick {s.draft_pick} ({s.draft_year})"
             }
 
