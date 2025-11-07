@@ -125,8 +125,30 @@ h1 {
     margin-bottom: 30px;
 }
 
+.award-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .award-section p {
     color: #fafafa;
+}
+
+.total-awards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #27272a;
+    border: 2px solid #52525b;
+    border-radius: 10px;
+    color: #fafafa;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+    width: 95%;
 }
 
 h2 {
@@ -164,18 +186,7 @@ h2 {
 
 .pergame {
     margin-top: 20px;
-}
-
-.total-awards-container {   
-    margin-top: 5px;
-    background-color: #27272a;
-    border: 2px solid #6e6e79;
-    border-radius: 20px;
-    display: flex;
-    padding: 20px;
-    gap: 2px;
-    flex-direction: column;
-    transition: all .3s ease;
+    margin-bottom: 20px;
 }
 
 
@@ -195,6 +206,7 @@ h2 {
     color: #fafafa;
     text-align: center;
     padding: 20px;
+    width: 95%;
 }
 
 .center {
@@ -202,7 +214,9 @@ h2 {
     align-items: center;
     justify-content: center;
     margin-bottom: 3%;
+    flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .center-item {
@@ -210,6 +224,7 @@ h2 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .center p {
@@ -218,4 +233,9 @@ h2 {
     margin-bottom: 5px;
 }
 
-
+.award-total {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #18181b;
+    border: 2px solid #52525b;
+}

@@ -96,27 +96,47 @@ def checkawards(model):
     return False
 
 @register.filter
+def filterseasons(model):
+    cache = []
+    cache = [i.season for i in model if i.season not in cache]
+
+
+@register.filter
 def sumawards(model):
     awardDict = {}
     flist = []
+    seasons = []
     order = ['MVP', 'FMVP', 'CHAMP', 'CFMVP', 'AS', 'NBA1', 'NBA2', 'NBA3', 'DPOY', 'DEF1', 'DEF2', 'PC', 'RC', 'AC', 'SC', 'BC', 'ROY', 'ROOK1', 'ROOK2', 'ISTMVP', 'NBACUP', 'CPOY', '6MOY']
     for s in model:
-        for a in s.awards:
-            if a in awardDict:
-                awardDict[a] += 1
-            else:
-                awardDict[a] = 1 
+        if s.season not in seasons:
+            for a in s.awards:
+                if a in awardDict:
+                    awardDict[a] += 1
+                else:
+                    awardDict[a] = 1 
+                seasons.append(s.season)
     
     orderedDict = {k: awardDict[k] for k in order if k in awardDict}
     
     for a in orderedDict:
         if a != 'season':
+            flist.append([str(orderedDict[a]) , a])
+            '''
             if orderedDict[a] != 1:
-                flist.append(f"{orderedDict[a]}x {a}")
+                #flist.append(f"{orderedDict[a]}x {a}")
             else:
                 flist.append(f"{a}")
-
+            '''
+    #MAKE THIS RETURN 2 ELEMENTS FOR A COOL LOOKING TOTAL AWARDS BAR
     return flist
+
+@register.filter 
+def getnum(entry):
+    return f"{entry[0]}x"
+
+@register.filter
+def getaward(entry):
+    return entry[1]
 
 @register.filter
 def generalstats(model, stat):

@@ -24,12 +24,16 @@
     {%if seasons|checkawards%}
     <div class='center-item'>
         <p>total awards</p>
-        <div class='general-stats-container'>
+        <div class='total-awards-container'>
             {%for entry in seasons|sumawards%}
-                <div class='award-total'>{{entry}}</div>
+                <div class='award-item'>
+                    <div class='marker'>{{entry|getaward}}</div>
+                    <div class='award-total'>
+                        <div class='award-entry'>{{entry|getnum}}</div>
+                    </div>
+                </div>
             {%endfor%}
         </div>
-        <div class='award-info'></div>
     </div>
     {%endif%}
 </div>
@@ -147,7 +151,6 @@
                     </table>
                 </div>
             </div>
-
             <div class='flex-item pergame'>
                 <div class='table-container'>
                     <h2>Per Game</h2>
