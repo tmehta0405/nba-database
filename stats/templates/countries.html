@@ -9,13 +9,13 @@
 </div>
 <div class='center'>
     {%for player in distinct_players%}
-        <a href="{%url 'player_stats' player_name=player.player_name%}">
+        <a class='card-link'href="{%url 'player_stats' player_name=player.player_name%}">
             <div class='player-card'>
-                <h3>{{player.player_name}}</h3>
+                <h3 class='.h3'>{{player.player_name}}</h3>
                 <div class='stat-container'>
                     {%for key, value in totals.items%}
                     <div class='stat-item'> <!--add a filter for years-->
-                        <h4>{{key}}</h4>
+                        <h4 class='.h4'>{{key}}</h4>
                         <p>{{value|floatformat}}</p>
                     </div>
                     {%endfor%}

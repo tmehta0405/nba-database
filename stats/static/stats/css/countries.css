@@ -24,15 +24,15 @@ h1 {
     margin-bottom: 30px;
 }
 
-h3, h4 {
+.h3, .h4 {
     font-weight: 550;
 }
 
-h3 {
+.h3 {
     margin-bottom: 25px;
 }
 
-a {
+.card-link {
     color: #fafafa;
     text-decoration: none;
     display: flex;
