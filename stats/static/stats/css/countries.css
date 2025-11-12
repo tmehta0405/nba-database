@@ -24,36 +24,50 @@ h1 {
     margin-bottom: 30px;
 }
 
-.countries-container {
-    max-width: 100vw;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+h3, h4 {
+    font-weight: 550;
 }
 
-.countries-container div {
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    border: 2px solid #52525b;
-    background-color: #272729;
-    transition: .2s ease;
+h3 {
+    margin-bottom: 25px;
 }
 
-.countries-container a {
+a {
     color: #fafafa;
-    font-family: 'Fredoka';
     text-decoration: none;
-}
-
-.countries-container div:hover {
-    border-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
 }
 
 .center {
     display: flex;
-    align-items: center;
+    width: 100vw;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-card {
+    display: flex;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #52525b;
+    background-color: #272729;
+    width: 100%;
+    transition: .2s ease;
+}
+
+.player-card:hover {
+    border: 2px solid #fafafa;
+}
+
+.stat-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.exceptions import FieldError
-from django.db.models import Q, F, FloatField, ExpressionWrapper
+from django.db.models import Q, F, Case, When, Value, IntegerField, Sum,FloatField, ExpressionWrapper
 from .models import seasonData
 from datetime import datetime
 import random
@@ -109,7 +109,54 @@ def player_stats(request, player_name):
     return render(request, 'player_stats.html', context)
 
 def region(request):
-    return render(request, 'region.html')
+    countries = seasonData.objects.values_list('country', flat=True).distinct().order_by(
+        Case(
+            When(country='USA', then=Value(0)),
+            default=Value(1),
+            output_field=IntegerField()
+        ),
+        'country'
+    )
+
+    context = {
+        'countries': countries
+    }
+
+    return render(request, 'region.html', context)
+
+def countries(request, country):
+    players = seasonData.objects.filter(
+        country=country
+    ).order_by('player_name').values('player_id', 'player_name')
+    distinct_players = players.distinct()
+
+    totals = players.aggregate(
+        G = Sum('gp'),
+        MP = Sum('minutes'),
+        FGM = Sum('fgm'),
+        FGA = Sum('fga'),
+        FG3 = Sum('fg3m'),
+        FG3A = Sum('fg3a'),
+        FT = Sum('ftm'),
+        FTA = Sum('fta'),
+        ORB = Sum('oreb'),
+        DRB = Sum('dreb'),
+        TRB = Sum('reb'),
+        AST = Sum('ast'),
+        STL = Sum('stl'),
+        BLK = Sum('blk'),
+        TOV = Sum('tov'),
+        PF = Sum('pf'),
+        PTS = Sum('pts'),
+    )
+
+    context = {
+        'country': country,
+        'distinct_players': distinct_players,
+        'players': players,
+        'totals': totals
+    }
+    return render(request, 'countries.html', context)
 
 def leaderboard(request, stat):
     stat_map = {

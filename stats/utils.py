@@ -33,6 +33,7 @@ for key in stats.keys():
     )
     print(key)
 '''
+'''
 import os
 import sys
 import django
@@ -71,6 +72,42 @@ for pid in ajson:
             awards = ajson[pid][season]
         )
         print(f"Updated {pid}: {season}")
+'''
+
+import os
+import sys
+import django
+import time
+import json
+from pathlib import Path
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nba_data_site.settings')
+django.setup()
+
+from stats.models import seasonData
+import pandas as pd
+
+JSON_DIR = Path(BASE_DIR) / 'nba_cache'
+JSON_DIR.mkdir(exist_ok=True)
+JSON_FILE = JSON_DIR / 'countries.json'
+
+def updateRegions():
+    with open(JSON_FILE, 'r') as f:
+            countriesDict = json.load(f)
+
+    for pid in countriesDict:
+        seasonData.objects.filter(
+            player_id = pid
+        ).update(
+            country = countriesDict[pid]
+        )
+        print(f"Updated {pid} to {countriesDict[pid]}.")
+
+
+updateRegions()
 
 
 

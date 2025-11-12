@@ -4,6 +4,14 @@
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/region.css' %}">{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
-<h1>Region Leaderboard</h1>
-
+<div class='center'>
+    <h1>Regions</h1>
+</div>
+<div class='countries-container'>
+    {%for country in countries%}
+        {%if country%}
+             <a href="{%url 'countries' country=country%}"><div>{{country}}</div></a>
+        {%endif%}
+    {%endfor%}
+</div>
 {% endblock %}

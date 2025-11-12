@@ -1,0 +1,27 @@
+{% extends "template.html" %}
+{% load static %}
+{% block title %}DataBall | {{country}}{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/countries.css' %}">{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class='center'>
+    <h1>{{country}}</h1>
+</div>
+<div class='center'>
+    {%for player in distinct_players%}
+        <a href="{%url 'player_stats' player_name=player.player_name%}">
+            <div class='player-card'>
+                <h3>{{player.player_name}}</h3>
+                <div class='stat-container'>
+                    {%for key, value in totals.items%}
+                    <div class='stat-item'> <!--add a filter for years-->
+                        <h4>{{key}}</h4>
+                        <p>{{value|floatformat}}</p>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </a>
+    {%endfor%}
+</div>
+{% endblock %}

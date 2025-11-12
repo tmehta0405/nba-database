@@ -225,12 +225,35 @@ h2 {
     border: 2px solid #52525b;
 }
 
+.hw-stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    background-color: #272729;
+
+}
+
+.hw-stat-item-l {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.hw-stat-item-r {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 2px solid #52525b;
+}
+
+
 .hw-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    border: 2px solid #52525b;
+    border-radius: 12px;
 }
 
 .center {
