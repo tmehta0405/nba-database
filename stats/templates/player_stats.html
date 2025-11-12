@@ -13,10 +13,12 @@
     <div class='center-item'>
         <h2>general stats</h2>
         <div class='general-stats-container'>
-            <div class='general-stat'>
-                <p>country</p>
-                <div class='general-stat-item'>{{seasons|generalstats:'Country'}}</div>
-            </div>
+            <a href={%url 'countries' country=seasons|generalstats:'Country'%}>
+                <div class='general-stat'>
+                    <p>country</p>
+                    <div class='general-stat-item'>{{seasons|generalstats:'Country'}}</div>
+                </div>
+            </a>
             <div class='general-stat'>
                 <p>school</p>
                 <div class='general-stat-item'>{{seasons|generalstats:'School'}}</div>

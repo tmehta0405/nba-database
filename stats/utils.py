@@ -102,9 +102,9 @@ def updateRegions():
         seasonData.objects.filter(
             player_id = pid
         ).update(
-            country = countriesDict[pid]
+            country = countriesDict[pid][1]
         )
-        print(f"Updated {pid} to {countriesDict[pid]}.")
+        print(f"Updated {pid}/{countriesDict[pid][0]} to {countriesDict[pid][1]}.")
 
 
 updateRegions()

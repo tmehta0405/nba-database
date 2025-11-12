@@ -1,613 +1,2446 @@
 {
-  "1628981": "Angola",
-  "203658": "Antigua And Barbuda",
-  "1630195": "Argentina",
-  "1630267": "Argentina",
-  "1630466": "Argentina",
-  "2568": "Argentina",
-  "1627868": "Argentina",
-  "200835": "Argentina",
-  "101177": "Argentina",
-  "203143": "Argentina",
-  "2449": "Argentina",
-  "2431": "Australia",
-  "1512": "Australia",
-  "203946": "Australia",
-  "101106": "Australia",
-  "1628413": "Australia",
-  "1361": "Australia",
-  "1629151": "Australia",
-  "1641645": "Australia",
-  "1628249": "Australia",
-  "1630700": "Australia",
-  "203521": "Australia",
-  "1642505": "Australia",
-  "203957": "Australia",
-  "1642277": "Australia",
-  "1845": "Australia",
-  "1630581": "Australia",
-  "1630182": "Australia",
-  "1049": "Australia",
-  "1629353": "Australia",
-  "204060": "Australia",
-  "202681": "Australia",
-  "201605": "Australia",
-  "1629111": "Australia",
-  "26": "Australia",
-  "1630266": "Australia",
-  "1628493": "Australia",
-  "1629098": "Australia",
-  "201988": "Australia",
-  "1642878": "Australia",
-  "101195": "Australia",
-  "1627732": "Australia",
-  "1631247": "Australia",
-  "1631298": "Australia",
-  "1627751": "Austria",
-  "1629028": "Bahamas",
-  "76337": "Bahamas",
-  "1642845": "Bahamas",
-  "1627741": "Bahamas",
-  "1630539": "Bahamas",
-  "1100": "Bahamas",
-  "78331": "Bahamas",
-  "1641739": "Belgium",
-  "202333": "Belgium",
-  "1642274": "Belgium",
-  "1642349": "Belgium",
-  "1628373": "Belgium",
-  "2225": "Belgium",
-  "1627733": "Bosnia And Herzegovina",
-  "200806": "Bosnia And Herzegovina",
-  "1631255": "Bosnia And Herzegovina",
-  "203994": "Bosnia And Herzegovina",
-  "2237": "Bosnia And Herzegovina",
-  "1627826": "Bosnia And Herzegovina",
-  "2571": "Brazil",
-  "203998": "Brazil",
-  "203543": "Brazil",
-  "76709": "Brazil",
-  "2682": "Brazil",
-  "1626273": "Brazil",
-  "1629712": "Brazil",
-  "203097": "Brazil",
-  "203526": "Brazil",
-  "203512": "Brazil",
-  "1630611": "Brazil",
-  "201168": "Brazil",
-  "200790": "Brazil",
-  "1641793": "British Virgin Islands",
-  "76824": "Bulgaria",
-  "2257": "Cameroon",
-  "1642279": "Cameroon",
-  "203954": "Cameroon",
-  "1631132": "Cameroon",
-  "201601": "Cameroon",
-  "1627783": "Cameroon",
-  "1629734": "Canada",
-  "1629638": "Canada",
-  "201202": "Canada",
-  "76089": "Canada",
-  "1630625": "Canada",
-  "1629628": "Canada",
-  "203461": "Canada",
-  "204021": "Canada",
-  "203920": "Canada",
-  "1629052": "Canada",
-  "1628415": "Canada",
-  "1629634": "Canada",
-  "76469": "Canada",
-  "1630268": "Canada",
-  "1629652": "Canada",
-  "1641744": "Canada",
-  "203898": "Canada",
-  "296": "Canada",
-  "1628983": "Canada",
-  "76847": "Canada",
-  "77062": "Canada",
-  "1631216": "Canada",
-  "202709": "Canada",
-  "203126": "Canada",
-  "1629662": "Canada",
-  "1630639": "Canada",
-  "1626168": "Canada",
-  "1928": "Canada",
-  "2048": "Canada",
-  "1631097": "Canada",
-  "1641801": "Canada",
-  "1631159": "Canada",
-  "1628513": "Canada",
-  "1628539": "Canada",
-  "1627750": "Canada",
-  "1629614": "Canada",
-  "1642948": "Canada",
-  "203094": "Canada",
-  "203482": "Canada",
-  "1630698": "Canada",
-  "203939": "Canada",
-  "1630563": "Canada",
-  "1641765": "Canada",
-  "1628504": "Canada",
-  "77916": "Canada",
-  "1642860": "Canada",
-  "1642050": "Canada",
-  "1631101": "Canada",
-  "1629621": "Canada",
-  "1091": "Canada",
-  "78221": "Canada",
-  "203917": "Canada",
-  "202684": "Canada",
-  "78405": "Canada",
-  "82": "Canada",
-  "203952": "Canada",
-  "1629623": "Canada",
-  "78647": "Canada",
-  "204002": "Cape Verde",
-  "2370": "China",
-  "1642905": "China",
-  "201146": "China",
-  "77584": "China",
-  "2397": "China",
-  "1627753": "China",
-  "201180": "China",
-  "1917": "China",
-  "1630693": "Colombia",
-  "1626251": "Croatia",
-  "1626209": "Croatia",
-  "2435": "Croatia",
-  "129": "Croatia",
-  "203967": "Croatia",
-  "1953": "Cuba",
-  "1628426": "Cyprus",
-  "1630249": "Czech Republic",
-  "202687": "Democratic Republic of the Congo",
-  "201963": "Democratic Republic of the Congo",
-  "1630228": "Democratic Republic of the Congo",
-  "1626144": "Democratic Republic of the Congo",
-  "87": "Democratic Republic of the Congo",
-  "1631131": "Democratic Republic of the Congo",
-  "76941": "Denmark",
-  "1630994": "Denmark",
-  "2123": "Dominica",
-  "1630537": "Dominican Republic",
-  "2784": "Dominican Republic",
-  "201143": "Dominican Republic",
-  "77057": "Dominican Republic",
-  "1626242": "Dominican Republic",
-  "76001": "Egypt",
-  "1627846": "Egypt",
-  "1630929": "Estonia",
-  "1628374": "Finland",
-  "1505": "France",
-  "1630555": "France",
-  "201587": "France",
-  "1630608": "France",
-  "1631321": "France",
-  "1627822": "France",
-  "1641731": "France",
-  "1642359": "France",
-  "201986": "France",
-  "1631217": "France",
-  "2564": "France",
-  "200821": "France",
-  "1631172": "France",
-  "203095": "France",
-  "203497": "France",
-  "1629658": "France",
-  "1629739": "France",
-  "203530": "France",
-  "101133": "France",
-  "77565": "France",
-  "1629690": "France",
-  "203513": "France",
-  "1629059": "France",
-  "101130": "France",
-  "1629738": "France",
-  "1642875": "France",
-  "2541": "France",
-  "1641712": "France",
-  "1642275": "France",
-  "1642259": "France",
-  "1630846": "France",
-  "1565": "France",
-  "202377": "France",
-  "1629681": "France",
-  "1626253": "France",
-  "1641705": "France",
-  "1122": "France",
-  "1627824": "France",
-  "203996": "French Guiana",
-  "1629735": "Gabon",
-  "1629048": "Georgia",
-  "2585": "Georgia",
-  "203129": "Georgia",
-  "1735": "Georgia",
-  "2054": "Georgia",
-  "2401": "Georgia",
-  "76172": "Germany",
-  "1629067": "Germany",
-  "2430": "Germany",
-  "762": "Germany",
-  "76276": "Germany",
-  "76477": "Germany",
-  "1641783": "Germany",
-  "76637": "Germany",
-  "76676": "Germany",
-  "76757": "Germany",
-  "203548": "Germany",
-  "77035": "Germany",
-  "1630574": "Germany",
-  "1628467": "Germany",
-  "1717": "Germany",
-  "203317": "Germany",
-  "202353": "Germany",
-  "201576": "Germany",
-  "96": "Germany",
-  "203471": "Germany",
-  "1628464": "Germany",
-  "78404": "Germany",
-  "1630532": "Germany",
-  "1629021": "Germany",
-  "78464": "Germany",
-  "1630613": "Germany",
-  "1846": "Germany",
-  "1627835": "Germany",
-  "1627791": "Ghana",
-  "1628578": "Ghana",
-  "1641877": "Ghana",
-  "203507": "Greece",
-  "1628961": "Greece",
-  "203648": "Greece",
-  "2238": "Greece",
-  "2601": "Greece",
-  "1630686": "Greece",
-  "1627834": "Greece",
-  "203123": "Greece",
-  "981": "Greece",
-  "2779": "Greece",
-  "201958": "Guadeloupe",
-  "1630619": "Guinea",
-  "1629603": "Guinea",
-  "1629635": "Guinea",
-  "101185": "Guyana",
-  "1954": "Guyana",
-  "2223": "Haiti",
-  "77214": "Haiti",
-  "178": "Haiti",
-  "1630582": "Haiti",
-  "76901": "Iceland",
-  "2469": "Ireland",
-  "201632": "Islamic Republic of Iran",
-  "1630166": "Israel",
-  "201956": "Israel",
-  "1628388": "Israel",
-  "203539": "Israel",
-  "200745": "Italy",
-  "201158": "Italy",
-  "76161": "Italy",
-  "203540": "Italy",
-  "76683": "Italy",
-  "1631323": "Italy",
-  "201568": "Italy",
-  "202704": "Italy",
-  "1630185": "Italy",
-  "474": "Italy",
-  "1641774": "Italy",
-  "201607": "Jamaica",
-  "204179": "Jamaica",
-  "202366": "Jamaica",
-  "1630208": "Jamaica",
-  "716": "Jamaica",
-  "202396": "Jamaica",
-  "78062": "Jamaica",
-  "78419": "Jamaica",
-  "1629060": "Japan",
-  "1642530": "Japan",
-  "2657": "Japan",
-  "1630560": "Japan",
-  "1629139": "Japan",
-  "1629066": "Latvia",
-  "1628394": "Latvia",
-  "204001": "Latvia",
-  "70": "Lebanon",
-  "938": "Lebanon",
-  "1629649": "Lithuania",
-  "980": "Lithuania",
-  "101132": "Lithuania",
-  "1629083": "Lithuania",
-  "1627851": "Lithuania",
-  "101178": "Lithuania",
-  "717": "Lithuania",
-  "1629686": "Lithuania",
-  "2443": "Lithuania",
-  "202685": "Lithuania",
-  "2264": "Luxembourg",
-  "1642368": "Mali",
-  "1627767": "Mali",
-  "2066": "Mali",
-  "1641766": "Mali",
-  "101142": "Martinique",
-  "1024": "Mexico",
-  "1542": "Montenegro",
-  "1630250": "Montenegro",
-  "76727": "Morocco",
-  "76139": "Netherlands",
-  "1642399": "Netherlands",
-  "1922": "Netherlands",
-  "2429": "Netherlands",
-  "903": "Netherlands",
-  "1642502": "Netherlands",
-  "77689": "Netherlands",
-  "1642366": "Netherlands",
-  "22": "Netherlands",
-  "203500": "New Zealand",
-  "203382": "New Zealand",
-  "1752": "New Zealand",
-  "2632": "New Zealand",
-  "1630173": "Nigeria",
-  "202374": "Nigeria",
-  "1824": "Nigeria",
-  "1628962": "Nigeria",
-  "1629646": "Nigeria",
-  "1641737": "Nigeria",
-  "212": "Nigeria",
-  "1918": "Nigeria",
-  "203105": "Nigeria",
-  "1631320": "Nigeria",
-  "1022": "Nigeria",
-  "1629006": "Nigeria",
-  "165": "Nigeria",
-  "1709": "Nigeria",
-  "1630647": "Nigeria",
-  "2071": "Nigeria",
-  "76292": "Norway",
-  "76176": "Panama",
-  "201814": "Panama",
-  "76861": "Panama",
-  "101162": "Poland",
-  "2573": "Poland",
-  "77436": "Poland",
-  "1629674": "Portugal",
-  "2306": "Puerto Rico",
-  "200826": "Puerto Rico",
-  "1628492": "Puerto Rico",
-  "77356": "Puerto Rico",
-  "2762": "Puerto Rico",
-  "1626224": "Republic of North Macedonia",
-  "201586": "Republic of the Congo",
-  "76899": "Romania",
-  "76128": "Russian Federation",
-  "203508": "Russian Federation",
-  "201619": "Russian Federation",
-  "1905": "Russian Federation",
-  "101117": "Russian Federation",
-  "2752": "Russian Federation",
-  "202389": "Russian Federation",
-  "2750": "Russian Federation",
-  "203144": "Russian Federation",
-  "78421": "Russian Federation",
-  "1628449": "Saint Lucia",
-  "1502": "Saint Vincent and the Grenadines",
-  "1630641": "Senegal",
-  "203476": "Senegal",
-  "2205": "Senegal",
-  "1629605": "Senegal",
-  "1631243": "Senegal",
-  "202380": "Senegal",
-  "1823": "Senegal",
-  "2055": "Senegal",
-  "101238": "Senegal",
-  "1626254": "Senegal",
-  "200798": "Senegal",
-  "200754": "Senegal",
-  "2776": "Senegal",
-  "202357": "Serbia",
-  "203992": "Serbia",
-  "124": "Serbia",
-  "203999": "Serbia",
-  "1630197": "Serbia",
-  "203545": "Serbia",
-  "1059": "Serbia",
-  "1628427": "Slovenia",
-  "1629029": "Slovenia",
-  "2757": "Slovenia",
-  "959": "South Africa",
-  "1642879": "South Africa",
-  "1629061": "South Sudan",
-  "76195": "South Sudan",
-  "2736": "South Sudan",
-  "101184": "South Sudan",
-  "1627748": "South Sudan",
-  "1642863": "South Sudan",
-  "1641871": "South Sudan",
-  "1630583": "Spain",
-  "76291": "Spain",
-  "201964": "Spain",
-  "200816": "Spain",
-  "1630586": "Spain",
-  "201188": "Spain",
-  "2200": "Spain",
-  "1642864": "Spain",
-  "2434": "Spain",
-  "1642258": "Spain",
-  "201937": "Spain",
-  "1887": "Spain",
-  "1629626": "Sudan",
-  "1629117": "Sudan",
-  "201973": "Sweden",
-  "1641752": "Sweden",
-  "1641796": "Sweden",
-  "1750": "Sweden",
-  "78299": "Sweden",
-  "203991": "Switzerland",
-  "202683": "Switzerland",
-  "1642273": "Switzerland",
-  "1642949": "Switzerland",
-  "200757": "Switzerland",
-  "202696": "Switzerland",
-  "201570": "Taiwan",
-  "76383": "Trinidad and Tobago",
-  "61": "Trinidad and Tobago",
-  "1626257": "Tunisia",
-  "203128": "Turkey",
-  "201600": "Turkey",
-  "1641931": "Turkey",
-  "201623": "Turkey",
-  "1627788": "Turkey",
-  "2825": "Turkey",
-  "2246": "Turkey",
-  "1630209": "Turkey",
-  "1952": "U.S. Virgin Islands",
-  "1127": "U.S. Virgin Islands",
-  "1495": "U.S. Virgin Islands",
-  "1627762": "Ukraine",
-  "201178": "Ukraine",
-  "2751": "Ukraine",
-  "203139": "Ukraine",
-  "203458": "Ukraine",
-  "2098": "Ukraine",
-  "1629004": "Ukraine",
-  "200762": "Ukraine",
-  "958": "Ukraine",
-  "1631376": "Ukraine",
-  "1628384": "United Kingdom",
-  "2425": "United Kingdom",
-  "101235": "United Kingdom",
-  "76294": "United Kingdom",
-  "76583": "United Kingdom",
-  "2569": "United Kingdom",
-  "200777": "United Kingdom",
-  "2732": "United Kingdom",
-  "76893": "United Kingdom",
-  "76958": "United Kingdom",
-  "1631107": "United Kingdom",
-  "200822": "United Kingdom",
-  "1629678": "United Kingdom",
-  "1642873": "United Kingdom",
-  "201934": "United Republic of Tanzania",
-  "101212": "Uruguay",
-  "1627852": "Venezuela",
-  "1938": "Venezuela",
-  "1627879": "Venezuela",
-  "2804": "Venezuela",
-  "2143": "Venezuela",
-  "2106": "Venezuela",
-  "202711": "Venezuela",
-  "390": "Venezuela",
-  "101148": "Venezuela",
-  "203136": "Venezuela",
-  "1629058": "Venezuela",
-  "2565": "Venezuela",
-  "2209": "Venezuela",
-  "203141": "Venezuela",
-  "2737": "Venezuela",
-  "1626245": "Venezuela",
-  "2403": "Venezuela",
-  "1641970": "Venezuela",
-  "2760": "Venezuela",
-  "78416": "Venezuela",
-  "1921": "Venezuela",
-  "389": "Venezuela",
-  "200785": "Venezuela",
-  "77845": "Venezuela",
-  "204014": "Venezuela",
-  "1629677": "Venezuela",
-  "2453": "Venezuela",
-  "978": "Venezuela",
-  "1743": "Venezuela",
-  "440": "Venezuela",
-  "101146": "Venezuela",
-  "1037": "Venezuela",
-  "1627790": "Venezuela",
-  "76903": "Venezuela",
-  "203107": "Venezuela",
-  "202686": "Venezuela",
-  "2412": "Venezuela",
-  "678": "Venezuela",
-  "1629116": "Venezuela",
-  "101128": "Venezuela",
-  "1642357": "Venezuela",
-  "1732": "Venezuela",
-  "982": "Venezuela",
-  "2069": "Venezuela",
-  "201582": "Venezuela",
-  "1627789": "Venezuela",
-  "1630177": "Venezuela",
-  "2040": "Venezuela",
-  "1642422": "Venezuela",
-  "1642849": "Venezuela",
-  "202338": "Venezuela",
-  "201186": "Venezuela",
-  "2053": "Venezuela",
-  "201590": "Venezuela",
-  "101153": "Venezuela",
-  "2554": "Venezuela",
-  "1627746": "Venezuela",
-  "1600": "Venezuela",
-  "1629740": "Venezuela",
-  "1629541": "Venezuela",
-  "202722": "Venezuela",
-  "2740": "Venezuela",
-  "78415": "Venezuela",
-  "101149": "Venezuela",
-  "101180": "Venezuela",
-  "36": "Venezuela",
-  "202700": "Venezuela",
-  "202970": "Venezuela",
-  "203268": "Venezuela",
-  "2059": "Venezuela",
-  "202703": "Venezuela",
-  "1097": "Venezuela",
-  "2562": "Venezuela",
-  "201593": "Venezuela",
-  "1893": "Venezuela",
-  "2092": "Venezuela",
-  "2456": "Venezuela",
-  "200799": "Venezuela",
-  "77771": "Venezuela",
-  "77969": "Venezuela",
-  "203544": "Venezuela",
-  "49": "Venezuela",
-  "1630211": "Venezuela",
-  "76079": "Venezuela",
-  "2560": "Venezuela",
-  "76488": "Venezuela",
-  "687": "Venezuela",
-  "1629741": "Venezuela",
-  "2060": "Venezuela",
-  "2420": "Venezuela",
-  "1626246": "Venezuela",
-  "203995": "Venezuela",
-  "2545": "Venezuela",
-  "203517": "Venezuela",
-  "1630196": "Venezuela",
-  "2080": "Venezuela",
-  "1442": "Venezuela",
-  "1629346": "Venezuela",
-  "1434": "Venezuela",
-  "1628462": "Venezuela",
-  "1726": "Venezuela",
-  "2582": "Venezuela",
-  "77846": "Venezuela",
-  "2056": "Venezuela",
-  "201609": "Venezuela",
-  "204054": "Venezuela",
-  "1527": "Venezuela",
-  "2411": "Venezuela",
-  "1725": "Venezuela",
-  "101166": "Venezuela",
-  "2756": "Venezuela",
-  "203518": "Venezuela",
-  "101181": "Venezuela",
-  "201164": "Venezuela",
-  "1627823": "Venezuela",
-  "1626195": "Venezuela",
-  "2221": "Venezuela",
-  "77472": "Venezuela",
-  "200771": "Venezuela",
-  "101141": "Venezuela",
-  "1630578": "Venezuela",
-  "2045": "Venezuela",
-  "2351": "Venezuela",
-  "202349": "Venezuela"
+  "1628981": [
+    "Bruno Fernando",
+    "Angola"
+  ],
+  "203658": [
+    "Norvel Pelle",
+    "Antigua And Barbuda"
+  ],
+  "1630195": [
+    "Leandro Bolmaro",
+    "Argentina"
+  ],
+  "1630267": [
+    "Facundo Campazzo",
+    "Argentina"
+  ],
+  "1630466": [
+    "Gabriel Deck",
+    "Argentina"
+  ],
+  "2568": [
+    "Carlos Delfino",
+    "Argentina"
+  ],
+  "1627868": [
+    "Patricio Garino",
+    "Argentina"
+  ],
+  "200835": [
+    "Walter Herrmann",
+    "Argentina"
+  ],
+  "101177": [
+    "Fabricio Oberto",
+    "Argentina"
+  ],
+  "203143": [
+    "Pablo Prigioni",
+    "Argentina"
+  ],
+  "2449": [
+    "Luis Scola",
+    "Argentina"
+  ],
+  "2431": [
+    "David Andersen",
+    "Australia"
+  ],
+  "1512": [
+    "Chris Anstey",
+    "Australia"
+  ],
+  "203946": [
+    "Cameron Bairstow",
+    "Australia"
+  ],
+  "101106": [
+    "Andrew Bogut",
+    "Australia"
+  ],
+  "1628413": [
+    "Jonah Bolden",
+    "Australia"
+  ],
+  "1361": [
+    "Mark Bradtke",
+    "Australia"
+  ],
+  "1629151": [
+    "Ryan Broekhoff",
+    "Australia"
+  ],
+  "1641645": [
+    "Xavier Cooks",
+    "Australia"
+  ],
+  "1628249": [
+    "Mitchell Creek",
+    "Australia"
+  ],
+  "1630700": [
+    "Dyson Daniels",
+    "Australia"
+  ],
+  "203521": [
+    "Matthew Dellavedova",
+    "Australia"
+  ],
+  "1642505": [
+    "Alex Ducas",
+    "Australia"
+  ],
+  "203957": [
+    "Dant\u00e9 Exum",
+    "Australia"
+  ],
+  "1642277": [
+    "Johnny Furphy",
+    "Australia"
+  ],
+  "1845": [
+    "Andrew Gaze",
+    "Australia"
+  ],
+  "1630581": [
+    "Josh Giddey",
+    "Australia"
+  ],
+  "1630182": [
+    "Josh Green",
+    "Australia"
+  ],
+  "1049": [
+    "Shane Heal",
+    "Australia"
+  ],
+  "1629353": [
+    "Isaac Humphries",
+    "Australia"
+  ],
+  "204060": [
+    "Joe Ingles",
+    "Australia"
+  ],
+  "202681": [
+    "Kyrie Irving",
+    "Australia"
+  ],
+  "201605": [
+    "Nathan Jawai",
+    "Australia"
+  ],
+  "1629111": [
+    "Jock Landale",
+    "Australia"
+  ],
+  "26": [
+    "Luc Longley",
+    "Australia"
+  ],
+  "1630266": [
+    "Will Magnay",
+    "Australia"
+  ],
+  "1628493": [
+    "Mangok Mathiang",
+    "Australia"
+  ],
+  "1629098": [
+    "Jack McVeigh",
+    "Australia"
+  ],
+  "201988": [
+    "Patty Mills",
+    "Australia"
+  ],
+  "1642878": [
+    "Tyrese Proctor",
+    "Australia"
+  ],
+  "101195": [
+    "Luke Schenscher",
+    "Australia"
+  ],
+  "1627732": [
+    "Ben Simmons",
+    "Australia"
+  ],
+  "1631247": [
+    "Luke Travers",
+    "Australia"
+  ],
+  "1631298": [
+    "Jack White",
+    "Australia"
+  ],
+  "1627751": [
+    "Jakob Poeltl",
+    "Austria"
+  ],
+  "1629028": [
+    "Deandre Ayton",
+    "Bahamas"
+  ],
+  "76337": [
+    "Dexter Cambridge",
+    "Bahamas"
+  ],
+  "1642845": [
+    "VJ Edgecombe",
+    "Bahamas"
+  ],
+  "1627741": [
+    "Buddy Hield",
+    "Bahamas"
+  ],
+  "1630539": [
+    "Kai Jones",
+    "Bahamas"
+  ],
+  "1100": [
+    "Ian Lockhart",
+    "Bahamas"
+  ],
+  "78331": [
+    "Mychal Thompson",
+    "Bahamas"
+  ],
+  "1641739": [
+    "Toumani Camara",
+    "Belgium"
+  ],
+  "202333": [
+    "Xavier Henry",
+    "Belgium"
+  ],
+  "1642274": [
+    "Yves Missi",
+    "Belgium"
+  ],
+  "1642349": [
+    "Ajay Mitchell",
+    "Belgium"
+  ],
+  "1628373": [
+    "Frank Ntilikina",
+    "Belgium"
+  ],
+  "2225": [
+    "Tony Parker",
+    "Belgium"
+  ],
+  "1627733": [
+    "Dragan Bender",
+    "Bosnia And Herzegovina"
+  ],
+  "200806": [
+    "Damir Markota",
+    "Bosnia And Herzegovina"
+  ],
+  "1631255": [
+    "Karlo Matkovi\u0107",
+    "Bosnia And Herzegovina"
+  ],
+  "203994": [
+    "Jusuf Nurki\u0107",
+    "Bosnia And Herzegovina"
+  ],
+  "2237": [
+    "Ratko Varda",
+    "Bosnia And Herzegovina"
+  ],
+  "1627826": [
+    "Ivica Zubac",
+    "Bosnia And Herzegovina"
+  ],
+  "2571": [
+    "Leandro Barbosa",
+    "Brazil"
+  ],
+  "203998": [
+    "Bruno Caboclo",
+    "Brazil"
+  ],
+  "203543": [
+    "Vitor Faverani",
+    "Brazil"
+  ],
+  "76709": [
+    "Rolando Ferreira",
+    "Brazil"
+  ],
+  "2682": [
+    "Alex Garcia",
+    "Brazil"
+  ],
+  "1626273": [
+    "Marcelo Huertas",
+    "Brazil"
+  ],
+  "1629712": [
+    "Didi Louzada",
+    "Brazil"
+  ],
+  "203097": [
+    "Fab Melo",
+    "Brazil"
+  ],
+  "203526": [
+    "Raul Neto",
+    "Brazil"
+  ],
+  "203512": [
+    "Lucas Nogueira",
+    "Brazil"
+  ],
+  "1630611": [
+    "Gui Santos",
+    "Brazil"
+  ],
+  "201168": [
+    "Tiago Splitter",
+    "Brazil"
+  ],
+  "200790": [
+    "Marcus Vinicius",
+    "Brazil"
+  ],
+  "1641793": [
+    "D'Moi Hodge",
+    "British Virgin Islands"
+  ],
+  "76824": [
+    "Georgi Glouchkov",
+    "Bulgaria"
+  ],
+  "2257": [
+    "Ruben Boumtje-Boumtje",
+    "Cameroon"
+  ],
+  "1642279": [
+    "Ulrich Chomche",
+    "Cameroon"
+  ],
+  "203954": [
+    "Joel Embiid",
+    "Cameroon"
+  ],
+  "1631132": [
+    "Christian Koloko",
+    "Cameroon"
+  ],
+  "201601": [
+    "Luc Mbah a Moute",
+    "Cameroon"
+  ],
+  "1627783": [
+    "Pascal Siakam",
+    "Cameroon"
+  ],
+  "1629734": [
+    "Kyle Alexander",
+    "Canada"
+  ],
+  "1629638": [
+    "Nickeil Alexander-Walker",
+    "Canada"
+  ],
+  "201202": [
+    "Joel Anthony",
+    "Canada"
+  ],
+  "76089": [
+    "Norm Baker",
+    "Canada"
+  ],
+  "1630625": [
+    "Dalano Banton",
+    "Canada"
+  ],
+  "1629628": [
+    "RJ Barrett",
+    "Canada"
+  ],
+  "203461": [
+    "Anthony Bennett",
+    "Canada"
+  ],
+  "204021": [
+    "Sim Bhullar",
+    "Canada"
+  ],
+  "203920": [
+    "Khem Birch",
+    "Canada"
+  ],
+  "1629052": [
+    "Oshae Brissett",
+    "Canada"
+  ],
+  "1628415": [
+    "Dillon Brooks",
+    "Canada"
+  ],
+  "1629634": [
+    "Brandon Clarke",
+    "Canada"
+  ],
+  "76469": [
+    "Ron Crevier",
+    "Canada"
+  ],
+  "1630268": [
+    "Nate Darling",
+    "Canada"
+  ],
+  "1629652": [
+    "Luguentz Dort",
+    "Canada"
+  ],
+  "1641744": [
+    "Zach Edey",
+    "Canada"
+  ],
+  "203898": [
+    "Tyler Ennis",
+    "Canada"
+  ],
+  "296": [
+    "Rick Fox",
+    "Canada"
+  ],
+  "1628983": [
+    "Shai Gilgeous-Alexander",
+    "Canada"
+  ],
+  "76847": [
+    "Stewart Granger",
+    "Canada"
+  ],
+  "77062": [
+    "Bob Houbregs",
+    "Canada"
+  ],
+  "1631216": [
+    "Caleb Houstan",
+    "Canada"
+  ],
+  "202709": [
+    "Cory Joseph",
+    "Canada"
+  ],
+  "203126": [
+    "Kris Joseph",
+    "Canada"
+  ],
+  "1629662": [
+    "Mfiondu Kabengele",
+    "Canada"
+  ],
+  "1630639": [
+    "A.J. Lawson",
+    "Canada"
+  ],
+  "1626168": [
+    "Trey Lyles",
+    "Canada"
+  ],
+  "1928": [
+    "Todd MacCulloch",
+    "Canada"
+  ],
+  "2048": [
+    "Jamaal Magloire",
+    "Canada"
+  ],
+  "1631097": [
+    "Bennedict Mathurin",
+    "Canada"
+  ],
+  "1641801": [
+    "Emanuel Miller",
+    "Canada"
+  ],
+  "1631159": [
+    "Leonard Miller",
+    "Canada"
+  ],
+  "1628513": [
+    "Naz Mitrou-Long",
+    "Canada"
+  ],
+  "1628539": [
+    "Mychal Mulder",
+    "Canada"
+  ],
+  "1627750": [
+    "Jamal Murray",
+    "Canada"
+  ],
+  "1629614": [
+    "Andrew Nembhard",
+    "Canada"
+  ],
+  "1642948": [
+    "Ryan Nembhard",
+    "Canada"
+  ],
+  "203094": [
+    "Andrew Nicholson",
+    "Canada"
+  ],
+  "203482": [
+    "Kelly Olynyk",
+    "Canada"
+  ],
+  "1630698": [
+    "Kevin Pangos",
+    "Canada"
+  ],
+  "203939": [
+    "Dwight Powell",
+    "Canada"
+  ],
+  "1630563": [
+    "Joshua Primo",
+    "Canada"
+  ],
+  "1641765": [
+    "Olivier-Maxence Prosper",
+    "Canada"
+  ],
+  "1628504": [
+    "Xavier Rathan-Mayes",
+    "Canada"
+  ],
+  "77916": [
+    "Leo Rautins",
+    "Canada"
+  ],
+  "1642860": [
+    "Will Riley",
+    "Canada"
+  ],
+  "1642050": [
+    "Jackson Rowe",
+    "Canada"
+  ],
+  "1631101": [
+    "Shaedon Sharpe",
+    "Canada"
+  ],
+  "1629621": [
+    "Marial Shayok",
+    "Canada"
+  ],
+  "1091": [
+    "Mike Smrek",
+    "Canada"
+  ],
+  "78221": [
+    "Gino Sovran",
+    "Canada"
+  ],
+  "203917": [
+    "Nik Stauskas",
+    "Canada"
+  ],
+  "202684": [
+    "Tristan Thompson",
+    "Canada"
+  ],
+  "78405": [
+    "Ernie Vandeweghe",
+    "Canada"
+  ],
+  "82": [
+    "Bill Wennington",
+    "Canada"
+  ],
+  "203952": [
+    "Andrew Wiggins",
+    "Canada"
+  ],
+  "1629623": [
+    "Lindell Wigginton",
+    "Canada"
+  ],
+  "78647": [
+    "Jim Zoet",
+    "Canada"
+  ],
+  "204002": [
+    "Edy Tavares",
+    "Cape Verde"
+  ],
+  "2370": [
+    "Mengke Bateer",
+    "China"
+  ],
+  "1642905": [
+    "Yang Hansen",
+    "China"
+  ],
+  "201146": [
+    "Yi Jianlian",
+    "China"
+  ],
+  "77584": [
+    "Tom Meschery",
+    "China"
+  ],
+  "2397": [
+    "Yao Ming",
+    "China"
+  ],
+  "1627753": [
+    "Zhou Qi",
+    "China"
+  ],
+  "201180": [
+    "Sun Yue",
+    "China"
+  ],
+  "1917": [
+    "Wang Zhi-zhi",
+    "China"
+  ],
+  "1630693": [
+    "Jaime Echenique",
+    "Colombia"
+  ],
+  "1626251": [
+    "Duje Dukan",
+    "Croatia"
+  ],
+  "1626209": [
+    "Mario Hezonja",
+    "Croatia"
+  ],
+  "2435": [
+    "Mario Kasun",
+    "Croatia"
+  ],
+  "129": [
+    "Dino Radja",
+    "Croatia"
+  ],
+  "203967": [
+    "Dario \u0160ari\u0107",
+    "Croatia"
+  ],
+  "1953": [
+    "Lazaro Borrell",
+    "Cuba"
+  ],
+  "1628426": [
+    "Sasha Vezenkov",
+    "Cyprus"
+  ],
+  "1630249": [
+    "V\u00edt Krej\u010d\u00ed",
+    "Czech Republic"
+  ],
+  "202687": [
+    "Bismack Biyombo",
+    "Democratic Republic of the Congo"
+  ],
+  "201963": [
+    "Christian Eyenga",
+    "Democratic Republic of the Congo"
+  ],
+  "1630228": [
+    "Jonathan Kuminga",
+    "Democratic Republic of the Congo"
+  ],
+  "1626144": [
+    "Emmanuel Mudiay",
+    "Democratic Republic of the Congo"
+  ],
+  "87": [
+    "Dikembe Mutombo",
+    "Democratic Republic of the Congo"
+  ],
+  "1631131": [
+    "Oscar Tshiebwe",
+    "Democratic Republic of the Congo"
+  ],
+  "76941": [
+    "Lars Hansen",
+    "Denmark"
+  ],
+  "1630994": [
+    "Gabriel Lundberg",
+    "Denmark"
+  ],
+  "2123": [
+    "Garth Joseph",
+    "Dominica"
+  ],
+  "1630537": [
+    "Chris Duarte",
+    "Dominican Republic"
+  ],
+  "2784": [
+    "Luis Flores",
+    "Dominican Republic"
+  ],
+  "201143": [
+    "Al Horford",
+    "Dominican Republic"
+  ],
+  "77057": [
+    "Tito Horford",
+    "Dominican Republic"
+  ],
+  "1626242": [
+    "Luis Montero",
+    "Dominican Republic"
+  ],
+  "76001": [
+    "Alaa Abdelnaby",
+    "Egypt"
+  ],
+  "1627846": [
+    "Abdel Nader",
+    "Egypt"
+  ],
+  "1630929": [
+    "Henri Drell",
+    "Estonia"
+  ],
+  "1628374": [
+    "Lauri Markkanen",
+    "Finland"
+  ],
+  "1505": [
+    "Tariq Abdul-Wahad",
+    "France"
+  ],
+  "1630555": [
+    "Joel Ayayi",
+    "France"
+  ],
+  "201587": [
+    "Nicolas Batum",
+    "France"
+  ],
+  "1630608": [
+    "Malcolm Cazalon",
+    "France"
+  ],
+  "1631321": [
+    "Sidy Cissoko",
+    "France"
+  ],
+  "1627822": [
+    "Petr Cornelie",
+    "France"
+  ],
+  "1641731": [
+    "Bilal Coulibaly",
+    "France"
+  ],
+  "1642359": [
+    "Pac\u00f4me Dadiet",
+    "France"
+  ],
+  "201986": [
+    "Nando De Colo",
+    "France"
+  ],
+  "1631217": [
+    "Moussa Diabat\u00e9",
+    "France"
+  ],
+  "2564": [
+    "Boris Diaw",
+    "France"
+  ],
+  "200821": [
+    "Yakhouba Diawara",
+    "France"
+  ],
+  "1631172": [
+    "Ousmane Dieng",
+    "France"
+  ],
+  "203095": [
+    "Evan Fournier",
+    "France"
+  ],
+  "203497": [
+    "Rudy Gobert",
+    "France"
+  ],
+  "1629658": [
+    "Jaylen Hoard",
+    "France"
+  ],
+  "1629739": [
+    "William Howard",
+    "France"
+  ],
+  "203530": [
+    "Joffrey Lauvergne",
+    "France"
+  ],
+  "101133": [
+    "Ian Mahinmi",
+    "France"
+  ],
+  "77565": [
+    "Cozell McQueen",
+    "France"
+  ],
+  "1629690": [
+    "Adam Mokoka",
+    "France"
+  ],
+  "203513": [
+    "Erik Murphy",
+    "France"
+  ],
+  "1629059": [
+    "Elie Okobo",
+    "France"
+  ],
+  "101130": [
+    "Johan Petro",
+    "France"
+  ],
+  "1629738": [
+    "Vincent Poirier",
+    "France"
+  ],
+  "1642875": [
+    "Maxime Raynaud",
+    "France"
+  ],
+  "2541": [
+    "Antoine Rigaudeau",
+    "France"
+  ],
+  "1641712": [
+    "Rayan Rupert",
+    "France"
+  ],
+  "1642275": [
+    "Tidjane Sala\u00fcn",
+    "France"
+  ],
+  "1642259": [
+    "Alex Sarr",
+    "France"
+  ],
+  "1630846": [
+    "Olivier Sarr",
+    "France"
+  ],
+  "1565": [
+    "Michael Stewart",
+    "France"
+  ],
+  "202377": [
+    "Pape Sy",
+    "France"
+  ],
+  "1629681": [
+    "Killian Tillie",
+    "France"
+  ],
+  "1626253": [
+    "Axel Toupane",
+    "France"
+  ],
+  "1641705": [
+    "Victor Wembanyama",
+    "France"
+  ],
+  "1122": [
+    "Dominique Wilkins",
+    "France"
+  ],
+  "1627824": [
+    "Guerschon Yabusele",
+    "France"
+  ],
+  "203996": [
+    "Damien Inglis",
+    "French Guiana"
+  ],
+  "1629735": [
+    "Chris Silva",
+    "Gabon"
+  ],
+  "1629048": [
+    "Goga Bitadze",
+    "Georgia"
+  ],
+  "2585": [
+    "Zaza Pachulia",
+    "Georgia"
+  ],
+  "203129": [
+    "Tornike Shengelia",
+    "Georgia"
+  ],
+  "1735": [
+    "Vladimir Stepania",
+    "Georgia"
+  ],
+  "2054": [
+    "Jake Tsakalidis",
+    "Georgia"
+  ],
+  "2401": [
+    "Nikoloz Tskitishvili",
+    "Georgia"
+  ],
+  "76172": [
+    "Uwe Blab",
+    "Germany"
+  ],
+  "1629067": [
+    "Isaac Bonga",
+    "Germany"
+  ],
+  "2430": [
+    "Carlos Boozer",
+    "Germany"
+  ],
+  "762": [
+    "Shawn Bradley",
+    "Germany"
+  ],
+  "76276": [
+    "John Brown",
+    "Germany"
+  ],
+  "76477": [
+    "Pete Cross",
+    "Germany"
+  ],
+  "1641783": [
+    "Tristan da Silva",
+    "Germany"
+  ],
+  "76637": [
+    "Kent Edelin",
+    "Germany"
+  ],
+  "76676": [
+    "Jojo English",
+    "Germany"
+  ],
+  "76757": [
+    "Frido Frey",
+    "Germany"
+  ],
+  "203548": [
+    "Elias Harris",
+    "Germany"
+  ],
+  "77035": [
+    "Adolph Hoefer",
+    "Germany"
+  ],
+  "1630574": [
+    "Ariel Hukporti",
+    "Germany"
+  ],
+  "1628467": [
+    "Maxi Kleber",
+    "Germany"
+  ],
+  "1717": [
+    "Dirk Nowitzki",
+    "Germany"
+  ],
+  "203317": [
+    "Tim Ohlbrecht",
+    "Germany"
+  ],
+  "202353": [
+    "Tibor Pleiss",
+    "Germany"
+  ],
+  "201576": [
+    "Anthony Randolph",
+    "Germany"
+  ],
+  "96": [
+    "Detlef Schrempf",
+    "Germany"
+  ],
+  "203471": [
+    "Dennis Schr\u00f6der",
+    "Germany"
+  ],
+  "1628464": [
+    "Daniel Theis",
+    "Germany"
+  ],
+  "78404": [
+    "Kiki Vandeweghe",
+    "Germany"
+  ],
+  "1630532": [
+    "Franz Wagner",
+    "Germany"
+  ],
+  "1629021": [
+    "Moritz Wagner",
+    "Germany"
+  ],
+  "78464": [
+    "Duane Washington",
+    "Germany"
+  ],
+  "1630613": [
+    "Duane Washington Jr.",
+    "Germany"
+  ],
+  "1846": [
+    "Chris Welp",
+    "Germany"
+  ],
+  "1627835": [
+    "Paul Zipser",
+    "Germany"
+  ],
+  "1627791": [
+    "Ben Bentil",
+    "Ghana"
+  ],
+  "1628578": [
+    "Amida Brimah",
+    "Ghana"
+  ],
+  "1641877": [
+    "Nathan Mensah",
+    "Ghana"
+  ],
+  "203507": [
+    "Giannis Antetokounmpo",
+    "Greece"
+  ],
+  "1628961": [
+    "Kostas Antetokounmpo",
+    "Greece"
+  ],
+  "203648": [
+    "Thanasis Antetokounmpo",
+    "Greece"
+  ],
+  "2238": [
+    "Antonis Fotsis",
+    "Greece"
+  ],
+  "2601": [
+    "Andreas Glyniadakis",
+    "Greece"
+  ],
+  "1630686": [
+    "Georgios Kalaitzakis",
+    "Greece"
+  ],
+  "1627834": [
+    "Georgios Papagiannis",
+    "Greece"
+  ],
+  "203123": [
+    "Kostas Papanikolaou",
+    "Greece"
+  ],
+  "981": [
+    "Efthimios Rentzias",
+    "Greece"
+  ],
+  "2779": [
+    "Vassilis Spanoulis",
+    "Greece"
+  ],
+  "201958": [
+    "Rodrigue Beaubois",
+    "Guadeloupe"
+  ],
+  "1630619": [
+    "Moussa Cisse",
+    "Guinea"
+  ],
+  "1629603": [
+    "Mamadi Diakite",
+    "Guinea"
+  ],
+  "1629635": [
+    "Sekou Doumbouya",
+    "Guinea"
+  ],
+  "101185": [
+    "Rawle Marshall",
+    "Guyana"
+  ],
+  "1954": [
+    "Jason Miskiri",
+    "Guyana"
+  ],
+  "2223": [
+    "Samuel Dalembert",
+    "Haiti"
+  ],
+  "77214": [
+    "Yvon Joseph",
+    "Haiti"
+  ],
+  "178": [
+    "Olden Polynice",
+    "Haiti"
+  ],
+  "1630582": [
+    "Yves Pons",
+    "Haiti"
+  ],
+  "76901": [
+    "Petur Gudmundsson",
+    "Iceland"
+  ],
+  "2469": [
+    "Pat Burke",
+    "Ireland"
+  ],
+  "201632": [
+    "Hamed Haddadi",
+    "Islamic Republic of Iran"
+  ],
+  "1630166": [
+    "Deni Avdija",
+    "Israel"
+  ],
+  "201956": [
+    "Omri Casspi",
+    "Israel"
+  ],
+  "1628388": [
+    "T.J. Leaf",
+    "Israel"
+  ],
+  "203539": [
+    "Gal Mekel",
+    "Israel"
+  ],
+  "200745": [
+    "Andrea Bargnani",
+    "Italy"
+  ],
+  "201158": [
+    "Marco Belinelli",
+    "Italy"
+  ],
+  "76161": [
+    "Hank Biasatti",
+    "Italy"
+  ],
+  "203540": [
+    "Gigi Datome",
+    "Italy"
+  ],
+  "76683": [
+    "Vincenzo Esposito",
+    "Italy"
+  ],
+  "1631323": [
+    "Simone Fontecchio",
+    "Italy"
+  ],
+  "201568": [
+    "Danilo Gallinari",
+    "Italy"
+  ],
+  "202704": [
+    "Reggie Jackson",
+    "Italy"
+  ],
+  "1630185": [
+    "Nico Mannion",
+    "Italy"
+  ],
+  "474": [
+    "Stefano Rusconi",
+    "Italy"
+  ],
+  "1641774": [
+    "Tristan Vukcevic",
+    "Italy"
+  ],
+  "121": [
+    "Patrick Ewing",
+    "Jamaica"
+  ],
+  "204179": [
+    "Omari Johnson",
+    "Jamaica"
+  ],
+  "202366": [
+    "Jerome Jordan",
+    "Jamaica"
+  ],
+  "1630208": [
+    "Nick Richards",
+    "Jamaica"
+  ],
+  "716": [
+    "Rumeal Robinson",
+    "Jamaica"
+  ],
+  "202396": [
+    "Samardo Samuels",
+    "Jamaica"
+  ],
+  "78062": [
+    "Wayne Sappleton",
+    "Jamaica"
+  ],
+  "78419": [
+    "Gary Voce",
+    "Jamaica"
+  ],
+  "1629060": [
+    "Rui Hachimura",
+    "Japan"
+  ],
+  "1642530": [
+    "Yuki Kawamura",
+    "Japan"
+  ],
+  "2657": [
+    "Yuta Tabuse",
+    "Japan"
+  ],
+  "1630560": [
+    "Cam Thomas",
+    "Japan"
+  ],
+  "1629139": [
+    "Yuta Watanabe",
+    "Japan"
+  ],
+  "1629066": [
+    "Rodions Kurucs",
+    "Latvia"
+  ],
+  "1628394": [
+    "An\u017eejs Pase\u010d\u0146iks",
+    "Latvia"
+  ],
+  "204001": [
+    "Kristaps Porzi\u0146\u0123is",
+    "Latvia"
+  ],
+  "70": [
+    "Steve Kerr",
+    "Lebanon"
+  ],
+  "938": [
+    "Rony Seikaly",
+    "Lebanon"
+  ],
+  "1629649": [
+    "Ignas Brazdeikis",
+    "Lithuania"
+  ],
+  "980": [
+    "Zydrunas Ilgauskas",
+    "Lithuania"
+  ],
+  "101132": [
+    "Linas Kleiza",
+    "Lithuania"
+  ],
+  "1629083": [
+    "Arnoldas Kulboka",
+    "Lithuania"
+  ],
+  "1627851": [
+    "Mindaugas Kuzminskas",
+    "Lithuania"
+  ],
+  "101178": [
+    "Arvydas Macijauskas",
+    "Lithuania"
+  ],
+  "717": [
+    "Arvydas Sabonis",
+    "Lithuania"
+  ],
+  "1629686": [
+    "Deividas Sirvydis",
+    "Lithuania"
+  ],
+  "2443": [
+    "Darius Songaila",
+    "Lithuania"
+  ],
+  "202685": [
+    "Jonas Valan\u010di\u016bnas",
+    "Lithuania"
+  ],
+  "2264": [
+    "Alvin Jones",
+    "Luxembourg"
+  ],
+  "1642368": [
+    "N'Faly Dante",
+    "Mali"
+  ],
+  "1627767": [
+    "Cheick Diallo",
+    "Mali"
+  ],
+  "2066": [
+    "Soumaila Samake",
+    "Mali"
+  ],
+  "1641766": [
+    "Adama Sanogo",
+    "Mali"
+  ],
+  "101142": [
+    "Ronny Turiaf",
+    "Martinique"
+  ],
+  "1024": [
+    "Horacio Llamas",
+    "Mexico"
+  ],
+  "1542": [
+    "Predrag Drobnjak",
+    "Montenegro"
+  ],
+  "1630250": [
+    "Marko Simonovic",
+    "Montenegro"
+  ],
+  "76727": [
+    "Mike Flynn",
+    "Morocco"
+  ],
+  "76139": [
+    "Hank Beenders",
+    "Netherlands"
+  ],
+  "1642399": [
+    "Jesse Edwards",
+    "Netherlands"
+  ],
+  "1922": [
+    "Francisco Elson",
+    "Netherlands"
+  ],
+  "2429": [
+    "Dan Gadzuric",
+    "Netherlands"
+  ],
+  "903": [
+    "Geert Hammink",
+    "Netherlands"
+  ],
+  "1642502": [
+    "Malevy Leons",
+    "Netherlands"
+  ],
+  "77689": [
+    "Swen Nater",
+    "Netherlands"
+  ],
+  "1642366": [
+    "Quinten Post",
+    "Netherlands"
+  ],
+  "22": [
+    "Rik Smits",
+    "Netherlands"
+  ],
+  "203500": [
+    "Steven Adams",
+    "New Zealand"
+  ],
+  "203382": [
+    "Aron Baynes",
+    "New Zealand"
+  ],
+  "1752": [
+    "Sean Marks",
+    "New Zealand"
+  ],
+  "2632": [
+    "Kirk Penney",
+    "New Zealand"
+  ],
+  "1630173": [
+    "Precious Achiuwa",
+    "Nigeria"
+  ],
+  "202374": [
+    "Solomon Alabi",
+    "Nigeria"
+  ],
+  "1824": [
+    "Peter Aluma",
+    "Nigeria"
+  ],
+  "1628962": [
+    "Udoka Azubuike",
+    "Nigeria"
+  ],
+  "1629646": [
+    "Charles Bassey",
+    "Nigeria"
+  ],
+  "1641737": [
+    "Adem Bona",
+    "Nigeria"
+  ],
+  "212": [
+    "Yinka Dare",
+    "Nigeria"
+  ],
+  "1918": [
+    "Obinna Ekezie",
+    "Nigeria"
+  ],
+  "203105": [
+    "Festus Ezeli",
+    "Nigeria"
+  ],
+  "1631320": [
+    "Chima Moneke",
+    "Nigeria"
+  ],
+  "1022": [
+    "Julius Nwosu",
+    "Nigeria"
+  ],
+  "1629006": [
+    "Josh Okogie",
+    "Nigeria"
+  ],
+  "165": [
+    "Hakeem Olajuwon",
+    "Nigeria"
+  ],
+  "1709": [
+    "Michael Olowokandi",
+    "Nigeria"
+  ],
+  "1630647": [
+    "Eugene Omoruyi",
+    "Nigeria"
+  ],
+  "2071": [
+    "Olumide Oyedeji",
+    "Nigeria"
+  ],
+  "76292": [
+    "Torgeir Bryn",
+    "Norway"
+  ],
+  "76176": [
+    "Rolando Blackman",
+    "Panama"
+  ],
+  "201814": [
+    "Gary Forbes",
+    "Panama"
+  ],
+  "76861": [
+    "Stuart Gray",
+    "Panama"
+  ],
+  "101162": [
+    "Marcin Gortat",
+    "Poland"
+  ],
+  "2573": [
+    "Maciej Lampe",
+    "Poland"
+  ],
+  "77436": [
+    "Johnny Macknowski",
+    "Poland"
+  ],
+  "1629674": [
+    "Neemias Queta",
+    "Portugal"
+  ],
+  "2306": [
+    "Carlos Arroyo",
+    "Puerto Rico"
+  ],
+  "200826": [
+    "J.J. Barea",
+    "Puerto Rico"
+  ],
+  "1628492": [
+    "Gian Clavell",
+    "Puerto Rico"
+  ],
+  "77356": [
+    "Butch Lee",
+    "Puerto Rico"
+  ],
+  "2762": [
+    "Peter John Ramos",
+    "Puerto Rico"
+  ],
+  "1626224": [
+    "Cedi Osman",
+    "Republic of North Macedonia"
+  ],
+  "201586": [
+    "Serge Ibaka",
+    "Republic of the Congo"
+  ],
+  "76899": [
+    "Ernie Grunfeld",
+    "Romania"
+  ],
+  "76128": [
+    "Sergei Bazarevich",
+    "Russian Federation"
+  ],
+  "203508": [
+    "Sergey Karasev",
+    "Russian Federation"
+  ],
+  "201619": [
+    "Sasha Kaun",
+    "Russian Federation"
+  ],
+  "1905": [
+    "Andrei Kirilenko",
+    "Russian Federation"
+  ],
+  "101117": [
+    "Yaroslav Korolev",
+    "Russian Federation"
+  ],
+  "2752": [
+    "Sergei Monia",
+    "Russian Federation"
+  ],
+  "202389": [
+    "Timofey Mozgov",
+    "Russian Federation"
+  ],
+  "2750": [
+    "Pavel Podkolzin",
+    "Russian Federation"
+  ],
+  "203144": [
+    "Alexey Shved",
+    "Russian Federation"
+  ],
+  "78421": [
+    "Alexander Volkov",
+    "Russian Federation"
+  ],
+  "1628449": [
+    "Chris Boucher",
+    "Saint Lucia"
+  ],
+  "1502": [
+    "Adonal Foyle",
+    "Saint Vincent and the Grenadines"
+  ],
+  "1630641": [
+    "Ibou Badji",
+    "Senegal"
+  ],
+  "203476": [
+    "Gorgui Dieng",
+    "Senegal"
+  ],
+  "2205": [
+    "DeSagana Diop",
+    "Senegal"
+  ],
+  "1629605": [
+    "Tacko Fall",
+    "Senegal"
+  ],
+  "1631243": [
+    "Mouhamed Gueye",
+    "Senegal"
+  ],
+  "202380": [
+    "Hamady Ndiaye",
+    "Senegal"
+  ],
+  "1823": [
+    "Makhtar N'diaye",
+    "Senegal"
+  ],
+  "2055": [
+    "Mamadou N'diaye",
+    "Senegal"
+  ],
+  "101238": [
+    "Boniface Ndong",
+    "Senegal"
+  ],
+  "1626254": [
+    "Maurice Ndour",
+    "Senegal"
+  ],
+  "200798": [
+    "Cheikh Samb",
+    "Senegal"
+  ],
+  "200754": [
+    "Mouhamed Sene",
+    "Senegal"
+  ],
+  "2776": [
+    "Pape Sow",
+    "Senegal"
+  ],
+  "202357": [
+    "Nemanja Bjelica",
+    "Serbia"
+  ],
+  "203992": [
+    "Bogdan Bogdanovi\u0107",
+    "Serbia"
+  ],
+  "124": [
+    "Vlade Divac",
+    "Serbia"
+  ],
+  "203999": [
+    "Nikola Joki\u0107",
+    "Serbia"
+  ],
+  "1630197": [
+    "Aleksej Pokusevski",
+    "Serbia"
+  ],
+  "203545": [
+    "Miroslav Raduljica",
+    "Serbia"
+  ],
+  "1059": [
+    "Aleksandar Djordjevic",
+    "Serbia"
+  ],
+  "1628427": [
+    "Vlatko \u010can\u010dar",
+    "Slovenia"
+  ],
+  "1629029": [
+    "Luka Don\u010di\u0107",
+    "Slovenia"
+  ],
+  "2757": [
+    "Beno Udrih",
+    "Slovenia"
+  ],
+  "959": [
+    "Steve Nash",
+    "South Africa"
+  ],
+  "1642879": [
+    "Ben Saraf",
+    "South Africa"
+  ],
+  "1629061": [
+    "Deng Adel",
+    "South Sudan"
+  ],
+  "76195": [
+    "Manute Bol",
+    "South Sudan"
+  ],
+  "2736": [
+    "Luol Deng",
+    "South Sudan"
+  ],
+  "101184": [
+    "Deng Gai",
+    "South Sudan"
+  ],
+  "1627748": [
+    "Thon Maker",
+    "South Sudan"
+  ],
+  "1642863": [
+    "Khaman Maluach",
+    "South Sudan"
+  ],
+  "1641871": [
+    "Duop Reath",
+    "South Sudan"
+  ],
+  "1630583": [
+    "Santi Aldama",
+    "Spain"
+  ],
+  "76291": [
+    "Wallace Bryant",
+    "Spain"
+  ],
+  "201964": [
+    "Victor Claver",
+    "Spain"
+  ],
+  "200816": [
+    "Jorge Garbajosa",
+    "Spain"
+  ],
+  "1630586": [
+    "Usman Garuba",
+    "Spain"
+  ],
+  "201188": [
+    "Marc Gasol",
+    "Spain"
+  ],
+  "2200": [
+    "Pau Gasol",
+    "Spain"
+  ],
+  "1642864": [
+    "Hugo Gonz\u00e1lez",
+    "Spain"
+  ],
+  "2434": [
+    "Juan Carlos Navarro",
+    "Spain"
+  ],
+  "1642258": [
+    "Zaccharie Risacher",
+    "Spain"
+  ],
+  "201937": [
+    "Ricky Rubio",
+    "Spain"
+  ],
+  "1887": [
+    "Wally Szczerbiak",
+    "Spain"
+  ],
+  "1629626": [
+    "Bol Bol",
+    "Sudan"
+  ],
+  "1629117": [
+    "Wenyen Gabriel",
+    "Sudan"
+  ],
+  "201973": [
+    "Jonas Jerebko",
+    "Sweden"
+  ],
+  "1641752": [
+    "Bobi Klintman",
+    "Sweden"
+  ],
+  "1641796": [
+    "Pelle Larsson",
+    "Sweden"
+  ],
+  "1750": [
+    "Miles Simon",
+    "Sweden"
+  ],
+  "78299": [
+    "Jeff Taylor",
+    "Sweden"
+  ],
+  "203991": [
+    "Clint Capela",
+    "Switzerland"
+  ],
+  "202683": [
+    "Enes Freedom",
+    "Switzerland"
+  ],
+  "1642273": [
+    "Kyshawn George",
+    "Switzerland"
+  ],
+  "1642949": [
+    "Yanic Konan Niederh\u00e4user",
+    "Switzerland"
+  ],
+  "200757": [
+    "Thabo Sefolosha",
+    "Switzerland"
+  ],
+  "202696": [
+    "Nikola Vu\u010devi\u0107",
+    "Switzerland"
+  ],
+  "201570": [
+    "Joe Alexander",
+    "Taiwan"
+  ],
+  "76383": [
+    "Ken Charles",
+    "Trinidad and Tobago"
+  ],
+  "61": [
+    "Carl Herrera",
+    "Trinidad and Tobago"
+  ],
+  "1626257": [
+    "Salah Mejri",
+    "Tunisia"
+  ],
+  "203128": [
+    "Furkan Aldemir",
+    "Turkey"
+  ],
+  "201600": [
+    "Omer Asik",
+    "Turkey"
+  ],
+  "1641931": [
+    "Onuralp Bitim",
+    "Turkey"
+  ],
+  "201623": [
+    "Semih Erden",
+    "Turkey"
+  ],
+  "1627788": [
+    "Furkan Korkmaz",
+    "Turkey"
+  ],
+  "2825": [
+    "Ibrahim Kutluay",
+    "Turkey"
+  ],
+  "2246": [
+    "Mehmet Okur",
+    "Turkey"
+  ],
+  "1630209": [
+    "Omer Yurtseven",
+    "Turkey"
+  ],
+  "1952": [
+    "Raja Bell",
+    "U.S. Virgin Islands"
+  ],
+  "1127": [
+    "Charles Claxton",
+    "U.S. Virgin Islands"
+  ],
+  "1495": [
+    "Tim Duncan",
+    "U.S. Virgin Islands"
+  ],
+  "1627762": [
+    "Joel Bolomboy",
+    "Ukraine"
+  ],
+  "201178": [
+    "Kyrylo Fesenko",
+    "Ukraine"
+  ],
+  "2751": [
+    "Viktor Khryapa",
+    "Ukraine"
+  ],
+  "203139": [
+    "Viacheslav Kravtsov",
+    "Ukraine"
+  ],
+  "203458": [
+    "Alex Len",
+    "Ukraine"
+  ],
+  "2098": [
+    "Slava Medvedenko",
+    "Ukraine"
+  ],
+  "1629004": [
+    "Svi Mykhailiuk",
+    "Ukraine"
+  ],
+  "200762": [
+    "Oleksiy Pecherov",
+    "Ukraine"
+  ],
+  "958": [
+    "Vitaly Potapenko",
+    "Ukraine"
+  ],
+  "1631376": [
+    "Dmytro Skapintsev",
+    "Ukraine"
+  ],
+  "1628384": [
+    "OG Anunoby",
+    "United Kingdom"
+  ],
+  "2425": [
+    "Robert Archibald",
+    "United Kingdom"
+  ],
+  "101235": [
+    "Kelenna Azubuike",
+    "United Kingdom"
+  ],
+  "76294": [
+    "Steve Bucknall",
+    "United Kingdom"
+  ],
+  "76583": [
+    "James Donaldson",
+    "United Kingdom"
+  ],
+  "2569": [
+    "Ndudi Ebi",
+    "United Kingdom"
+  ],
+  "200777": [
+    "Joel Freeland",
+    "United Kingdom"
+  ],
+  "2732": [
+    "Ben Gordon",
+    "United Kingdom"
+  ],
+  "76893": [
+    "George Grimshaw",
+    "United Kingdom"
+  ],
+  "76958": [
+    "Chris Harris",
+    "United Kingdom"
+  ],
+  "1631107": [
+    "Nikola Jovi\u0107",
+    "United Kingdom"
+  ],
+  "200822": [
+    "Pops Mensah-Bonsu",
+    "United Kingdom"
+  ],
+  "1629678": [
+    "Admiral Schofield",
+    "United Kingdom"
+  ],
+  "1642873": [
+    "Amari Williams",
+    "United Kingdom"
+  ],
+  "201934": [
+    "Hasheem Thabeet",
+    "United Republic of Tanzania"
+  ],
+  "101212": [
+    "Esteban Batista",
+    "Uruguay"
+  ],
+  "1627852": [
+    "Nicolas Brussino",
+    "Argentina"
+  ],
+  "1938": [
+    "Manu Ginobili",
+    "Argentina"
+  ],
+  "1627879": [
+    "Nicolas Laprovittola",
+    "Argentina"
+  ],
+  "2804": [
+    "Andres Nocioni",
+    "Argentina"
+  ],
+  "2143": [
+    "Pepe Sanchez",
+    "Argentina"
+  ],
+  "2106": [
+    "Ruben Wolkowyski",
+    "Argentina"
+  ],
+  "202711": [
+    "Bojan Bogdanovic",
+    "Bosnia And Herzegovina"
+  ],
+  "390": [
+    "Sasha Danilovic",
+    "Bosnia And Herzegovina"
+  ],
+  "101148": [
+    "Mile Ilic",
+    "Bosnia And Herzegovina"
+  ],
+  "203136": [
+    "Ognjen Kuzmic",
+    "Bosnia And Herzegovina"
+  ],
+  "1629058": [
+    "Dzanan Musa",
+    "Bosnia And Herzegovina"
+  ],
+  "2565": [
+    "Zoran Planinic",
+    "Bosnia And Herzegovina"
+  ],
+  "2209": [
+    "Vladimir Radmanovic",
+    "Bosnia And Herzegovina"
+  ],
+  "203141": [
+    "Mirza Teletovic",
+    "Bosnia And Herzegovina"
+  ],
+  "2737": [
+    "Rafael Araujo",
+    "Brazil"
+  ],
+  "1626245": [
+    "Cristiano Felicio",
+    "Brazil"
+  ],
+  "2403": [
+    "Nene",
+    "Brazil"
+  ],
+  "1641970": [
+    "Maozinha Pereira",
+    "Brazil"
+  ],
+  "2760": [
+    "Anderson Varejao",
+    "Brazil"
+  ],
+  "78416": [
+    "Joao Vianna",
+    "Brazil"
+  ],
+  "1921": [
+    "Gordan Giricek",
+    "Croatia"
+  ],
+  "389": [
+    "Toni Kukoc",
+    "Croatia"
+  ],
+  "200785": [
+    "Kosta Perovic",
+    "Croatia"
+  ],
+  "77845": [
+    "Drazen Petrovic",
+    "Croatia"
+  ],
+  "204014": [
+    "Damjan Rudez",
+    "Croatia"
+  ],
+  "1629677": [
+    "Luka Samanic",
+    "Croatia"
+  ],
+  "2453": [
+    "Predrag Savovic",
+    "Croatia"
+  ],
+  "978": [
+    "Peja Stojakovic",
+    "Croatia"
+  ],
+  "1743": [
+    "Bruno Sundov",
+    "Croatia"
+  ],
+  "440": [
+    "Zan Tabak",
+    "Croatia"
+  ],
+  "101146": [
+    "Roko Ukic",
+    "Croatia"
+  ],
+  "1037": [
+    "Stojko Vrankovic",
+    "Croatia"
+  ],
+  "1627790": [
+    "Ante Zizic",
+    "Croatia"
+  ],
+  "76903": [
+    "Andres Guibert",
+    "Cuba"
+  ],
+  "203107": [
+    "Tomas Satoransky",
+    "Czech Republic"
+  ],
+  "202686": [
+    "Jan Vesely",
+    "Czech Republic"
+  ],
+  "2412": [
+    "Jiri Welsch",
+    "Czech Republic"
+  ],
+  "678": [
+    "George Zidek",
+    "Czech Republic"
+  ],
+  "1629116": [
+    "Angel Delgado",
+    "Dominican Republic"
+  ],
+  "101128": [
+    "Francisco Garcia",
+    "Dominican Republic"
+  ],
+  "1642357": [
+    "David Jones Garcia",
+    "Dominican Republic"
+  ],
+  "1732": [
+    "Felipe Lopez",
+    "Dominican Republic"
+  ],
+  "982": [
+    "Martin Muursepp",
+    "Estonia"
+  ],
+  "2069": [
+    "Hanno Mottola",
+    "Finland"
+  ],
+  "201582": [
+    "Alexis Ajinca",
+    "France"
+  ],
+  "1627789": [
+    "Timothe Luwawu-Cabarrot",
+    "France"
+  ],
+  "1630177": [
+    "Theo Maledon",
+    "France"
+  ],
+  "2040": [
+    "Jerome Moiso",
+    "France"
+  ],
+  "1642422": [
+    "Armel Traore",
+    "France"
+  ],
+  "1642849": [
+    "Nolan Traore",
+    "France"
+  ],
+  "202338": [
+    "Kevin Seraphin",
+    "French Guiana"
+  ],
+  "201186": [
+    "Stephane Lasme",
+    "Gabon"
+  ],
+  "2053": [
+    "Dalibor Bagaric",
+    "Germany"
+  ],
+  "201590": [
+    "Donte Greene",
+    "Germany"
+  ],
+  "101153": [
+    "Mickael Gelabale",
+    "Guadeloupe"
+  ],
+  "2554": [
+    "Mickael Pietrus",
+    "Guadeloupe"
+  ],
+  "1627746": [
+    "Skal Labissiere",
+    "Haiti"
+  ],
+  "1600": [
+    "Kornel David",
+    "Hungary"
+  ],
+  "1629740": [
+    "Nicolo Melli",
+    "Italy"
+  ],
+  "1629541": [
+    "Dairis Bertans",
+    "Latvia"
+  ],
+  "202722": [
+    "Davis Bertans",
+    "Latvia"
+  ],
+  "2740": [
+    "Andris Biedrins",
+    "Latvia"
+  ],
+  "78415": [
+    "Gundars Vetra",
+    "Latvia"
+  ],
+  "101149": [
+    "Martynas Andriuskevicius",
+    "Lithuania"
+  ],
+  "101180": [
+    "Sarunas Jasikevicius",
+    "Lithuania"
+  ],
+  "36": [
+    "Sarunas Marciulionis",
+    "Lithuania"
+  ],
+  "202700": [
+    "Donatas Motiejunas",
+    "Lithuania"
+  ],
+  "202970": [
+    "Gustavo Ayon",
+    "Mexico"
+  ],
+  "203268": [
+    "Jorge Gutierrez",
+    "Mexico"
+  ],
+  "2059": [
+    "Eduardo Najera",
+    "Mexico"
+  ],
+  "202703": [
+    "Nikola Mirotic",
+    "Montenegro"
+  ],
+  "1097": [
+    "Zarko Paspalj",
+    "Montenegro"
+  ],
+  "2562": [
+    "Sasha Pavlovic",
+    "Montenegro"
+  ],
+  "201593": [
+    "Nikola Pekovic",
+    "Montenegro"
+  ],
+  "1893": [
+    "Aleksandar Radojevic",
+    "Montenegro"
+  ],
+  "2092": [
+    "Ruben Garces",
+    "Panama"
+  ],
+  "2456": [
+    "Cezary Trybanski",
+    "Poland"
+  ],
+  "200799": [
+    "Guillermo Diaz",
+    "Puerto Rico"
+  ],
+  "77771": [
+    "Jose Ortiz",
+    "Puerto Rico"
+  ],
+  "77969": [
+    "Ramon Rivas",
+    "Puerto Rico"
+  ],
+  "203544": [
+    "Pero Antic",
+    "Republic of North Macedonia"
+  ],
+  "49": [
+    "Gheorghe Muresan",
+    "Romania"
+  ],
+  "1630211": [
+    "Karim Mane",
+    "Senegal"
+  ],
+  "76079": [
+    "Milos Babic",
+    "Serbia"
+  ],
+  "2560": [
+    "Zarko Cabarkapa",
+    "Serbia"
+  ],
+  "76488": [
+    "Radisav Curcic",
+    "Serbia"
+  ],
+  "687": [
+    "Rastko Cvetkovic",
+    "Serbia"
+  ],
+  "1629741": [
+    "Marko Guduric",
+    "Serbia"
+  ],
+  "2060": [
+    "Marko Jaric",
+    "Serbia"
+  ],
+  "2420": [
+    "Nenad Krstic",
+    "Serbia"
+  ],
+  "1626246": [
+    "Boban Marjanovic",
+    "Serbia"
+  ],
+  "203995": [
+    "Vasilije Micic",
+    "Serbia"
+  ],
+  "2545": [
+    "Darko Milicic",
+    "Serbia"
+  ],
+  "203517": [
+    "Nemanja Nedovic",
+    "Serbia"
+  ],
+  "1630196": [
+    "Filip Petrusev",
+    "Serbia"
+  ],
+  "2080": [
+    "Igor Rakocevic",
+    "Serbia"
+  ],
+  "1442": [
+    "Zeljko Rebraca",
+    "Serbia"
+  ],
+  "1629346": [
+    "Alen Smailagic",
+    "Serbia"
+  ],
+  "1434": [
+    "Dragan Tarlac",
+    "Serbia"
+  ],
+  "1628462": [
+    "Milos Teodosic",
+    "Serbia"
+  ],
+  "1726": [
+    "Mirsad Turkcan",
+    "Serbia"
+  ],
+  "2582": [
+    "Slavko Vranes",
+    "Serbia"
+  ],
+  "77846": [
+    "Richard Petruska",
+    "Slovakia"
+  ],
+  "2056": [
+    "Primoz Brezec",
+    "Slovenia"
+  ],
+  "201609": [
+    "Goran Dragic",
+    "Slovenia"
+  ],
+  "204054": [
+    "Zoran Dragic",
+    "Slovenia"
+  ],
+  "1527": [
+    "Marko Milic",
+    "Slovenia"
+  ],
+  "2411": [
+    "Bostjan Nachbar",
+    "Slovenia"
+  ],
+  "1725": [
+    "Rasho Nesterovic",
+    "Slovenia"
+  ],
+  "101166": [
+    "Uros Slokar",
+    "Slovenia"
+  ],
+  "2756": [
+    "Sasha Vujacic",
+    "Slovenia"
+  ],
+  "203518": [
+    "Alex Abrines",
+    "Spain"
+  ],
+  "101181": [
+    "Jose Calderon",
+    "Spain"
+  ],
+  "201164": [
+    "Rudy Fernandez",
+    "Spain"
+  ],
+  "1627823": [
+    "Juancho Hernangomez",
+    "Spain"
+  ],
+  "1626195": [
+    "Willy Hernangomez",
+    "Spain"
+  ],
+  "2221": [
+    "Raul Lopez",
+    "Spain"
+  ],
+  "77472": [
+    "Fernando Martin",
+    "Spain"
+  ],
+  "200771": [
+    "Sergio Rodriguez",
+    "Spain"
+  ],
+  "101141": [
+    "Ersan Ilyasova",
+    "Turkey"
+  ],
+  "1630578": [
+    "Alperen Sengun",
+    "Turkey"
+  ],
+  "2045": [
+    "Hedo Turkoglu",
+    "Turkey"
+  ],
+  "2351": [
+    "Oscar Torres",
+    "Venezuela"
+  ],
+  "202349": [
+    "Greivis Vasquez",
+    "Venezuela"
+  ]
 }

@@ -206,6 +206,13 @@ h2 {
     width: 95%;
 }
 
+
+
+.general-stats-container a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
 .general-stats-container .general-stat {
     display: flex;
     align-items: center;
@@ -223,6 +230,11 @@ h2 {
     height: 50px;
     background-color: #272729;
     border: 2px solid #52525b;
+    transition: .2s ease;
+}
+
+.general-stats-container .general-stat .general-stat-item:hover {
+    border: 2px solid #fafafa;
 }
 
 .hw-stat-item {
@@ -232,7 +244,6 @@ h2 {
     width: 100px;
     height: 50px;
     background-color: #272729;
-
 }
 
 .hw-stat-item-l {
