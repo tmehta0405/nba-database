@@ -125,36 +125,62 @@ def region(request):
     return render(request, 'region.html', context)
 
 def countries(request, country):
-    players = seasonData.objects.filter(
+    players_with_totals = seasonData.objects.filter(
         country=country
-    ).order_by('player_name').values('player_id', 'player_name')
-    distinct_players = players.distinct()
-
-    totals = players.aggregate(
-        G = Sum('gp'),
-        MP = Sum('minutes'),
-        FGM = Sum('fgm'),
-        FGA = Sum('fga'),
-        FG3 = Sum('fg3m'),
-        FG3A = Sum('fg3a'),
-        FT = Sum('ftm'),
-        FTA = Sum('fta'),
-        ORB = Sum('oreb'),
-        DRB = Sum('dreb'),
-        TRB = Sum('reb'),
-        AST = Sum('ast'),
-        STL = Sum('stl'),
-        BLK = Sum('blk'),
-        TOV = Sum('tov'),
-        PF = Sum('pf'),
-        PTS = Sum('pts'),
+    ).values('player_id', 'player_name').annotate(
+        G=Sum('gp'),
+        MP=Sum('minutes'),
+        FGM=Sum('fgm'),
+        FGA=Sum('fga'),
+        FG3=Sum('fg3m'),
+        FG3A=Sum('fg3a'),
+        FT=Sum('ftm'),
+        FTA=Sum('fta'),
+        ORB=Sum('oreb'),
+        DRB=Sum('dreb'),
+        TRB=Sum('reb'),
+        AST=Sum('ast'),
+        STL=Sum('stl'),
+        BLK=Sum('blk'),
+        TOV=Sum('tov'),
+        PF=Sum('pf'),
+        PTS=Sum('pts'),
+    ).order_by('-PTS')  
+    
+    country_totals = seasonData.objects.filter(
+        country=country
+    ).aggregate(
+        G=Sum('gp'),
+        MP=Sum('minutes'),
+        FGM=Sum('fgm'),
+        FGA=Sum('fga'),
+        FG3=Sum('fg3m'),
+        FG3A=Sum('fg3a'),
+        FT=Sum('ftm'),
+        FTA=Sum('fta'),
+        ORB=Sum('oreb'),
+        DRB=Sum('dreb'),
+        TRB=Sum('reb'),
+        AST=Sum('ast'),
+        STL=Sum('stl'),
+        BLK=Sum('blk'),
+        TOV=Sum('tov'),
+        PF=Sum('pf'),
+        PTS=Sum('pts'),
     )
+
+    stat_order = ['G', 'MP', 'FGM', 'FGA', 'FG3', 'FG3A', 'FT', 'FTA', 
+                'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
+
+    totals_ordered = [
+        {'label': key, 'value': country_totals.get(key, 0)}
+        for key in stat_order
+    ]
 
     context = {
         'country': country,
-        'distinct_players': distinct_players,
-        'players': players,
-        'totals': totals
+        'players': players_with_totals, 
+        'country_totals': totals_ordered, 
     }
     return render(request, 'countries.html', context)
 

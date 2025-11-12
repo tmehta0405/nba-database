@@ -7,17 +7,30 @@
 <div class='center'>
     <h1>{{country}}</h1>
 </div>
+<div class='center total-center'>
+    <h2 class='total-header'>total country stats</h2>
+    <div class='total-stat-container'>
+        {%for stat in country_totals%}
+            <div class='stat-item'>
+                <div class='stat'>{{stat.label}}</div>
+                <div class='stat-value'>{{stat.value|floatformat}}</div>
+            </div>
+        {%endfor%}
+    </div>
+</div>
 <div class='center'>
-    {%for player in distinct_players%}
-        <a class='card-link'href="{%url 'player_stats' player_name=player.player_name%}">
+    {%for player in players%}
+        <a class='card-link' href="{%url 'player_stats' player_name=player.player_name%}">
             <div class='player-card'>
-                <h3 class='.h3'>{{player.player_name}}</h3>
+                <div class='player-name'>{{player.player_name}}</div>
                 <div class='stat-container'>
-                    {%for key, value in totals.items%}
-                    <div class='stat-item'> <!--add a filter for years-->
-                        <h4 class='.h4'>{{key}}</h4>
-                        <p>{{value|floatformat}}</p>
-                    </div>
+                    {%for key, value in player.items%}
+                        {%if key != 'player_id' and key != 'player_name'%}
+                            <div class='stat-item'>
+                                <div class='stat'>{{key}}</div>
+                                <p>{{value|floatformat}}</p>
+                            </div>
+                        {%endif%}
                     {%endfor%}
                 </div>
             </div>
