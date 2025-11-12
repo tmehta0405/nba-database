@@ -125,9 +125,13 @@ def region(request):
     return render(request, 'region.html', context)
 
 def countries(request, country):
-    players_with_totals = seasonData.objects.filter(
+    base = seasonData.objects.filter(
         country=country
-    ).values('player_id', 'player_name').annotate(
+    ).exclude(
+        team_abbreviation='TOT'
+    )
+
+    players_with_totals = base.values('player_id', 'player_name').annotate(
         G=Sum('gp'),
         MP=Sum('minutes'),
         FGM=Sum('fgm'),
@@ -147,9 +151,7 @@ def countries(request, country):
         PTS=Sum('pts'),
     ).order_by('-PTS')  
     
-    country_totals = seasonData.objects.filter(
-        country=country
-    ).aggregate(
+    country_totals = base.aggregate(
         G=Sum('gp'),
         MP=Sum('minutes'),
         FGM=Sum('fgm'),

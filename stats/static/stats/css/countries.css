@@ -14,6 +14,7 @@ body {
     background: #18181b;
     color: #fafafa;
     font-family: 'Fredoka';
+    padding-bottom: 50px;
 }   
 
 h1 {
@@ -53,7 +54,7 @@ h1 {
 
 .total-center {
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .total-stat-container {

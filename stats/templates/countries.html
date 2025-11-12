@@ -1,5 +1,6 @@
 {% extends "template.html" %}
 {% load static %}
+{% load humanize %}
 {% block title %}DataBall | {{country}}{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/countries.css' %}">{% endblock %}
 {% block content %}
@@ -13,7 +14,7 @@
         {%for stat in country_totals%}
             <div class='stat-item'>
                 <div class='stat'>{{stat.label}}</div>
-                <div class='stat-value'>{{stat.value|floatformat}}</div>
+                <div class='stat-value'>{{stat.value|floatformat|intcomma}}</div>
             </div>
         {%endfor%}
     </div>
