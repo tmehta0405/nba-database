@@ -106,6 +106,13 @@ def dupe(model, entry):
     return True # placeholder
 
 @register.filter
+def tt(award):
+    totext = {
+        'AS': 'All-Star'
+    }
+    return totext[award]
+
+@register.filter
 def sumawards(model):
     awardDict = {}
     flist = []
@@ -158,6 +165,8 @@ def generalstats(model, stat):
             }
             if (s.draft_round == None or s.draft_pick == None) and stat == 'Drafted':
                 return s.draft_year
+            elif (s.draft_round == 'Undrafted' or s.draft_pick == 'Undrafted' or s.draft_year == 'Undrafted') and stat == 'Drafted':
+                return 'Undrafted'
             else:
                 return f"{statmap[stat]}"
             

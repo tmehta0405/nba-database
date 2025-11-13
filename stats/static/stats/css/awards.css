@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +8,7 @@
 
 body {
     background: #18181b;
+    overflow: hidden;
 }   
 
 h1 {
@@ -66,4 +63,110 @@ h1 {
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.all-nba-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    padding: 40px 20px;
+}
+
+.all-nba-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #fafafa;
+    font-family: 'Fredoka';
+    background-color: #272729;
+    border-radius: 16px;
+    padding: 24px;
+    transition: border 0.2s ease;
+    border: 2px solid #52525b;
+    max-height: 600px;
+}
+
+.all-nba-card h3 {
+    font-weight: 450;
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #52525b;
+}
+
+.all-nba-stat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 8px;
+}
+
+.all-nba-stat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.all-nba-stat-container::-webkit-scrollbar-track {
+    background: rgba(82, 82, 91, 0.3);
+    border-radius: 4px;
+}
+
+.all-nba-stat-container::-webkit-scrollbar-thumb {
+    background: #52525b;
+    border-radius: 4px;
+    transition: .2s ease;
+}
+
+.all-nba-stat-container::-webkit-scrollbar-thumb:hover {
+    background: #fafafa;
+}
+
+.player-grid {
+    display: grid;
+    text-decoration: none;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 10px 14px;
+    background-color: rgba(82, 82, 91, 0.2);
+    border-radius: 8px;
+    transition: background 0.2s ease, border 0.2s ease;
+    align-items: center;
+    border: 1px solid #52525b;
+}
+
+.player-grid:hover {
+    background-color: rgba(82, 82, 91, 0.35);
+    border-color: #fafafa;
+}
+
+.player_name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.player_teams {
+    font-size: 13px;
+    color: #fafafa;
+    font-weight: 600;
+    padding: 4px 10px;
+    background-color: rgba(82, 82, 91, 0.5);
+    border-radius: 6px;
+    white-space: nowrap;
+    border: 1px solid #52525b;
+}
+
+@media (max-width: 768px) {
+    .all-nba-container {
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+    }
+
+    .all-nba-card h3 {
+        font-size: 24px;
+    }
 }

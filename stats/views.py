@@ -12,39 +12,81 @@ def home(request):
     return render(request, 'home.html')
 
 def awards(request, award):
+    allnba = ['AS', 'DEF', 'NBA', 'ROOK', 'NBACUP']
     seasons_with_award = awardsBySeason.objects.filter(
         awards__has_key=award
     ).order_by('-season')
     
     from collections import defaultdict
     
-    winners = []
-    for season in seasons_with_award:
-        if season.awards and award in season.awards:
-            player_teams = defaultdict(list)
-            
-            for winner in season.awards[award]: #type: ignore
-                player_id = winner.get('player_id')
-                player_teams[player_id].append({
-                    'player_name': winner.get('player_name'),
-                    'team': winner.get('team_abbreviation'),
-                    'value': winner.get('value')
-                })
-            
-            for player_id, entries in player_teams.items():
-                teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
-                winners.append({
+    grouped_awards = ['AS']  
+
+    if award in grouped_awards:
+        winners_by_season = []
+        for season in seasons_with_award:
+            if season.awards and award in season.awards:
+                player_teams = defaultdict(list)
+                
+                for winner in season.awards[award]: #type: ignore
+                    player_id = winner.get('player_id')
+                    player_teams[player_id].append({
+                        'player_name': winner.get('player_name'),
+                        'team': winner.get('team_abbreviation'),
+                        'value': winner.get('value')
+                    })
+                
+                players = []
+                for player_id, entries in player_teams.items():
+                    teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
+                    players.append({
+                        'player_id': player_id,
+                        'player_name': entries[0]['player_name'],
+                        'teams': teams,
+                        'value': entries[0]['value']
+                    })
+                
+                winners_by_season.append({
                     'season': season.season,
-                    'player_id': player_id,
-                    'player_name': entries[0]['player_name'],
-                    'teams': teams,
-                    'value': entries[0]['value']
+                    'players': players
                 })
+        
+        context = {
+            'award': award,
+            'winners_by_season': winners_by_season,
+            'allnba': allnba,
+            'isgrouped': True
+        }
+    else:
+        winners = []
+        for season in seasons_with_award:
+            if season.awards and award in season.awards:
+                player_teams = defaultdict(list)
+                
+                for winner in season.awards[award]: #type: ignore
+                    player_id = winner.get('player_id')
+                    player_teams[player_id].append({
+                        'player_name': winner.get('player_name'),
+                        'team': winner.get('team_abbreviation'),
+                        'value': winner.get('value')
+                    })
+                
+                for player_id, entries in player_teams.items():
+                    teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
+                    winners.append({
+                        'season': season.season,
+                        'player_id': player_id,
+                        'player_name': entries[0]['player_name'],
+                        'teams': teams,
+                        'value': entries[0]['value']
+                    })
+        
+        context = {
+            'award': award,
+            'winners': winners,
+            'allnba': allnba,
+            'isgrouped': False
+        }
     
-    context = {
-        'award': award,
-        'winners': winners
-    }
     return render(request, 'awards.html', context)
 
 def search(request):

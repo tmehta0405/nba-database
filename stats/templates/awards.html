@@ -1,12 +1,26 @@
 {% extends "template.html" %}
 {% load static %}
-{% block title %}DataBall | {{award}}s by Year{% endblock %}
+{% load filters %}
+{% block title %}
+{%if isgrouped%}
+    DataBall | {{award|tt}}s by Year
+{%else%}
+    DataBall | {{award}}s by Year
+{%endif%}
+{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/awards.css' %}">{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
-<div class='center'>
-    <h1>{{award}}s by Year</h1>
-</div>
+{%if isgrouped%}
+    <div class='center'>
+        <h1>{{award|tt}}s by Year</h1>
+    </div>
+{%else%}
+    <div class='center'>
+        <h1>{{award}}s by Year</h1>
+    </div>
+{%endif%}
+{%if not isgrouped%}
 <div class='card-container'>
     {%for winner in winners%}
         <a class='card-link' href="{%url 'player_stats' player_name=winner.player_name%}">
@@ -18,4 +32,21 @@
         </a>
     {%endfor%}
 </div>
+{%else%}
+<div class='all-nba-container'>
+    {%for data in winners_by_season%}
+        <div class='all-nba-card'>
+            <h3 class='all-nba-card-title'>{{data.season}}</h3>
+            <div class='all-nba-stat-container'>
+                {%for player in data.players%}
+                <a class='player-grid' href="{%url 'player_stats' player_name=player.player_name%}"'>
+                    <div class='player_name'>{{player.player_name}}</div>
+                    <div class='player_teams'>{{player.teams}}</div>
+                </a>
+                {%endfor%}
+            </div>
+        </div>
+    {%endfor%}
+</div>
+{%endif%}
 {% endblock %}
