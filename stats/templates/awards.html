@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% load static %}
+{% block title %}DataBall | {{award}}s by Year{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/awards.css' %}">{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class='center'>
+    <h1>{{award}}s by Year</h1>
+</div>
+<div class='card-container'>
+    {%for data in winners%}
+        {%for winner in data.winners%}
+        <a class='card-link' href="{%url 'player_stats' player_name=winner.player_name%}">
+            <div class='card'>
+                <h4>{{data.season}}</h4>
+                <p>{{winner.player_name}}</p>
+                <p>{{winner.team_abbreviation}}</p>
+            </div>
+        </a>
+        {%endfor%}
+    {%endfor%}
+</div>
+{% endblock %}

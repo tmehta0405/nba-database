@@ -45,24 +45,26 @@
         </div>
         <div class='dropdown-container'>
             <p class='navbar-item navbar-dropdown'>Awards by Year</p>
-            <div class='dropdown-content'>
+            <div class='dropdown-content bonus-width'>
                 <div class='dropdown-content-section'>
                     <h3>Main Awards</h3>
                     <div class='dropdown-content-links'>
-                        <a href='/' class='dropdown-link'>MVP</a> 
-                        <a href='/' class='dropdown-link'>FMVP</a>
-                        <a href='/' class='dropdown-link'>DPOY</a>
+                        <a href="{%url 'awards' 'MVP'%}" class='dropdown-link'>MVP</a> 
+                        <a href="{%url 'awards' 'FMVP'%}" class='dropdown-link'>FMVP</a>
+                        <a href="{%url 'awards' 'CFMVP'%}" class='dropdown-link'>CFMVP</a>
+                        <a href="{%url 'awards' 'DPOY'%}" class='dropdown-link'>DPOY</a>
+                        <a href="{%url 'awards' 'ROY'%}" class='dropdown-link'>ROY</a>
                     </div>
                 </div>
                 <div class='hr'></div>
                 <div class='dropdown-content-section'>
                     <h3>League Leaders</h3>
                     <div class='dropdown-content-links'>
-                        <a href="/" class='dropdown-link'>Points</a>
-                        <a href='/' class='dropdown-link'>Rebounds</a> 
-                        <a href='/' class='dropdown-link'>Assists</a> 
-                        <a href='/' class='dropdown-link'>Steals</a> 
-                        <a href='/' class='dropdown-link'>Blocks</a> 
+                        <a href="{%url 'awards' 'PC'%}" class='dropdown-link'>Points</a>
+                        <a href="{%url 'awards' 'RC'%}" class='dropdown-link'>Rebounds</a> 
+                        <a href="{%url 'awards' 'AC'%}" class='dropdown-link'>Assists</a> 
+                        <a href="{%url 'awards' 'SC'%}" class='dropdown-link'>Steals</a> 
+                        <a href="{%url 'awards' 'BC'%}" class='dropdown-link'>Blocks</a> 
                     </div>
                 </div>
                 <div class='hr'></div>
@@ -70,7 +72,10 @@
                     <h3>All-NBA</h3>
                     <div class='dropdown-content-links'>
                         <a href="/" class='dropdown-link'>All Stars</a>
-                        <a href='/' class='dropdown-link'>All Defensive</a> 
+                        <a href='/' class='dropdown-link'>All Defensive</a>
+                        <a href='/' class='dropdown-link'>All NBA</a> 
+                        <a href='/' class='dropdown-link'>All Rookie</a> 
+                        <a href='/' class='dropdown-link'>All NBA Cup</a>  
                     </div>
                 </div>
             </div>

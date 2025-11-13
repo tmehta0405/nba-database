@@ -89,6 +89,10 @@
     flex-direction: column;
 }
 
+.bonus-width {
+    width: 500px;
+}
+
 .dropdown-content-section {
     display: flex;
     gap: 10px;

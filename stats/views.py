@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.exceptions import FieldError
-from django.db.models import Q, F, Case, When, Value, IntegerField, Sum,FloatField, ExpressionWrapper
-from .models import seasonData
+from django.db.models import Q, F, Case, When, Value, IntegerField, Sum, FloatField, ExpressionWrapper
+from .models import seasonData, awardsBySeason
 from datetime import datetime
 import random
 import numpy as np
@@ -10,6 +10,26 @@ import numpy as np
 
 def home(request):
     return render(request, 'home.html')
+
+def awards(request, award):
+    seasons_with_award = awardsBySeason.objects.filter(
+        awards__has_key=award
+    ).order_by('-season')
+    
+    winners_by_season = []
+    for season in seasons_with_award:
+        if season.awards and award in season.awards:
+            winners_by_season.append({
+                'season': season.season,
+                'winners': season.awards[award]
+            })
+    
+    context = {
+        'award': award,
+        'seasons': seasons_with_award,
+        'winners': winners_by_season
+    }
+    return render(request, 'awards.html', context)
 
 def search(request):
     if request.GET.get('search-bar'):

@@ -51,3 +51,11 @@ class seasonData(models.Model):
 
     def __str__(self):
         return f"{self.player_name} - {self.season_id} - {self.player_id}"
+    
+
+class awardsBySeason(models.Model):
+    season = models.CharField(max_length=10, blank=True, null=True)
+    awards = models.JSONField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.season}"
