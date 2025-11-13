@@ -4,8 +4,16 @@
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/college.css' %}">{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
-<h1>Colleges</h1> <!--make search-->
+<div class='center'>
+    <h1>Colleges</h1> <!--make search-->
+</div>
+<div class='college-container'>
     {%for college in colleges%}
-        <a href="{%url 'college' 'UCLA'%}">{{college}}</a>
+        <a class='college-link' href="{%url 'college' college=college%}">
+            <div>
+                {{college}}
+            </div>
+        </a>
     {%endfor%}
+</div>
 {% endblock %}

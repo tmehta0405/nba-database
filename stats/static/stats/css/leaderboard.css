@@ -4,7 +4,6 @@
   display: none;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -75,4 +74,15 @@ h1 {
 
 .leaderboard-table tbody tr:nth-of-type(even) {
     background-color: #27272a;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

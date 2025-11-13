@@ -229,12 +229,16 @@ def colleges(request):
     c = np.unique(np.array(seasonData.objects.exclude(school__isnull=True).values_list(
         'school', flat=True
     )))
+
+    colleges = [college for college in c if college]
+    
     context = {
-        'colleges': c
+        'colleges': colleges
     }
     return render(request, 'colleges.html', context)
 
 def college_info(request, college):
+    #make view get all players with college stat and order by points/alphabetically
     return render(request, 'college_info.html')
 
 def get_birthday_player(request):

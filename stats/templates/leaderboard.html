@@ -5,11 +5,13 @@
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/leaderboard.css' %}">{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
+<div class='center'>
 {%if per%}
     <h1>{{ stat|caps }} Leaderboard</h1>
 {%else%}
     <h1>{{stat|capfirst}} Leaderboard</h1>
 {%endif%}
+</div>
 <div class='leaderboard-container'>
     <table class="leaderboard-table">
         <thead>
