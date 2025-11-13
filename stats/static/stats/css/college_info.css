@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #18181b;
+    color: #fafafa;
+    font-family: 'Fredoka';
+    padding-bottom: 50px;
+}   
+
+h1 {
+    color: #fafafa;
+    font-family: 'Fredoka';
+    font-weight: 450;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.player-name, .stat {
+    font-weight: 500;
+}
+
+.player-name {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card-link {
+    color: #fafafa;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+}
+
+.center {
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.total-center {
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.total-stat-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stat-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid #52525b;
+    background-color: #272729;
+    border-radius: 10px;
+}
+
+.player-card {
+    display: flex;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #52525b;
+    background-color: #272729;
+    width: 100%;
+    transition: .2s ease;
+}
+
+.player-card:hover {
+    border: 2px solid #fafafa;
+}
+
+.stat-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.total-header {
+    font-weight: 450;
+}

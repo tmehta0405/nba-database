@@ -19,10 +19,12 @@
                     <div class='general-stat-item'>{{seasons|generalstats:'Country'}}</div>
                 </div>
             </a>
-            <div class='general-stat'>
-                <p>school</p>
-                <div class='general-stat-item'>{{seasons|generalstats:'School'}}</div>
-            </div>
+            <a href={%url 'college' college=seasons|generalstats:'School'%}>
+                <div class='general-stat'>
+                    <p>school</p>
+                    <div class='general-stat-item'>{{seasons|generalstats:'School'}}</div>
+                </div>
+            </a>
             <div class='general-stat'>
                 <p>birthday</p>
                 <div class='general-stat-item'>{{seasons|generalstats:'Birthday'}}</div>

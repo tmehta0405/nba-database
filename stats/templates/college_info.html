@@ -1,9 +1,41 @@
 {% extends "template.html" %}
 {% load static %}
+{% load humanize %}
 {% block title %}DataBall | {{college|capfirst}}{% endblock %}
-{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/college.css' %}">{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/college_info.css' %}">{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
-<h1>College Info</h1>
-
+<div class='center'>
+    <h1>{{college}}</h1>
+</div>
+<div class='center total-center'>
+    <h2 class='total-header'>total school stats</h2>
+    <div class='total-stat-container'>
+        {%for stat in college_totals%}
+            <div class='stat-item'>
+                <div class='stat'>{{stat.label}}</div>
+                <div class='stat-value'>{{stat.value|floatformat|intcomma}}</div>
+            </div>
+        {%endfor%}
+    </div>
+</div>
+<div class='center'>
+    {%for player in players%}
+        <a class='card-link' href="{%url 'player_stats' player_name=player.player_name%}">
+            <div class='player-card'>
+                <div class='player-name'>{{player.player_name}}</div>
+                <div class='stat-container'>
+                    {%for key, value in player.items%}
+                        {%if key != 'player_id' and key != 'player_name'%}
+                            <div class='stat-item'>
+                                <div class='stat'>{{key}}</div>
+                                <p>{{value|floatformat}}</p>
+                            </div>
+                        {%endif%}
+                    {%endfor%}
+                </div>
+            </div>
+        </a>
+    {%endfor%}
+</div>
 {% endblock %}

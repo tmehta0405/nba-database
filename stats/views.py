@@ -186,6 +186,81 @@ def countries(request, country):
     }
     return render(request, 'countries.html', context)
 
+def colleges(request):
+    c = np.unique(np.array(seasonData.objects.exclude(school__isnull=True).values_list(
+        'school', flat=True
+    )))
+
+    colleges = [college for college in c if college]
+    
+    context = {
+        'colleges': colleges
+    }
+    return render(request, 'colleges.html', context)
+
+def college_info(request, college):
+    players = seasonData.objects.filter(
+        school = college
+    ).exclude(
+        team_abbreviation = 'TOT'
+    )
+
+    players_with_totals = players.values('player_id', 'player_name').annotate(
+        G=Sum('gp'),
+        MP=Sum('minutes'),
+        FGM=Sum('fgm'),
+        FGA=Sum('fga'),
+        FG3=Sum('fg3m'),
+        FG3A=Sum('fg3a'),
+        FT=Sum('ftm'),
+        FTA=Sum('fta'),
+        ORB=Sum('oreb'),
+        DRB=Sum('dreb'),
+        TRB=Sum('reb'),
+        AST=Sum('ast'),
+        STL=Sum('stl'),
+        BLK=Sum('blk'),
+        TOV=Sum('tov'),
+        PF=Sum('pf'),
+        PTS=Sum('pts'),        
+    ).order_by('-PTS')
+
+    college_totals = players.aggregate(
+        G=Sum('gp'),
+        MP=Sum('minutes'),
+        FGM=Sum('fgm'),
+        FGA=Sum('fga'),
+        FG3=Sum('fg3m'),
+        FG3A=Sum('fg3a'),
+        FT=Sum('ftm'),
+        FTA=Sum('fta'),
+        ORB=Sum('oreb'),
+        DRB=Sum('dreb'),
+        TRB=Sum('reb'),
+        AST=Sum('ast'),
+        STL=Sum('stl'),
+        BLK=Sum('blk'),
+        TOV=Sum('tov'),
+        PF=Sum('pf'),
+        PTS=Sum('pts'),        
+    )
+
+    stat_order = ['G', 'MP', 'FGM', 'FGA', 'FG3', 'FG3A', 'FT', 'FTA', 
+                'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
+
+    totals_ordered = [
+        {'label': key, 'value': college_totals.get(key, 0)}
+        for key in stat_order
+    ]
+
+    context = {
+        'players': players_with_totals,
+        'college': college,
+        'college_totals': totals_ordered
+    }
+    return render(request, 'college_info.html', context)
+
+
 def leaderboard(request, stat):
     stat_map = {
         'points': 'pts',
@@ -225,21 +300,6 @@ def leaderboard(request, stat):
     }
     return render(request, 'leaderboard.html', context)
 
-def colleges(request):
-    c = np.unique(np.array(seasonData.objects.exclude(school__isnull=True).values_list(
-        'school', flat=True
-    )))
-
-    colleges = [college for college in c if college]
-    
-    context = {
-        'colleges': colleges
-    }
-    return render(request, 'colleges.html', context)
-
-def college_info(request, college):
-    #make view get all players with college stat and order by points/alphabetically
-    return render(request, 'college_info.html')
 
 def get_birthday_player(request):
     today = datetime.now()
