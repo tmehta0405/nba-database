@@ -16,18 +16,34 @@ def awards(request, award):
         awards__has_key=award
     ).order_by('-season')
     
-    winners_by_season = []
+    from collections import defaultdict
+    
+    winners = []
     for season in seasons_with_award:
         if season.awards and award in season.awards:
-            winners_by_season.append({
-                'season': season.season,
-                'winners': season.awards[award]
-            })
+            player_teams = defaultdict(list)
+            
+            for winner in season.awards[award]: #type: ignore
+                player_id = winner.get('player_id')
+                player_teams[player_id].append({
+                    'player_name': winner.get('player_name'),
+                    'team': winner.get('team_abbreviation'),
+                    'value': winner.get('value')
+                })
+            
+            for player_id, entries in player_teams.items():
+                teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
+                winners.append({
+                    'season': season.season,
+                    'player_id': player_id,
+                    'player_name': entries[0]['player_name'],
+                    'teams': teams,
+                    'value': entries[0]['value']
+                })
     
     context = {
         'award': award,
-        'seasons': seasons_with_award,
-        'winners': winners_by_season
+        'winners': winners
     }
     return render(request, 'awards.html', context)
 

@@ -8,16 +8,14 @@
     <h1>{{award}}s by Year</h1>
 </div>
 <div class='card-container'>
-    {%for data in winners%}
-        {%for winner in data.winners%}
+    {%for winner in winners%}
         <a class='card-link' href="{%url 'player_stats' player_name=winner.player_name%}">
             <div class='card'>
-                <h4>{{data.season}}</h4>
+                <h4>{{winner.season}}</h4>
                 <p>{{winner.player_name}}</p>
-                <p>{{winner.team_abbreviation}}</p>
+                <p>{{winner.teams}}</p>
             </div>
         </a>
-        {%endfor%}
     {%endfor%}
 </div>
 {% endblock %}
