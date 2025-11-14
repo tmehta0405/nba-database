@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.exceptions import FieldError
 from django.db.models import Q, F, Case, When, Value, IntegerField, Sum, FloatField, ExpressionWrapper
-from .models import seasonData, awardsBySeason
+from .models import seasonData, awardsBySeason, PlayoffSeasonData
 from datetime import datetime
 import random
 import numpy as np
@@ -190,6 +190,10 @@ def player_stats(request, player_name):
     seasons = seasonData.objects.filter(
         player_name__iexact=player_name
     ).order_by('season', '-team_abbreviation')
+
+    postseasons = PlayoffSeasonData.objects.filter(
+        player_name__iexact=player_name
+    ).order_by('season', '-team_abbreviation')
     
     if not seasons.exists():
         return render(request, 'player_not_found.html', {'player_name': player_name})
@@ -202,10 +206,21 @@ def player_stats(request, player_name):
             seen_seasons.add(season.season)
         else:
             season.show_awards = False #type: ignore
+    
+    seen_postseasons = set()
+    postseasons_list = list(postseasons)
+    for postseason in postseasons_list:
+        if postseason.season not in seen_postseasons:
+            postseason.show_awards = True #type: ignore
+            seen_postseasons.add(postseason.season)
+        else:
+            postseason.show_awards = False #type: ignore
+
 
     context = {
         'player_name': player_name,
         'seasons': seasons_list,
+        'postseasons': postseasons_list,
     }
     return render(request, 'player_stats.html', context)
 

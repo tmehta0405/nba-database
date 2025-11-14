@@ -70,7 +70,7 @@
         <div class='flex-container'>
             <div class='flex-item'>
                 <div class='table-container'>
-                    <h2>Totals</h2>
+                    <h2>Regular Season Totals</h2>
                     <table class='content-table'>
                         <thead>
                             <tr>
@@ -214,6 +214,184 @@
                         </thead>
                         <tbody>
                             {%for season in seasons%}
+                            <tr class='season-stat'>
+                                <td>{{season.season}}</td>
+                                <td>{{season.player_age|floatformat}}</td>
+                                <td>{{season.team_abbreviation}}</td>
+                                <td>{{season.league_id|lformat}}</td>
+                                <td>{{season.gp|floatformat}}</td>
+                                <td>{{season.gs|floatformat}}</td>
+                                <td>{{season.minutes|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.fgm|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.fga|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.fg_pct|multiply:100|floatformat:1}}</td>
+                                <td>{{season.fg3m|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.fg3a|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.fg3_pct|multiply:100|floatformat:1}}</td>
+                                <td>{{season.ftm|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.fta|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.ft_pct|multiply:100|floatformat:1}}</td>
+                                <td>{{season.oreb|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.dreb|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.reb|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.ast|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.stl|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.blk|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.tov|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.pf|divide:season.gp|floatformat:1}}</td>
+                                <td>{{season.pts|divide:season.gp|floatformat:1}}</td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class='flex-item'>
+                <div class='table-container'>
+                    <h2>Postseason Totals</h2>
+                    <table class='content-table'>
+                        <thead>
+                            <tr>
+                                <th>Season</th>
+                                <th>Age</th>
+                                <th>Team</th>
+                                <th>League</th>
+                                <th>G</th>
+                                <th>GS</th>
+                                <th>MP</th>
+                                <th>FG</th>
+                                <th>FGA</th>
+                                <th>FG%</th>
+                                <th>3P</th>
+                                <th>3PA</th>
+                                <th>3P%</th>
+                                <th>FT</th>
+                                <th>FTA</th>
+                                <th>FT%</th>
+                                <th>ORB</th>
+                                <th>DRB</th>
+                                <th>TRB</th>
+                                <th>AST</th>
+                                <th>STL</th>
+                                <th>BLK</th>
+                                <th>TOV</th>
+                                <th>PF</th>
+                                <th>PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for season in postseasons%}
+                            <tr class='season-stat'>
+                                <td>{{season.season}}</td>
+                                <td>{{season.player_age|floatformat}}</td>
+                                <td>{{season.team_abbreviation}}</td>
+                                <td>{{season.league_id|lformat}}</td>
+                                <td>{{season.gp|floatformat}}</td>
+                                <td>{{season.gs|floatformat}}</td>
+                                <td>{{season.minutes|floatformat}}</td>
+                                <td>{{season.fgm|floatformat}}</td>
+                                <td>{{season.fga|floatformat}}</td>
+                                <td>{{season.fg_pct|multiply:100|floatformat:1}}</td>
+                                <td>{{season.fg3m|floatformat}}</td>
+                                <td>{{season.fg3a|floatformat}}</td>
+                                <td>{{season.fg3_pct|multiply:100|floatformat:1}}</td>
+                                <td>{{season.ftm|floatformat}}</td>
+                                <td>{{season.fta|floatformat}}</td>
+                                <td>{{season.ft_pct|multiply:100|floatformat:1}}</td>
+                                <td>{{season.oreb|floatformat}}</td>
+                                <td>{{season.dreb|floatformat}}</td>
+                                <td>{{season.reb|floatformat}}</td>
+                                <td>{{season.ast|floatformat}}</td>
+                                <td>{{season.stl|floatformat}}</td>
+                                <td>{{season.blk|floatformat}}</td>
+                                <td>{{season.tov|floatformat}}</td>
+                                <td>{{season.pf|floatformat}}</td>
+                                <td>{{season.pts|floatformat}}</td>
+                            </tr>
+                            {%endfor%}
+                            <tr class='totals'>
+                                <td colspan='4'>Career Total</td>
+                                <td>{{postseasons|tsum:"gp"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"gs"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"minutes"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"fgm"|floatformat}}</td>
+                                <td colspan='2'>{{postseasons|tsum:"fga"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"fg3m"|floatformat}}</td>
+                                <td colspan='2'>{{postseasons|tsum:"fg3a"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"ftm"|floatformat}}</td>
+                                <td colspan='2'>{{seasons|tsum:"fta"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"oreb"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"dreb"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"reb"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"ast"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"stl"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"blk"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"tov"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"pf"|floatformat}}</td>
+                                <td>{{postseasons|tsum:"pts"|floatformat}}</td>
+                            </tr>
+                            {%for team in postseasons|getteams%}
+                                <tr class='totals'>
+                                    <td colspan='4'>{{team}} ({{postseasons|teamduration:team}} Yrs)</td>
+                                    <td>{%teamstats postseasons 'gp' team%}</td>
+                                    <td>{%teamstats postseasons 'gs' team%}</td>
+                                    <td>{%teamstats postseasons 'minutes' team%}</td>
+                                    <td>{%teamstats postseasons 'fgm' team%}</td>
+                                    <td colspan='2'>{%teamstats postseasons 'fga' team%}</td>
+                                    <td>{%teamstats postseasons 'fg3m' team%}</td>
+                                    <td colspan='2'>{%teamstats postseasons 'fg3a' team%}</td>
+                                    <td>{%teamstats postseasons 'ftm' team%}</td>
+                                    <td colspan='2'>{%teamstats postseasons 'fta' team%}</td>
+                                    <td>{%teamstats postseasons 'oreb' team%}</td>
+                                    <td>{%teamstats postseasons 'dreb' team%}</td>
+                                    <td>{%teamstats postseasons 'reb' team%}</td>
+                                    <td>{%teamstats postseasons 'ast' team%}</td>
+                                    <td>{%teamstats postseasons 'stl' team%}</td>
+                                    <td>{%teamstats postseasons 'blk' team%}</td>
+                                    <td>{%teamstats postseasons 'tov' team%}</td>
+                                    <td>{%teamstats postseasons 'pf' team%}</td>
+                                    <td>{%teamstats postseasons 'pts' team%}</td>
+                                </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class='flex-item total-playoffs'>
+                <div class='table-container'>
+                    <h2>Postseason Per Game</h2>
+                    <table class='content-table'>
+                        <thead>
+                            <tr>
+                                <th>Season</th>
+                                <th>Age</th>
+                                <th>Team</th>
+                                <th>League</th>
+                                <th>G</th>
+                                <th>GS</th>
+                                <th>MP</th>
+                                <th>FG</th>
+                                <th>FGA</th>
+                                <th>FG%</th>
+                                <th>3P</th>
+                                <th>3PA</th>
+                                <th>3P%</th>
+                                <th>FT</th>
+                                <th>FTA</th>
+                                <th>FT%</th>
+                                <th>ORB</th>
+                                <th>DRB</th>
+                                <th>TRB</th>
+                                <th>AST</th>
+                                <th>STL</th>
+                                <th>BLK</th>
+                                <th>TOV</th>
+                                <th>PF</th>
+                                <th>PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for season in postseasons%}
                             <tr class='season-stat'>
                                 <td>{{season.season}}</td>
                                 <td>{{season.player_age|floatformat}}</td>

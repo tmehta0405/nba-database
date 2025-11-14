@@ -187,10 +187,6 @@ h1 {
     max-height: 600px;
 }
 
-.all-nba-card:hover {
-    border: 2px solid #fafafa;
-}
-
 .all-nba-card-title {
     font-weight: 450;
     font-size: 28px;
