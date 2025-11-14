@@ -20,18 +20,97 @@
         <h1>{{award}}s by Year</h1>
     </div>
 {%endif%}
+
 {%if not isgrouped%}
-<div class='card-container'>
-    {%for winner in winners%}
-        <a class='card-link' href="{%url 'player_stats' player_name=winner.player_name%}">
-            <div class='card'>
-                <h4>{{winner.season}}</h4>
-                <p>{{winner.player_name}}</p>
-                <p>{{winner.teams}}</p>
-            </div>
-        </a>
-    {%endfor%}
-</div>
+    {%if award == 'NBA' or award == 'DEF' or award == 'ROOK'%}
+        <div class='teams-awards-container'>
+            {% regroup winners by season as season_list %}
+            
+            {%for season_group in season_list%}
+                <div class='teams-award-card'>
+                    <h3 class='teams-award-title'>{{season_group.grouper}}</h3>
+                    
+                    {%if award == 'NBA'%}
+                        <div class='teams-grid-3'>
+                            <div class='team-column'>
+                                <h4 class='team-header'>First Team</h4>
+                                {%for winner in season_group.list%}
+                                    {%if winner.category == 'NBA1'%}
+                                        <a class='team-player' href="{%url 'player_stats' player_name=winner.player_name%}">
+                                            <span class='team-player-name'>{{winner.player_name}}</span>
+                                            <span class='team-player-team'>{{winner.teams}}</span>
+                                        </a>
+                                    {%endif%}
+                                {%endfor%}
+                            </div>
+                            
+                            <div class='team-column'>
+                                <h4 class='team-header'>Second Team</h4>
+                                {%for winner in season_group.list%}
+                                    {%if winner.category == 'NBA2'%}
+                                        <a class='team-player' href="{%url 'player_stats' player_name=winner.player_name%}">
+                                            <span class='team-player-name'>{{winner.player_name}}</span>
+                                            <span class='team-player-team'>{{winner.teams}}</span>
+                                        </a>
+                                    {%endif%}
+                                {%endfor%}
+                            </div>
+                            
+                            <div class='team-column'>
+                                <h4 class='team-header'>Third Team</h4>
+                                {%for winner in season_group.list%}
+                                    {%if winner.category == 'NBA3'%}
+                                        <a class='team-player' href="{%url 'player_stats' player_name=winner.player_name%}">
+                                            <span class='team-player-name'>{{winner.player_name}}</span>
+                                            <span class='team-player-team'>{{winner.teams}}</span>
+                                        </a>
+                                    {%endif%}
+                                {%endfor%}
+                            </div>
+                        </div>
+                    {%else%}
+                        <div class='teams-grid-2'>
+                            <div class='team-column'>
+                                <h4 class='team-header'>First Team</h4>
+                                {%for winner in season_group.list%}
+                                    {%if winner.category == award|add:'1'%}
+                                        <a class='team-player' href="{%url 'player_stats' player_name=winner.player_name%}">
+                                            <span class='team-player-name'>{{winner.player_name}}</span>
+                                            <span class='team-player-team'>{{winner.teams}}</span>
+                                        </a>
+                                    {%endif%}
+                                {%endfor%}
+                            </div>
+                            
+                            <div class='team-column'>
+                                <h4 class='team-header'>Second Team</h4>
+                                {%for winner in season_group.list%}
+                                    {%if winner.category == award|add:'2'%}
+                                        <a class='team-player' href="{%url 'player_stats' player_name=winner.player_name%}">
+                                            <span class='team-player-name'>{{winner.player_name}}</span>
+                                            <span class='team-player-team'>{{winner.teams}}</span>
+                                        </a>
+                                    {%endif%}
+                                {%endfor%}
+                            </div>
+                        </div>
+                    {%endif%}
+                </div>
+            {%endfor%}
+        </div>
+    {%else%}
+        <div class='card-container'>
+            {%for winner in winners%}
+                <a class='card-link' href="{%url 'player_stats' player_name=winner.player_name%}">
+                    <div class='card'>
+                        <h4>{{winner.season}}</h4>
+                        <p>{{winner.player_name}}</p>
+                        <p>{{winner.teams}}</p>
+                    </div>
+                </a>
+            {%endfor%}
+        </div>
+    {%endif%}
 {%else%}
 <div class='all-nba-container'>
     {%for data in winners_by_season%}
@@ -39,7 +118,7 @@
             <h3 class='all-nba-card-title'>{{data.season}}</h3>
             <div class='all-nba-stat-container'>
                 {%for player in data.players%}
-                <a class='player-grid' href="{%url 'player_stats' player_name=player.player_name%}"'>
+                <a class='player-grid' href="{%url 'player_stats' player_name=player.player_name%}">
                     <div class='player_name'>{{player.player_name}}</div>
                     <div class='player_teams'>{{player.teams}}</div>
                 </a>

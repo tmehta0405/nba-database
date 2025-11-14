@@ -13,8 +13,20 @@ def home(request):
 
 def awards(request, award):
     allnba = ['AS', 'DEF', 'NBA', 'ROOK', 'NBACUP']
+    
+    award_categories = {
+        'DEF': ['DEF1', 'DEF2'],
+        'NBA': ['NBA1', 'NBA2', 'NBA3'],
+        'ROOK': ['ROOK1', 'ROOK2']
+    }
+    
+    if award in award_categories:
+        award_keys = award_categories[award]
+    else:
+        award_keys = [award]
+    
     seasons_with_award = awardsBySeason.objects.filter(
-        awards__has_key=award
+        awards__has_any_keys=award_keys
     ).order_by('-season')
     
     from collections import defaultdict
@@ -24,31 +36,35 @@ def awards(request, award):
     if award in grouped_awards:
         winners_by_season = []
         for season in seasons_with_award:
-            if season.awards and award in season.awards:
-                player_teams = defaultdict(list)
+            if season.awards:
+                all_season_players = []
                 
-                for winner in season.awards[award]: #type: ignore
-                    player_id = winner.get('player_id')
-                    player_teams[player_id].append({
-                        'player_name': winner.get('player_name'),
-                        'team': winner.get('team_abbreviation'),
-                        'value': winner.get('value')
+                for award_key in award_keys:
+                    if award_key in season.awards:
+                        player_teams = defaultdict(list)
+                        
+                        for winner in season.awards[award_key]: #type: ignore
+                            player_id = winner.get('player_id')
+                            player_teams[player_id].append({
+                                'player_name': winner.get('player_name'),
+                                'team': winner.get('team_abbreviation'),
+                                'value': winner.get('value')
+                            })
+                        
+                        for player_id, entries in player_teams.items():
+                            teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
+                            all_season_players.append({
+                                'player_id': player_id,
+                                'player_name': entries[0]['player_name'],
+                                'teams': teams,
+                                'value': entries[0]['value']
+                            })
+                
+                if all_season_players:
+                    winners_by_season.append({
+                        'season': season.season,
+                        'players': all_season_players
                     })
-                
-                players = []
-                for player_id, entries in player_teams.items():
-                    teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
-                    players.append({
-                        'player_id': player_id,
-                        'player_name': entries[0]['player_name'],
-                        'teams': teams,
-                        'value': entries[0]['value']
-                    })
-                
-                winners_by_season.append({
-                    'season': season.season,
-                    'players': players
-                })
         
         context = {
             'award': award,
@@ -59,26 +75,30 @@ def awards(request, award):
     else:
         winners = []
         for season in seasons_with_award:
-            if season.awards and award in season.awards:
-                player_teams = defaultdict(list)
-                
-                for winner in season.awards[award]: #type: ignore
-                    player_id = winner.get('player_id')
-                    player_teams[player_id].append({
-                        'player_name': winner.get('player_name'),
-                        'team': winner.get('team_abbreviation'),
-                        'value': winner.get('value')
-                    })
-                
-                for player_id, entries in player_teams.items():
-                    teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
-                    winners.append({
-                        'season': season.season,
-                        'player_id': player_id,
-                        'player_name': entries[0]['player_name'],
-                        'teams': teams,
-                        'value': entries[0]['value']
-                    })
+            if season.awards:
+                for award_key in award_keys:
+                    if award_key in season.awards:
+                        player_teams = defaultdict(list)
+                        
+                        for winner in season.awards[award_key]: #type: ignore
+                            player_id = winner.get('player_id')
+                            player_teams[player_id].append({
+                                'player_name': winner.get('player_name'),
+                                'team': winner.get('team_abbreviation'),
+                                'value': winner.get('value'),
+                                'category': award_key 
+                            })
+                        
+                        for player_id, entries in player_teams.items():
+                            teams = '/'.join([entry['team'] for entry in entries if entry['team'] != 'TOT'])
+                            winners.append({
+                                'season': season.season,
+                                'player_id': player_id,
+                                'player_name': entries[0]['player_name'],
+                                'teams': teams,
+                                'value': entries[0]['value'],
+                                'category': entries[0]['category']  
+                            })
         
         context = {
             'award': award,
