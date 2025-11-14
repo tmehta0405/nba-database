@@ -24,7 +24,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Card container styling - matches all-nba layout */
 .card-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -73,7 +72,6 @@ h1 {
     margin-bottom: 4px;
 }
 
-/* Teams awards container - matches all-nba layout */
 .teams-awards-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -128,9 +126,7 @@ h1 {
     font-size: 18px;
     font-weight: 500;
     color: #ffffff;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #52525b;
+    padding-bottom: 4px;
 }
 
 .team-player {
@@ -168,7 +164,6 @@ h1 {
     border: 1px solid #52525b;
 }
 
-/* All-NBA container styling */
 .all-nba-container {
     max-width: 1200px;
     margin: 0 auto;

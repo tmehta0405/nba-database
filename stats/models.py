@@ -45,13 +45,49 @@ class seasonData(models.Model):
     draft_year = models.CharField(max_length=10, null=True)
     draft_round = models.CharField(max_length=10, null=True)
     draft_pick = models.CharField(max_length=10, null=True)
-    #add career high for points in game as json w/ date
+
     class Meta:
         unique_together = ['player_id', 'season_id', 'team_id']
 
     def __str__(self):
         return f"{self.player_name} - {self.season_id} - {self.player_id}"
     
+class PlayoffSeasonData(models.Model):
+    player_id = models.IntegerField()
+    player_name = models.CharField(max_length=100, blank=True, null=True)
+    season_id = models.CharField(max_length=10)
+    season = models.CharField(max_length=10, blank=True, null=True)
+    team_id = models.IntegerField()
+    league_id = models.CharField(max_length=10, blank=True, null=True)
+    team_abbreviation = models.CharField(max_length=10, blank=True, null=True)
+    player_age = models.FloatField(blank=True, null=True)
+    gp = models.IntegerField(blank=True, null=True)
+    gs = models.IntegerField(blank=True, null=True)
+    minutes = models.FloatField(blank=True, null=True)
+    fgm = models.FloatField(blank=True, null=True)
+    fga = models.FloatField(blank=True, null=True)
+    fg_pct = models.FloatField(blank=True, null=True)
+    fg3m = models.FloatField(blank=True, null=True)
+    fg3a = models.FloatField(blank=True, null=True)
+    fg3_pct = models.FloatField(blank=True, null=True)
+    ftm = models.FloatField(blank=True, null=True)
+    fta = models.FloatField(blank=True, null=True)
+    ft_pct = models.FloatField(blank=True, null=True)
+    oreb = models.FloatField(blank=True, null=True)
+    dreb = models.FloatField(blank=True, null=True)
+    reb = models.FloatField(blank=True, null=True)
+    ast = models.FloatField(blank=True, null=True)
+    stl = models.FloatField(blank=True, null=True)
+    blk = models.FloatField(blank=True, null=True)
+    tov = models.FloatField(blank=True, null=True)
+    pf = models.FloatField(blank=True, null=True)
+    pts = models.FloatField(blank=True, null=True)
+    
+    class Meta:
+        unique_together = ['player_id', 'season_id', 'team_id']
+
+    def __str__(self):
+        return f"{self.player_name} - {self.season_id} (Playoffs) - {self.player_id}"
 
 class awardsBySeason(models.Model):
     season = models.CharField(max_length=10, blank=True, null=True)

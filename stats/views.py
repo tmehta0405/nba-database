@@ -10,6 +10,9 @@ import numpy as np
 
 def home(request):
     return render(request, 'home.html')
+    
+def top100(request):
+    return render(request, 'top100.html')
 
 def awards(request, award):
     allnba = ['AS', 'DEF', 'NBA', 'ROOK', 'NBACUP']

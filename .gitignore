@@ -43,6 +43,7 @@ nba_cache/leaders_cache.json
 nba_cache/processed_players_2025_26.json
 nba_cache/general_stats.json
 nba_cache/awards.json
+nba_cache/processed_playoff_players.json
 nba_cache/countries.json
 .env
 

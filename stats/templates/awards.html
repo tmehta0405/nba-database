@@ -2,25 +2,14 @@
 {% load static %}
 {% load filters %}
 {% block title %}
-{%if isgrouped%}
-    DataBall | {{award|tt}}s by Year
-{%else%}
-    DataBall | {{award}}s by Year
-{%endif%}
+DataBall | {{award|tt}}s by Year
 {% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/awards.css' %}">{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
-{%if isgrouped%}
-    <div class='center'>
-        <h1>{{award|tt}}s by Year</h1>
-    </div>
-{%else%}
-    <div class='center'>
-        <h1>{{award}}s by Year</h1>
-    </div>
-{%endif%}
-
+<div class='center'>
+    <h1>{{award|tt}}s by Year</h1>
+</div>
 {%if not isgrouped%}
     {%if award == 'NBA' or award == 'DEF' or award == 'ROOK'%}
         <div class='teams-awards-container'>
@@ -29,7 +18,6 @@
             {%for season_group in season_list%}
                 <div class='teams-award-card'>
                     <h3 class='teams-award-title'>{{season_group.grouper}}</h3>
-                    
                     {%if award == 'NBA'%}
                         <div class='teams-grid-3'>
                             <div class='team-column'>
