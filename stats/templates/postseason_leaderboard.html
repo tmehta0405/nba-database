@@ -1,0 +1,63 @@
+{% extends "template.html" %}
+{% load static %}
+{% load humanize%}
+{% load filters %}
+{% block title %}
+{%if per%}
+    Databall | Playoff {{ stat|caps }} Leaderboard
+{%else%}
+    Databall | Playoff {{stat|title}} Leaderboard
+{%endif%}
+{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/leaderboard.css' %}">{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class='center'>
+{%if per%}
+    <h1>Playoff {{ stat|caps }} Leaderboard</h1>
+{%else%}
+    <h1>Playoff {{stat|title}} Leaderboard</h1>
+{%endif%}
+</div>
+<div class='leaderboard-container'>
+    {% for column in entries %}
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                {%if per%}
+                    <th>{{stat|caps}}</th>
+                {%else%}
+                    <th>{{stat|title}}</th>
+                {%endif%}
+                {%if not is_career%}
+                    <th>Season</th>
+                    <th>Team</th>
+                {%endif%}
+            </tr>
+        </thead>
+        <tbody>
+        {% for entry in column %}
+            <tr>
+                <td>{{ forloop.parentloop.counter0|multiply:50|add:forloop.counter }}</td>
+                {% if is_career %}
+                    <td><a href="{% url 'player_stats' player_name=entry.player_name %}">{{ entry.player_name }}</a></td>
+                    <td>{{ entry.total|floatformat|intcomma }}</td>
+                {% else %}
+                    <td><a href="{%url 'player_stats' player_name=entry.player_name%}">{{ entry.player_name }}</a></td>
+                    {%if per%}
+                        <td>{{ entry.avg|floatformat:1}}</td>
+                    {%else%}
+                        <td>{{ entry|getstat:stat_field|floatformat }}</td>
+                    {%endif%}
+                    <td>{{ entry.season }}</td>
+                    <td>{{ entry.team_abbreviation }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endfor %}
+</div>
+{% endblock %}

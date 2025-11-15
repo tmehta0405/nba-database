@@ -448,6 +448,76 @@ def leaderboard(request, stat):
     }
     return render(request, 'leaderboard.html', context)
 
+def postseason_leaderboard(request, stat):
+    stat_map = {
+        'points': 'pts',
+        'rebounds': 'reb',
+        'assists': 'ast',
+        'blocks': 'blk',
+        'steals': 'stl',
+        'career points': 'pts',
+        'career rebounds': 'reb',
+        'career assists': 'ast',
+        'career blocks': 'blk',
+        'career steals': 'stl',
+        'ppg': 'pts',
+        'rpg': 'reb',
+        'apg': 'ast',
+        'bpg': 'blk',
+        'spg': 'stl',
+    }
+
+    db_field = stat_map.get(stat.lower())
+    if not db_field:
+        from django.http import Http404
+        raise Http404(f"Unknown leaderboard stat: {stat}")
+    
+    is_per_game = stat.lower().endswith('pg')
+    is_career = stat.lower().startswith('career')
+
+    if is_per_game:
+        items = PlayoffSeasonData.objects.annotate(
+            avg=ExpressionWrapper(
+                F(db_field) * 1.0 / F('gp'),
+                output_field=FloatField()
+            )
+        ).order_by('-avg')[:250]
+        
+        entries = []
+        for i in range(5):
+            start_idx = i * 50
+            end_idx = start_idx + 50
+            entries.append(list(items[start_idx:end_idx]))
+            
+    elif is_career:        
+        career_totals = PlayoffSeasonData.objects.exclude(team_abbreviation='TOT').values('player_name').annotate(
+            total=Sum(db_field),
+            total_gp=Sum('gp')
+        ).order_by('-total')[:250]
+        
+        entries = []
+        for i in range(5):
+            start_idx = i * 50
+            end_idx = start_idx + 50
+            entries.append(list(career_totals[start_idx:end_idx]))
+            
+    else:
+        items = PlayoffSeasonData.objects.order_by(f'-{db_field}')[:250]
+        
+        entries = []
+        for i in range(5):
+            start_idx = i * 50
+            end_idx = start_idx + 50
+            entries.append(list(items[start_idx:end_idx]))
+
+    context = {
+        'entries': entries,
+        'stat': stat,
+        'stat_field': db_field,
+        'per': is_per_game,
+        'is_career': is_career,
+    }
+    return render(request, 'postseason_leaderboard.html', context)
 
 def get_birthday_player(request):
     today = datetime.now()
