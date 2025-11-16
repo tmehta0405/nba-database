@@ -1,19 +1,29 @@
 {% extends "template.html" %}
 {% load static %}
-{% block title %}DataBall | College Page{% endblock %}
+{% load filters%}
+{% block title %}DataBall | Schools{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/college.css' %}">{% endblock %}
+{% block script%}<script src="{% static 'stats/js/college.js' %}"></script>{%endblock%}
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
-    <h1>Colleges</h1> 
+    <h1>Schools</h1>
+    <div class='letter-bar'>
+        {%for l in letters%}
+            <p>{{l}}</p>
+        {%endfor%}
+    </div>
 </div>
 <div class='college-container'>
-    {%for college in colleges%}
-        <a class='college-link' href="{%url 'college' college=college%}">
-            <div>
-                {{college}}
+    {%for letter in letters%}
+        <div class='letter-section' id='letter={{letter}}'>
+            <h2>{{letter}}</h2>
+            <div class='letter-colleges'>
+                {%for college in colleges|get_item:letter%}
+                    <a href="{%url 'college' college=college%}"><div>{{college}}</div></a>
+                {%endfor%}
             </div>
-        </a>
+        </div>
     {%endfor%}
 </div>
 {% endblock %}

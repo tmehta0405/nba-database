@@ -313,8 +313,19 @@ def colleges(request):
 
     colleges = [college for college in c if college]
     
+    grouped = {}
+    for i in colleges:
+        if i:
+            first = i[0].upper()
+            if first not in grouped:
+                grouped[first] = []
+            grouped[first].append(i)
+
+    alpha = sorted(grouped.keys())
+
     context = {
-        'colleges': colleges
+        'colleges': grouped,
+        'letters': alpha
     }
     return render(request, 'colleges.html', context)
 
