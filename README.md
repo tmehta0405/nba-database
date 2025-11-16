@@ -7,3 +7,5 @@ Features
 - Search for players
 - Leaderboards for common stats/attributes (ex: countries/schools/PRA)
 - PostgreSQL backend
+
+Try it at: http://databall.ddns.net/
