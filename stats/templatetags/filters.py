@@ -130,7 +130,7 @@ def sumawards(model):
     awardDict = {}
     flist = []
     seasons = []
-    order = ['MVP', 'FMVP', 'CHAMP', 'CFMVP', 'AS', 'ASMVP','NBA1', 'NBA2', 'NBA3', 'DPOY', 'DEF1', 'DEF2', 'PC', 'RC', 'AC', 'SC', 'BC', 'ROY', 'ROOK1', 'ROOK2', 'ISTMVP', 'NBACUP', 'CPOY', '6MOY', "OLMP-G", "OLMP-S", "OLMP-B", "HUST", "TMATE"]
+    order = ['MVP', 'FMVP', 'CHAMP', 'CFMVP', 'AS', 'ASMVP', 'NBA1', 'NBA2', 'NBA3', 'DPOY', 'DEF1', 'DEF2', 'PC', 'RC', 'AC', 'SC', 'BC', 'ROY', 'ROOK1', 'ROOK2', 'ISTMVP', 'NBACUP', 'CPOY', '6MOY', "OLMP-G", "OLMP-S", "OLMP-B", "HUST", "TMATE", "MIP"]
     for s in model:
         if s.season not in seasons:
             if not s or not getattr(s, 'awards', None):
