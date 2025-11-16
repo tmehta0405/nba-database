@@ -34,6 +34,14 @@ def lformat(value):
         return 'NA'
     
 @register.filter
+def second(v):
+    return v[1]
+
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key, [])
+
+@register.filter
 def renderawards(value):
     if not isinstance(value, dict):
         return ""

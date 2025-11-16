@@ -225,19 +225,23 @@ def player_stats(request, player_name):
     return render(request, 'player_stats.html', context)
 
 def region(request):
-    countries = seasonData.objects.values_list('country', flat=True).distinct().order_by(
-        Case(
-            When(country='USA', then=Value(0)),
-            default=Value(1),
-            output_field=IntegerField()
-        ),
-        'country'
-    )
-
+    countries = seasonData.objects.values_list('country', flat=True).distinct().order_by('country')
+    
+    grouped_countries = {}
+    for country in countries:
+        if country:
+            first_letter = country[0].upper()
+            if first_letter not in grouped_countries:
+                grouped_countries[first_letter] = []
+            grouped_countries[first_letter].append(country)
+    
+    alpha = sorted(grouped_countries.keys())
+    
     context = {
-        'countries': countries
+        'grouped_countries': grouped_countries,
+        'letters': alpha
     }
-
+    
     return render(request, 'region.html', context)
 
 def countries(request, country):

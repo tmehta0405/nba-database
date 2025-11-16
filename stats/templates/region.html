@@ -1,17 +1,29 @@
 {% extends "template.html" %}
 {% load static %}
-{% block title %}DataBall | Region Leaderboard{% endblock %}
+{% load filters%}
+{% block title %}DataBall | Regions{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/region.css' %}">{% endblock %}
+{% block script%}<script src="{% static 'stats/js/region.js' %}"></script>{%endblock%}
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
     <h1>Regions</h1>
+    <div class='letter-bar'>
+        {%for l in letters%}
+            <p>{{l}}</p>
+        {%endfor%}
+    </div>
 </div>
 <div class='countries-container'>
-    {%for country in countries%}
-        {%if country%}
-             <a href="{%url 'countries' country=country%}"><div>{{country}}</div></a>
-        {%endif%}
+    {%for letter in letters%}
+        <div class='letter-section' id='letter={{letter}}'>
+            <h2>{{letter}}</h2>
+            <div class='letter-countries'>
+                {%for country in grouped_countries|get_item:letter%}
+                    <a href="{%url 'countries' country=country%}"><div>{{country}}</div></a>
+                {%endfor%}
+            </div>
+        </div>
     {%endfor%}
 </div>
 {% endblock %}
