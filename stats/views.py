@@ -539,7 +539,7 @@ def get_birthday_player(request):
     month = today.strftime("%m")
     day = today.strftime("%d")
     date_pattern = f"-{month}-{day}"
-    players_qs = seasonData.objects.filter(bday__contains=date_pattern)
+    players_qs = seasonData.objects.filter(bday__contains=date_pattern).order_by('-pts')
     players = list(players_qs.values('player_name', 'bday').distinct())
 
     unique_players = []
@@ -551,5 +551,5 @@ def get_birthday_player(request):
             unique_players.append({'player_name': name, 'birthday': p.get('bday')})
 
     if unique_players:
-        return JsonResponse({'success': True, 'players': unique_players})
+        return JsonResponse({'success': True, 'players': unique_players[:4]})
     return JsonResponse({'success': False, 'message': 'No NBA players were born today!'})
