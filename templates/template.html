@@ -17,10 +17,51 @@
 </head>
 
 <body>
+    <style>
+      footer {
+          background: var(--surface);
+          padding: 40px 20px;
+          text-align: center;
+          border-top: 1px solid var(--border);
+          margin-top: 80px;
+      }
+
+      .footer-links {
+          display: flex;
+          gap: 30px;
+          justify-content: center;
+          margin-bottom: 20px;
+          flex-wrap: wrap;
+      }
+
+      .footer-links a {
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-size: 14px;
+          transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+          color: var(--accent-primary);
+      }
+
+      footer p {
+          color: var(--text-secondary);
+          font-size: 14px;
+      }
+    </style>
     {%block content%}
     
     {%endblock%}
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+<footer>
+    <div class="footer-links">
+        <a href="#">About</a>
+        <a href="mailto:tirth11804@gmail.com">Contact</a>
+        <a href="https://github.com/tmehta0405" target="_blank">GitHub</a>
+    </div>
+    <p>&copy; 2025 DataBall | NBA Database</p>
+</footer>
 </html>

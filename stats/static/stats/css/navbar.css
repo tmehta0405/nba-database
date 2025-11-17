@@ -143,6 +143,11 @@
 .search-icon {
     color: var(--text);
     font-size: 1.5em;
+    transition: .2s ease;
+}
+
+.search-icon:hover {
+    color: var(--border-hover);
 }
 
 .dropdown-container {
@@ -163,7 +168,6 @@
 }
 
 .search-container {
-    background-color: var(--hover-bg);
     border: none;
     border-radius: 10px;
     height: 36px;
@@ -175,6 +179,3 @@
     justify-content: center; 
 }
 
-.search-container:hover {
-    background-color: var(--border);
-}

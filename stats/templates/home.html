@@ -5,5 +5,32 @@
 {% block script %}<script src="{% static 'stats/js/home.js' %}"></script>{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
+<div class="container">
+        <div class="hero">
+            <h1 id="typewriter-text"></h1>
+            <p class="subtitle">Your New Main NBA Database</p>
+            <p class="description">
+                Access comprehensive basketball statistics, player data, team records, and historical information all in one powerful database.
+            </p>
+            <div class="cta-buttons">
+                <a href="{%url 'search'%}" class="cta-button">Search</a>
+                <a href="https://github.com/tmehta0405" target='_blank' class="cta-button secondary">GitHub</a>
+            </div>
+            <div class="stats-preview">
+                <div class="stat-item">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Players</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label">Seasons</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30K+</div>
+                    <div class="stat-label">Entries</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

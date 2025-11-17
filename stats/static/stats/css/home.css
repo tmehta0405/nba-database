@@ -5,12 +5,18 @@
 :root {
   color-scheme: light dark;
   
-  --bg: light-dark(#f8fafc, #0f172a);
-  --surface: light-dark(#ffffff, #1e293b);
-  --text: light-dark(#1e293b, #f1f5f9);
-  --text-secondary: light-dark(#475569, #cbd5e1);
-  --accent-primary: light-dark(#dc2626, #ef4444);
-  --accent-secondary: #f59e0b;
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --navbar-bg: light-dark(#ffffff, #161b22);
+  --dropdown-bg: light-dark(#ffffff, #0d1117);
+  --hover-bg: light-dark(#f3f4f6, #30363d);
 }
 
 * {
@@ -20,11 +26,177 @@
 }
 
 body {
+    font-family: 'JetBrains Mono', monospace;
     background: var(--bg);
-}   
-
-h1 {
     color: var(--text);
-    font-family: 'Jetbrains Mono';
-    font-weight: 450;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.hero {
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+    color: var(--text);
+    font-weight: 700;
+    min-height: 90px;
+}
+
+.typewriter::after {
+    content: '_';
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s step-end infinite;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease 2s forwards;
+}
+
+.description {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s ease 2.5s forwards;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeIn 1s ease 3s forwards;
+}
+
+.cta-button {
+    background: var(--accent-primary);
+    color: var(--bg);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.cta-button:hover {
+    background: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--border);
+}
+
+.cta-button.secondary:hover {
+    border-color: var(--border-hover);
+}
+
+.stats-preview {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeIn 1s ease 3.5s forwards;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveLine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(0) translateX(20px); }
+    75% { transform: translateY(20px) translateX(10px); }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 48px;
+        min-height: 60px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
 }
