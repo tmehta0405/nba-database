@@ -147,7 +147,7 @@ def populate_awards():
     print(f"Populated awards for {len(season_awards)} seasons")
 
 populate_awards()
-'''
+
 import os
 import sys
 import django
@@ -325,3 +325,35 @@ for player in playerList:
 save_cache(cache_data)
 print(f"\nTotal new players processed: {save_counter}")
 print(f"Players with playoff appearances: {players_with_playoffs}")
+'''
+
+import os
+import sys
+import django
+import json
+from pathlib import Path
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nba_data_site.settings')
+django.setup()
+
+from nba_api.stats.endpoints import commonplayerinfo
+from nba_api.stats.static import players
+from stats.models import seasonData
+import pandas as pd
+import numpy as np
+import time
+
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', None)
+
+usaplayers = seasonData.objects.filter(country='USA').distinct('player_id')
+player_ids = [p.player_id for p in usaplayers]
+for pid in player_ids:
+    bp = commonplayerinfo.CommonPlayerInfo(player_id=pid).get_data_frames()[0]['BIRTHSTATE'].iloc[0]
+    print(bp)
+
+    
