@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 
 :root {
   color-scheme: light dark;
@@ -32,7 +34,7 @@ body {
 
 h1 {
     color: var(--text);
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
     font-weight: 450;
     transition: all 0.3s ease;
 }
@@ -125,7 +127,7 @@ button:hover {
     display: none;
     position: relative; 
     width: 100%;
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
     font-weight: 450;
     background: transparent;
     border-radius: 10px;
@@ -166,7 +168,7 @@ button:hover {
     text-decoration: none;
     min-width: 160px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
     font-weight: 450;
     opacity: 0;
     transform: translateY(10px);
@@ -220,7 +222,7 @@ button:hover {
 }
 
 input[type='text'] {
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
     color: var(--text);
     background: none;
     border: none;
@@ -261,7 +263,7 @@ input:focus {
 
 .back-link {
     color: var(--text); 
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
     margin-top: 20px;
     text-decoration: none;
     background-color: var(--hover-bg);
@@ -287,7 +289,7 @@ input:focus {
 .suggestion-item {
     padding: 10px 15px;
     cursor: pointer;
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
     color: var(--text);
     transition: background-color 0.2s ease, padding-left 0.2s ease;
     display: flex;

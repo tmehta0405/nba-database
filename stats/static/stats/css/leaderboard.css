@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 
 :root {
   color-scheme: light dark;
@@ -28,12 +30,12 @@
 
 body {
     background: var(--bg);
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
 }   
 
 h1 {
     color: var(--text);
-    font-family: 'Fredoka';
+    font-family: 'Jetbrains Mono';
     font-weight: 450;
 }
 
