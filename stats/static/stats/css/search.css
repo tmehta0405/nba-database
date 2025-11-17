@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+:root {
+  color-scheme: light dark;
+  
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --input-bg: light-dark(#f6f8fa, #3f3f46);
+  --input-focus: light-dark(#e5e7eb, #52525b);
+  --hover-bg: light-dark(#f3f4f6, #30363d);
+  --suggestion-hover: light-dark(#e5e7eb, #52525b);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,20 +25,20 @@
 }
 
 body {
-    background: #18181b;
+    background: var(--bg);
     overflow-x: hidden;
     overflow-y: hidden;
 }   
 
 h1 {
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
     font-weight: 450;
     transition: all 0.3s ease;
 }
 
 .search-icon {
-    color: white;
+    color: var(--text);
     font-size: 1.5em;
 }
 
@@ -28,7 +46,7 @@ h1 {
     position: absolute;
     top: 15px;
     left: 15px;
-    color: #fafafa;
+    color: var(--text);
     text-decoration: none;
     font-size: 24px;
     display: flex;
@@ -38,7 +56,7 @@ h1 {
 
 .cake {
     position: absolute;
-    color: #fafafa;
+    color: var(--text);
     top: 15px;
     right: 15px;
     font-size: 24px;
@@ -46,11 +64,11 @@ h1 {
 }
 
 .back-button:hover {
-    color: #6e7078;
+    color: var(--accent-primary);
 }
 
 button {
-    background-color: #27272a;
+    background-color: var(--hover-bg);
     border: none;
     border-radius: 10px;
     height: 36px;
@@ -63,7 +81,7 @@ button {
 }
 
 button:hover {
-    background-color: #52525b;
+    background-color: var(--border);
 }
 
 .container {
@@ -77,7 +95,8 @@ button:hover {
 
 .home-container {
     position: relative;
-    background-color: #27272a;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -111,7 +130,7 @@ button:hover {
     background: transparent;
     border-radius: 10px;
     padding: 0 0 12px 0;
-    color: #fafafa;
+    color: var(--text);
     z-index: 50;
     margin-bottom: 8px;
     opacity: 0;
@@ -140,9 +159,10 @@ button:hover {
     flex-direction: column;
     gap: 4px;
     padding: 10px 14px;
-    background: #272729;
+    background: var(--card-bg);
+    border: 2px solid var(--border);
     border-radius: 10px;
-    color: #fafafa; 
+    color: var(--text); 
     text-decoration: none;
     min-width: 160px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -155,25 +175,26 @@ button:hover {
 
 .player-item:hover {
     transform: translateY(-4px);
-    background: #2b2b2f;
+    border-color: var(--border-hover);
+    box-shadow: 0 0 0 1px var(--border-hover);
 }
 
 .player-item strong { 
     font-size: 1em; 
-    color: #ffffff; 
+    color: var(--text); 
     font-weight: 450; 
 }
 
 .player-item .bday { 
     font-size: 0.85em; 
-    color: #ffffff; 
+    color: var(--text-secondary); 
     font-weight: 450; 
 }
 
 #player-reveal h2 { 
     margin: 0 0 6px 0; 
     font-size: 1.05em; 
-    color: #fafafa; 
+    color: var(--text); 
 }
 #player-reveal p { 
     margin: 0; 
@@ -188,7 +209,7 @@ button:hover {
 }
 
 #player-link:focus { 
-    outline: 2px solid rgba(245,158,11,0.2); 
+    outline: 2px solid var(--accent-primary); 
     border-radius: 6px; 
 }
 
@@ -198,13 +219,12 @@ button:hover {
     gap: 10px;
 }
 
-
 input[type='text'] {
     font-family: 'Fredoka';
-    color: #fafafa;
+    color: var(--text);
     background: none;
     border: none;
-    background: #3f3f46;
+    background: var(--input-bg);
     border-radius: 10px;
     padding: 10px;
     width: 40vw;
@@ -212,7 +232,7 @@ input[type='text'] {
 
 input:focus {
     outline: none;
-    background-color: #52525b;
+    background-color: var(--input-focus);
     transition: .3s;
 }
 
@@ -225,7 +245,8 @@ input:focus {
     top: 100%;
     left: 0;
     right: 0;
-    background: #3f3f46;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
     border-top: none;
     border-radius: 10px;  
     max-height: 300px;
@@ -236,15 +257,15 @@ input:focus {
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    
 }
 
 .back-link {
-    color: #fafafa; 
+    color: var(--text); 
     font-family: 'Fredoka';
     margin-top: 20px;
     text-decoration: none;
-    background-color: #27272a;
+    background-color: var(--hover-bg);
+    border: 1px solid var(--border);
     padding: 15px 25px;
     text-decoration: none; 
     display: inline-block; 
@@ -253,9 +274,9 @@ input:focus {
 }
 
 .back-link:hover {
-    background-color: #52525b;
+    background-color: var(--border);
+    border-color: var(--border-hover);
 }
-
 
 .suggestions-dropdown.show {
     display: block;
@@ -263,12 +284,11 @@ input:focus {
     transform: translateY(0);
 }
 
-
 .suggestion-item {
     padding: 10px 15px;
     cursor: pointer;
     font-family: 'Fredoka';
-    color: #fafafa;
+    color: var(--text);
     transition: background-color 0.2s ease, padding-left 0.2s ease;
     display: flex;
     justify-content: space-between;
@@ -277,7 +297,7 @@ input:focus {
 }
 
 .suggestion-item:hover {
-    background-color: #52525b;
+    background-color: var(--suggestion-hover);
     padding-left: 20px;  
 }
 
@@ -286,11 +306,9 @@ input:focus {
 }
 
 .suggestion-item.active {
-    background-color: #52525b;
+    background-color: var(--suggestion-hover);
     padding-left: 20px;
 }
-
-
 
 .fish {
     position: absolute;
@@ -299,7 +317,6 @@ input:focus {
     opacity: 0;
     z-index: -1;
 }
-
 
 .player-name {
     font-weight: 500;
@@ -310,7 +327,6 @@ input:focus {
     margin-left: auto;
     white-space: nowrap;    
 }
-
 
 @keyframes containerSlide {
     0% {
@@ -353,4 +369,3 @@ input:focus {
         opacity: 0;
     }
 }
-

@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+:root {
+  color-scheme: light dark;
+  
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --overlay: light-dark(rgba(209, 217, 224, 0.2), rgba(48, 54, 61, 0.2));
+  --overlay-hover: light-dark(rgba(86, 177, 103, 0.1), rgba(86, 177, 103, 0.15));
+  --badge-bg: light-dark(rgba(209, 217, 224, 0.5), rgba(48, 54, 61, 0.5));
+  --bar-bg: light-dark(#f6f8fa, #010409);
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -11,19 +29,19 @@
 }
 
 body {
-    background: #18181b;
-    color: #fafafa;
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Fredoka';
 }   
 
 h1 {
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
     font-weight: 450;
 }
 
 h2 {
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
     font-weight: 400;
     font-size: 1.5rem;
@@ -46,7 +64,7 @@ h2 {
 
 .letter-section h2 {
     padding-left: 10px;
-    border-left: 2px solid #fafafa;
+    border-left: 2px solid var(--accent-primary);
 }
 
 .letter-colleges {
@@ -56,7 +74,7 @@ h2 {
 }
 
 .letter-colleges a {
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
     text-decoration: none;
 }
@@ -67,15 +85,16 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #52525b;
-    background-color: #272729;
-    transition: .2s ease;
+    border: 2px solid var(--border);
+    background-color: var(--card-bg);
+    transition: border 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     min-width: 150px;
 }
 
 .letter-colleges div:hover {
-    border-color: #fafafa;
+    border-color: var(--border-hover);
     transform: translateY(-2px);
+    box-shadow: 0 0 0 1px var(--border-hover);
 }
 
 .center {
@@ -89,9 +108,9 @@ h2 {
 }
 
 .letter-bar {
-    background-color: #070707;
+    background-color: var(--bar-bg);
     border-radius: 20px;
-    border: 2px solid #52525b;
+    border: 2px solid var(--border);
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -106,10 +125,10 @@ h2 {
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 5px;
-    transition: .2s ease;
+    transition: background 0.2s ease;
     user-select: none;
 }
 
 .letter-bar p:hover {
-    background-color: #272729;
+    background-color: var(--overlay-hover);
 }

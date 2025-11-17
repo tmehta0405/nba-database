@@ -1,10 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+:root {
+  color-scheme: light dark;
+  
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --navbar-bg: light-dark(#ffffff, #161b22);
+  --dropdown-bg: light-dark(#ffffff, #0d1117);
+  --hover-bg: light-dark(#f3f4f6, #30363d);
+}
+
 .nhr {
     margin-top: 0;
     border: none;
     height: 2px;
-    background-color: #fafafa;
+    background-color: var(--accent-primary);
 }
 
 .navbar-logo {
@@ -25,11 +42,11 @@
 .dropdown-content-section h3 {
     font-family: 'Fredoka';
     font-weight: 500;
-    color: #fafafa;
+    color: var(--text);
 }
 
 .hr {
-    border-bottom: 2px solid #6e6e79;
+    border-bottom: 2px solid var(--border);
 }
 
 .left-align {
@@ -51,15 +68,16 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    background-color: #272729;
+    background-color: var(--navbar-bg);
     padding: 8px 30px;
     height: 65px;
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar-item {
     font-family: 'Fredoka';
     font-weight: 450;
-    color: #fafafa;
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -70,13 +88,13 @@
 
 .dropdown-content {
     position: absolute;
-    background-color: #2e2e2f;
+    background-color: var(--dropdown-bg);
     margin-top: 1px;
     z-index: 1;
     top: 100%;
     left: 0;
     border-radius: 8px;
-    border: 2px solid #6e6e79;
+    border: 2px solid var(--border);
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
@@ -87,6 +105,7 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .bonus-width {
@@ -109,17 +128,18 @@
     font-family: 'Fredoka';
     font-weight: 450;
     font-size: 16px;
-    color: #fafafa;
+    color: var(--text);
     text-decoration: none;
     transition: .2s;
 }
 
 .dropdown-link:hover {
     transform: translateY(-2px);
+    color: var(--accent-primary);
 }
 
 .search-icon {
-    color: white;
+    color: var(--text);
     font-size: 1.5em;
 }
 
@@ -141,7 +161,7 @@
 }
 
 .search-container {
-    background-color: #27272a;
+    background-color: var(--hover-bg);
     border: none;
     border-radius: 10px;
     height: 36px;
@@ -154,6 +174,5 @@
 }
 
 .search-container:hover {
-    background-color: #52525b;
+    background-color: var(--border);
 }
-

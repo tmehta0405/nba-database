@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+:root {
+  color-scheme: light dark;
+  
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --overlay: light-dark(rgba(209, 217, 224, 0.2), rgba(48, 54, 61, 0.2));
+  --overlay-hover: light-dark(rgba(86, 177, 103, 0.1), rgba(86, 177, 103, 0.15));
+  --badge-bg: light-dark(rgba(209, 217, 224, 0.5), rgba(48, 54, 61, 0.5));
+  --scrollbar-track: light-dark(rgba(209, 217, 224, 0.3), rgba(48, 54, 61, 0.3));
+  --scrollbar-thumb: light-dark(#818b98, #484f58);
+  --scrollbar-thumb-hover: light-dark(#56b167, #6cc177);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +27,11 @@
 }
 
 body {
-    background: #18181b;
+    background: var(--bg);
 }   
 
 h1 {
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
     font-weight: 450;
 }
@@ -41,31 +61,32 @@ h1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
-    background-color: #272729;
+    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 24px;
-    transition: border 0.2s ease;
-    border: 2px solid #52525b;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid var(--border);
     min-height: 150px;
 }
 
 .card:hover {
-    border: 2px solid #fafafa;
+    border: 2px solid var(--border-hover);
+    box-shadow: 0 0 0 1px var(--border-hover);
 }
 
 .card h4 {
     font-weight: 450;
     font-size: 28px;
-    color: #ffffff;
+    color: var(--text);
     margin-bottom: 12px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #52525b;
+    border-bottom: 2px solid var(--border);
 }
 
 .card p {
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
     font-size: 15px;
     font-weight: 500;
@@ -85,23 +106,23 @@ h1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
-    background-color: #272729;
+    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 24px;
     transition: border 0.2s ease;
-    border: 2px solid #52525b;
+    border: 2px solid var(--border);
     width: 100%;
 }
 
 .teams-award-title {
     font-weight: 450;
     font-size: 28px;
-    color: #ffffff;
+    color: var(--text);
     margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #52525b;
+    border-bottom: 2px solid var(--border);
 }
 
 .teams-grid-3 {
@@ -125,7 +146,7 @@ h1 {
 .team-header {
     font-size: 18px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text);
     padding-bottom: 4px;
 }
 
@@ -135,33 +156,33 @@ h1 {
     grid-template-columns: 1fr auto;
     gap: 12px;
     padding: 10px 14px;
-    background-color: rgba(82, 82, 91, 0.2);
+    background-color: var(--overlay);
     border-radius: 8px;
     transition: background 0.2s ease, border 0.2s ease;
     align-items: center;
-    border: 1px solid #52525b;
+    border: 1px solid var(--border);
 }
 
 .team-player:hover {
-    background-color: rgba(82, 82, 91, 0.35);
-    border-color: #fafafa;
+    background-color: var(--overlay-hover);
+    border-color: var(--border-hover);
 }
 
 .team-player-name {
     font-size: 15px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text);
 }
 
 .team-player-team {
     font-size: 13px;
-    color: #fafafa;
+    color: var(--text);
     font-weight: 600;
     padding: 4px 10px;
-    background-color: rgba(82, 82, 91, 0.5);
+    background-color: var(--badge-bg);
     border-radius: 6px;
     white-space: nowrap;
-    border: 1px solid #52525b;
+    border: 1px solid var(--border);
 }
 
 .all-nba-container {
@@ -177,23 +198,23 @@ h1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
-    background-color: #272729;
+    background-color: var(--card-bg);
     border-radius: 16px;
     padding: 24px;
     transition: border 0.2s ease;
-    border: 2px solid #52525b;
+    border: 2px solid var(--border);
     max-height: 600px;
 }
 
 .all-nba-card-title {
     font-weight: 450;
     font-size: 28px;
-    color: #ffffff;
+    color: var(--text);
     margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #52525b;
+    border-bottom: 2px solid var(--border);
 }
 
 .all-nba-stat-container {
@@ -210,18 +231,18 @@ h1 {
 }
 
 .all-nba-stat-container::-webkit-scrollbar-track {
-    background: rgba(82, 82, 91, 0.3);
+    background: var(--scrollbar-track);
     border-radius: 4px;
 }
 
 .all-nba-stat-container::-webkit-scrollbar-thumb {
-    background: #52525b;
+    background: var(--scrollbar-thumb);
     border-radius: 4px;
     transition: .2s ease;
 }
 
 .all-nba-stat-container::-webkit-scrollbar-thumb:hover {
-    background: #fafafa;
+    background: var(--scrollbar-thumb-hover);
 }
 
 .player-grid {
@@ -230,33 +251,33 @@ h1 {
     grid-template-columns: 1fr auto;
     gap: 12px;
     padding: 10px 14px;
-    background-color: rgba(82, 82, 91, 0.2);
+    background-color: var(--overlay);
     border-radius: 8px;
     transition: background 0.2s ease, border 0.2s ease;
     align-items: center;
-    border: 1px solid #52525b;
+    border: 1px solid var(--border);
 }
 
 .player-grid:hover {
-    background-color: rgba(82, 82, 91, 0.35);
-    border-color: #fafafa;
+    background-color: var(--overlay-hover);
+    border-color: var(--border-hover);
 }
 
 .player_name {
     font-size: 15px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text);
 }
 
 .player_teams {
     font-size: 13px;
-    color: #fafafa;
+    color: var(--text);
     font-weight: 600;
     padding: 4px 10px;
-    background-color: rgba(82, 82, 91, 0.5);
+    background-color: var(--badge-bg);
     border-radius: 6px;
     white-space: nowrap;
-    border: 1px solid #52525b;
+    border: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {

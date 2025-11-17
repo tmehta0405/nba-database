@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+:root {
+  color-scheme: light dark;
+  
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --table-header: light-dark(#e5e7eb, #30363d);
+  --table-stripe: light-dark(#f9fafb, #0d1117);
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -12,13 +28,13 @@
 
 body {
     overflow-x: hidden;
-    background: #18181b;
+    background: var(--bg);
     font-family: 'Fredoka';
     padding-bottom: 20px;
 }
 
 h1 {
-    color: #fafafa;
+    color: var(--text);
     font-size: 3em;
     text-align: center;
     font-weight: 450;
@@ -55,20 +71,18 @@ h1 {
     padding: 20px;
 }
 
-
 .flex-item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-
 .back-button {
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #fafafa;
+    color: var(--text);
     text-decoration: none;
     font-size: 24px;
     display: flex;
@@ -77,7 +91,7 @@ h1 {
 }
 
 .back-button:hover {
-    color: #52525b;
+    color: var(--accent-primary);
 }
 
 .content-table {
@@ -95,11 +109,11 @@ h1 {
 }
 
 .content-table thead .season-stat {
-    background-color: #52525b;
+    background-color: var(--table-header);
 }
 
 .content-table thead tr th {
-    color: #fafafa;
+    color: var(--text);
     font-weight: 500;
     text-align: left;
 }
@@ -116,11 +130,11 @@ h1 {
 }
 
 .content-table tbody .season-stat {
-    color: #fafafa;
+    color: var(--text);
 }
 
 .content-table tbody .season-stat:nth-of-type(even) {
-    background-color: #27272a;
+    background-color: var(--table-stripe);
 }
 
 .award-section {
@@ -137,7 +151,7 @@ h1 {
 }
 
 .award-section p {
-    color: #fafafa;
+    color: var(--text);
 }
 
 .total-awards-container {
@@ -146,7 +160,7 @@ h1 {
     justify-content: center;
     flex-wrap: wrap;
     border-radius: 10px;
-    color: #fafafa;
+    color: var(--text);
     text-align: center;
     padding: 20px;
     gap: 20px;
@@ -155,18 +169,18 @@ h1 {
 
 h2 {
     font-weight: 500;
-    color: #fafafa;
+    color: var(--text);
     margin-bottom: 8px;
     margin-top: 0px;
 }
 
 .content-table tbody .totals,
 .content-table thead tr {
-    background-color: #52525b;
+    background-color: var(--table-header);
 }
 
 .content-table tbody .totals td {
-    color: #fafafa;
+    color: var(--text);
     font-weight: 500;
     text-align: left;
 }
@@ -178,7 +192,7 @@ h2 {
 
 .content-table tbody .season-stat:hover {
     transition: .3s;
-    border-left: 2px solid #fafafa;
+    border-left: 2px solid var(--border-hover);
     transform: translateX(1px);
 }
 
@@ -191,10 +205,9 @@ h2 {
     margin-bottom: 20px;
 }
 
-
 .total-awards .total-awards-container div {
     text-align: center;
-    color: #fafafa;
+    color: var(--text);
     transition: all .3s ease;
     cursor: pointer;
 }
@@ -206,17 +219,15 @@ h2 {
     flex-wrap: wrap;
     gap: 20px;
     border-radius: 10px;
-    color: #fafafa;
+    color: var(--text);
     text-align: center;
     padding: 20px;
     width: 95%;
 }
 
-
-
 .general-stats-container a {
     text-decoration: none;
-    color: #fafafa;
+    color: var(--text);
 }
 
 .general-stats-container .general-stat {
@@ -234,13 +245,14 @@ h2 {
     justify-content: center;
     width: 200px;
     height: 50px;
-    background-color: #272729;
-    border: 2px solid #52525b;
-    transition: .2s ease;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 .general-stats-container .general-stat .general-stat-item:hover {
-    border: 2px solid #fafafa;
+    border: 2px solid var(--border-hover);
+    box-shadow: 0 0 0 1px var(--border-hover);
 }
 
 .hw-stat-item {
@@ -249,7 +261,7 @@ h2 {
     justify-content: center;
     width: 100px;
     height: 50px;
-    background-color: #272729;
+    background-color: var(--card-bg);
 }
 
 .hw-stat-item-l {
@@ -260,16 +272,15 @@ h2 {
 .hw-stat-item-r {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    border-left: 2px solid #52525b;
+    border-left: 2px solid var(--border);
 }
-
 
 .hw-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    border: 2px solid #52525b;
+    border: 2px solid var(--border);
     border-radius: 12px;
 }
 
@@ -292,7 +303,7 @@ h2 {
 }
 
 .center p {
-    color: #fafafa;
+    color: var(--text);
     font-family: 'Fredoka';
     margin-bottom: 5px;
 }
@@ -305,6 +316,6 @@ h2 {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: #272729;
-    border: 2px solid #52525b;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
 }
