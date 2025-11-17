@@ -123,39 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-function createFish() {
-    const fish = document.createElement('i');
-    fish.className = 'fas fa-solid fa-basketball fish';
-    fish.style.top = Math.random() * 100 + '%';
-    fish.style.setProperty('--wave', (Math.random() * 100 - 50) + 'px');
-    const duration = Math.random() * 4 + 6;
-    fish.style.animationDuration = duration + 's';
-    fish.style.animationDelay = Math.random() * 2 + 's';
-    fish.style.fontSize = (Math.random() * 15 + 20) + 'px';
-    fish.style.color = Math.random() > 0.5 ? '#272729' : '#3f4045';
-    
-    if (Math.random() > 0.5) {
-        fish.style.animationName = 'swim';
-    } else {
-        fish.style.animationName = 'swimReverse';
-    }
-    
-    document.body.appendChild(fish);
-    
-    setTimeout(() => {
-        fish.remove();
-    }, (duration + 2) * 1000 + 2000);
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    setInterval(createFish, 400);
-    
-    for (let i = 0; i < 10; i++) {
-        setTimeout(createFish, i * 400);
-    }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("searchInput");
   const suggestionsBox = document.getElementById("suggestions");

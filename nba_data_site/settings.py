@@ -40,8 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'stats',
     'django.contrib.humanize',
+    'django_crontab',
 ]
 
+CRONJOBS = [
+    ('0 * * * *', 'stats.tasks.update_nba_stats')
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
