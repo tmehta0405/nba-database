@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const text = "Search for a Player";
+    const text = "SEARCH FOR A PLAYER";
     const typewriterElement = document.getElementById('typewriter-search');
     let index = 0;
 
@@ -136,52 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
             hideSuggestions();
         }
     });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("searchInput");
-  const suggestionsBox = document.getElementById("suggestions");
-
-  input.addEventListener("input", () => {
-    const query = input.value.trim();
-    if (query.length < 2) {
-      suggestionsBox.innerHTML = "";
-      return;
-    }
-
-    fetch(`/search/suggestions/?q=${encodeURIComponent(query)}`)
-      .then((res) => res.json())
-      .then((data) => {
-        suggestionsBox.innerHTML = "";
-
-        data.suggestions.forEach((item) => {
-          const [name, years] = item.text.split(" — ");
-          const suggestion = document.createElement("div");
-          suggestion.classList.add("suggestion-item");
-
-          suggestion.innerHTML = `
-            <span class="player-name">${name}</span>
-            <span class="player-years">${years || ""}</span>
-          `;
-
-          suggestion.addEventListener("click", () => {
-            input.value = name;
-            suggestionsBox.innerHTML = "";
-          });
-
-          suggestionsBox.appendChild(suggestion);
-        });
-      })
-      .catch(() => {
-        suggestionsBox.innerHTML = "";
-      });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".search-input-wrapper")) {
-      suggestionsBox.innerHTML = "";
-    }
-  });
 });
 
 function revealPlayer() {
