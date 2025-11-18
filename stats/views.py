@@ -187,14 +187,17 @@ def search_suggestions(request):
 
     return JsonResponse({'suggestions': suggestions})
 
+from django.db.models.functions import Cast
+from django.db.models import IntegerField
+
 def draft(request, season):
     allcandidates = seasonData.objects.filter(draft_year=season)
     
-    round1 = allcandidates.filter(draft_round='1').annotate(
+    round1 = allcandidates.filter(draft_round='1').exclude(team_abbreviation='TOT').annotate(
         pick_num=Cast('draft_pick', IntegerField())
     ).order_by('pick_num')
     
-    round2 = allcandidates.filter(draft_round='2').annotate(
+    round2 = allcandidates.filter(draft_round='2').exclude(team_abbreviation='TOT').annotate(
         pick_num=Cast('draft_pick', IntegerField())
     ).order_by('pick_num')
     
