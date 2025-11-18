@@ -1,5 +1,6 @@
 {% extends "template.html" %}
 {% load static %}
+{% load filters%}
 {% block title %}DataBall | {{season}} Draft{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/draft.css' %}">{% endblock %}
 {% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}

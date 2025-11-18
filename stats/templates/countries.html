@@ -1,6 +1,7 @@
 {% extends "template.html" %}
 {% load static %}
 {% load humanize %}
+{% load filters%}
 {% block title %}DataBall | {{country}}{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/countries.css' %}">{% endblock %}
 {% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}

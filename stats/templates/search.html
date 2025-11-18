@@ -4,6 +4,7 @@
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/search.css' %}">{% endblock %}
 {% block script %}<script src="{% static 'stats/js/search.js' %}"></script>{% endblock %}
 {% block content %}
+{% load filters%}
 <div class='container'>
     <div id='player-reveal' aria-live="polite">
         <div class="players-list"></div>

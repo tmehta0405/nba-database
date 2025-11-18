@@ -1,6 +1,7 @@
 {% extends "template.html" %}
 {% load static %}
 {% load humanize %}
+{% load filters%}
 {% block title %}DataBall | {{college|capfirst}}{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/college_info.css' %}">{% endblock %}
 {% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}
