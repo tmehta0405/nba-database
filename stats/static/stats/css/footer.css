@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+    color-scheme: light dark;
+
+    --bg: light-dark(#ffffff, #0d1117);
+    --surface: light-dark(#f6f8fa, #161b22);
+    --text: light-dark(#1f2328, #e6edf3);
+    --text-secondary: light-dark(#59636e, #848d97);
+    --accent-primary: light-dark(#1f883d, #56b167);
+    --accent-secondary: light-dark(#0969da, #4493f8);
+    --border: light-dark(#d1d9e0, #30363d);
+    --border-hover: light-dark(#56b167, #6cc177);
+    --card-bg: light-dark(#ffffff, #161b22);
+    --table-header: light-dark(#e5e7eb, #30363d);
+    --table-stripe: light-dark(#f9fafb, #101e1c);
+}
+
+footer {
+    background: var(--surface);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    font-family: 'Jetbrains Mono';
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-primary);
+}
+
+footer p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}

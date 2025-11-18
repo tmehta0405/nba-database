@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+  color-scheme: light dark;
+  
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --overlay: light-dark(rgba(209, 217, 224, 0.2), rgba(48, 54, 61, 0.2));
+  --overlay-hover: light-dark(rgba(86, 177, 103, 0.1), rgba(86, 177, 103, 0.15));
+  --badge-bg: light-dark(rgba(209, 217, 224, 0.5), rgba(48, 54, 61, 0.5));
+  --scrollbar-track: light-dark(rgba(209, 217, 224, 0.3), rgba(48, 54, 61, 0.3));
+  --scrollbar-thumb: light-dark(#818b98, #484f58);
+  --scrollbar-thumb-hover: light-dark(#56b167, #6cc177);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: var(--bg);
+}   
+
+h1 {
+    color: var(--text);
+    font-family: 'Jetbrains Mono';
+    font-weight: 450;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.draft-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 40px 20px;
+}
+
+.draft-round-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--text);
+    font-family: 'Jetbrains Mono';
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    transition: border 0.2s ease;
+    border: 2px solid var(--border);
+    flex: 1;
+    min-width: 500px;
+}
+
+.draft-round-title {
+    font-weight: 450;
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+}
+
+.draft-picks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 8px;
+    max-height: 800px;
+}
+
+.draft-picks-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.draft-picks-container::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 4px;
+}
+
+.draft-picks-container::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+    transition: .2s ease;
+}
+
+.draft-picks-container::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+.draft-pick-item {
+    display: grid;
+    text-decoration: none;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    padding: 10px 14px;
+    background-color: var(--overlay);
+    border-radius: 8px;
+    transition: background 0.2s ease, border 0.2s ease;
+    align-items: center;
+    border: 1px solid var(--border);
+}
+
+.draft-pick-item:hover {
+    background-color: var(--overlay-hover);
+    border-color: var(--border-hover);
+}
+
+.draft-pick-number {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 30px;
+}
+
+.draft-player-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.draft-team-badge {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+    padding: 4px 10px;
+    background-color: var(--badge-bg);
+    border-radius: 6px;
+    white-space: nowrap;
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .draft-container {
+        padding: 20px 10px;
+    }
+
+    .draft-round-card {
+        min-width: 100%;
+    }
+
+    .draft-round-title {
+        font-size: 24px;
+    }
+
+    .draft-pick-item {
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+    }
+}
+
+#typewriter-search {
+    min-height: 40px; 
+}
+
+.typewriter-search::after {
+    content: '_';
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}

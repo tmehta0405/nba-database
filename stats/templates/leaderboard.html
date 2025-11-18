@@ -14,11 +14,7 @@
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
-{%if per%}
-    <h1 id='typewriter-search'>{{ stat|caps }} Leaderboard</h1>
-{%else%}
-    <h1 id='typewriter-search'>{{stat|title}} Leaderboard</h1>
-{%endif%}
+    <h1 id='typewriter-search'>{{ stat|caps }} LEADERBOARD</h1>
 </div>
 <div class='leaderboard-container'>
     {% for column in entries %}

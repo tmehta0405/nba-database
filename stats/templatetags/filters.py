@@ -193,3 +193,10 @@ def si(value):
         return f"{(int(value.split('-')[0]) * 12 + int(value.split('-')[1])) * 0.0254:.2f}m"
     else:
         return f"{.453592 * int(value[:3]):.2f}kg"
+
+@register.filter
+def ry(model): #list, 
+    for s in model:
+        if s.draft_year:
+            return s.draft_year
+    

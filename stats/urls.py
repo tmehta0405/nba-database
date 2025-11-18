@@ -15,6 +15,7 @@ urlpatterns = [
     path('leaderboard/<str:stat>/', views.leaderboard, name='leaderboard'),
     path('postseasonleaderboard/<str:stat>/', views.postseason_leaderboard, name='postseason_leaderboard'),
     path('countries/<str:country>/', views.countries, name='countries'),
+    path('draft/<str:season>/', views.draft, name='draft'),
     path('awards/<str:award>/', views.awards, name='awards'),
 ]
 

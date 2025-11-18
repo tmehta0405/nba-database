@@ -9,7 +9,7 @@ DataBall | {{award|tt}}s by Year
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
-    <h1 id='typewriter-search'>{{award|tt}}s by Year</h1>
+    <h1 id='typewriter-search'>{{award|tt|caps}}S BY YEAR</h1>
 </div>
 {%if not isgrouped%}
     {%if award == 'NBA' or award == 'DEF' or award == 'ROOK'%}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.exceptions import FieldError
 from django.db.models import Q, F, Case, When, Value, IntegerField, Sum, FloatField, ExpressionWrapper
+from django.db.models.functions import Cast
 from .models import seasonData, awardsBySeason, PlayoffSeasonData
 from datetime import datetime
 import random
@@ -185,6 +186,39 @@ def search_suggestions(request):
         suggestions.append({'id': idx, 'text': text})
 
     return JsonResponse({'suggestions': suggestions})
+
+def draft(request, season):
+    allcandidates = seasonData.objects.filter(draft_year=season)
+    
+    round1 = allcandidates.filter(draft_round='1').annotate(
+        pick_num=Cast('draft_pick', IntegerField())
+    ).order_by('pick_num')
+    
+    round2 = allcandidates.filter(draft_round='2').annotate(
+        pick_num=Cast('draft_pick', IntegerField())
+    ).order_by('pick_num')
+    
+    seen1 = set()
+    round1_unique = []
+    for player in round1:
+        if player.player_id not in seen1:
+            seen1.add(player.player_id)
+            round1_unique.append(player)
+    
+    seen2 = set()
+    round2_unique = []
+    for player in round2:
+        if player.player_id not in seen2:
+            seen2.add(player.player_id)
+            round2_unique.append(player)
+    
+    context = {
+        'season': season,
+        'round1': round1_unique,
+        'round2': round2_unique,
+        'allcandidates': allcandidates  
+    }
+    return render(request, 'draft.html', context)
 
 def player_stats(request, player_name):
     seasons = seasonData.objects.filter(

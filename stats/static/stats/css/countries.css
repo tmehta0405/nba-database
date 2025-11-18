@@ -32,7 +32,6 @@ body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Jetbrains Mono';
-    padding-bottom: 50px;
 }   
 
 h1 {

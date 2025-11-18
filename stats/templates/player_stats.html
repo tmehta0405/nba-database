@@ -11,47 +11,49 @@
 </div>
 <div class='center'>
     <div class='center-item'>
-        <h2>general stats</h2>
+        <h2>GENERAL STATS</h2>
         <div class='general-stats-container'>
             <a href={%url 'countries' country=seasons|generalstats:'Country'%}>
                 <div class='general-stat'>
-                    <p>country</p>
+                    <p>COUNTRY</p>
                     <div class='general-stat-item'>{{seasons|generalstats:'Country'}}</div>
                 </div>
             </a>
             <a href={%url 'college' college=seasons|generalstats:'School'%}>
                 <div class='general-stat'>
-                    <p>school</p>
+                    <p>SCHOOL</p>
                     <div class='general-stat-item'>{{seasons|generalstats:'School'}}</div>
                 </div>
             </a>
             <div class='general-stat'>
-                <p>birthday</p>
+                <p>BIRTHDAY</p>
                 <div class='general-stat-item'>{{seasons|generalstats:'Birthday'}}</div>
             </div>
             <div class='general-stat'>
-                <p>height</p>
+                <p>HEIGHT</p>
                 <div class='hw-container'>
                     <div class='hw-stat-item hw-stat-item-l'>{{seasons|generalstats:'Height'|formatheight}}</div>
                     <div class='hw-stat-item hw-stat-item-r'>{{seasons|generalstats:'Height'|si}}</div>
                 </div>
             </div>
             <div class='general-stat'>
-                <p>weight</p>
+                <p>WEIGHT</p>
                 <div class='hw-container'>
                     <div class='hw-stat-item hw-stat-item-l'>{{seasons|generalstats:'Weight'}}</div>
                     <div class='hw-stat-item hw-stat-item-r'>{{seasons|generalstats:'Weight'|si}}</div>
                 </div>
             </div>
-            <div class='general-stat'>
-                <p>drafted</p>
-                <div class='general-stat-item'>{{seasons|generalstats:'Drafted'}}</div>
-            </div>
+            <a href="{%url 'draft' season=seasons|ry%}">
+                <div class='general-stat'>
+                    <p>DRAFTED</p>
+                    <div class='general-stat-item'>{{seasons|generalstats:'Drafted'}}</div>
+                </div>
+            </a>
         </div>
     </div>
     {%if seasons|checkawards%}
     <div class='center-item'>
-        <h2>total awards</h2>
+        <h2>TOTAL AWARDS</h2>
         <div class='total-awards-container'>
             {%for entry in seasons|sumawards%}
                 <div class='award-item'>
