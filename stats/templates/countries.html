@@ -3,10 +3,11 @@
 {% load humanize %}
 {% block title %}DataBall | {{country}}{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/countries.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
-    <h1>{{country}}</h1>
+    <h1 id='typewriter-search'>{{country}}</h1>
 </div>
 <div class='center total-center'>
     <h2 class='total-header'>total country stats</h2>

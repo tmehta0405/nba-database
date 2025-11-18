@@ -24,10 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const spacing = 40;
     const dotRadius = 2;
-    const maxDistance = 120;
-    const repelStrength = 40;
-
-    const mouse = { x: -1000, y: -1000 };
     const dots = [];
 
     class Dot {

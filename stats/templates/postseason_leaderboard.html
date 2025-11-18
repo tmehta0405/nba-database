@@ -10,13 +10,14 @@
 {%endif%}
 {% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/leaderboard.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
 {%if per%}
-    <h1>Playoff {{ stat|caps }} Leaderboard</h1>
+    <h1 id='typewriter-search'>Playoff {{ stat|caps }} Leaderboard</h1>
 {%else%}
-    <h1>Playoff {{stat|title}} Leaderboard</h1>
+    <h1 id='typewriter-search'>Playoff {{stat|title}} Leaderboard</h1>
 {%endif%}
 </div>
 <div class='leaderboard-container'>

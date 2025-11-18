@@ -5,10 +5,11 @@
 DataBall | {{award|tt}}s by Year
 {% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/awards.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
-    <h1>{{award|tt}}s by Year</h1>
+    <h1 id='typewriter-search'>{{award|tt}}s by Year</h1>
 </div>
 {%if not isgrouped%}
     {%if award == 'NBA' or award == 'DEF' or award == 'ROOK'%}

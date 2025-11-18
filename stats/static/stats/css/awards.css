@@ -310,3 +310,19 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+#typewriter-search {
+    min-height: 40px; 
+}
+
+.typewriter-search::after {
+    content: '_';
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}

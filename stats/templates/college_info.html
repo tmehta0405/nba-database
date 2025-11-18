@@ -3,10 +3,11 @@
 {% load humanize %}
 {% block title %}DataBall | {{college|capfirst}}{% endblock %}
 {% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/college_info.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}
 {% block content %}
 {% include 'navbar.html' %}
 <div class='center'>
-    <h1>{{college}}</h1>
+    <h1 id='typewriter-search'>{{college}}</h1>
 </div>
 <div class='center total-center'>
     <h2 class='total-header'>total school stats</h2>

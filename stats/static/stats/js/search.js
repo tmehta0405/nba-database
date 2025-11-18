@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const text = "Search for a Player";
+    const typewriterElement = document.getElementById('typewriter-search');
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            typewriterElement.innerHTML += text.charAt(index);
+            typewriterElement.classList.add('typewriter-search');
+            index++;
+            setTimeout(typeWriter, 100); 
+        }
+    }
+
+    setTimeout(typeWriter, 300); 
+    
     const searchInput = document.getElementById('searchInput');
     const suggestionsDiv = document.getElementById('suggestions');
     let debounceTimer;
