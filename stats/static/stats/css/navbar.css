@@ -22,8 +22,8 @@
 .nhr {
     margin-top: 0;
     border: none;
-    height: 2px;
-    background-color: var(--accent-primary);
+    height: 1px;
+    background-color: var(--border);
 }
 
 .navbar-logo {
@@ -31,7 +31,9 @@
 }
 
 .navbar-logo-text {
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-container {
@@ -73,11 +75,10 @@
     background-color: var(--navbar-bg);
     padding: 8px 30px;
     height: 65px;
-    border-bottom: 1px solid var(--border);
 }
 
 .navbar-item {
-    font-family: 'Jetbrains Mono';
+    font-family: 'Fredoka';
     font-weight: 450;
     color: var(--text);
     text-decoration: none;

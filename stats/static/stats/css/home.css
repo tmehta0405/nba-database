@@ -19,6 +19,10 @@
   --hover-bg: light-dark(#f3f4f6, #30363d);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
     margin: 0;
     padding: 0;
