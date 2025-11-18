@@ -44,12 +44,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 50px 20px;
 }
 
 .hero {
     text-align: center;
     max-width: 900px;
+    background: var(--card-bg);
+    padding: 60px 40px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -181,6 +188,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
     .hero h1 {
         font-size: 48px;
         min-height: 60px;
@@ -203,4 +214,14 @@ body {
         width: 100%;
         max-width: 300px;
     }
+}
+
+#dots-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
 }

@@ -9,90 +9,88 @@
             </a>
         </div>
         <div class='dropdown-container'>
-            <p class='navbar-item navbar-dropdown'>Regular Season Leaderboards</p>
-            <div class='dropdown-content'>
-                <div class='dropdown-content-section'>
-                    <h3>Career Totals</h3>
-                    <div class='dropdown-content-links'>
-                        <a href="{% url 'leaderboard' 'career points' %}" class='dropdown-link'>Points</a>
-                        <a href="{% url 'leaderboard' 'career rebounds' %}" class='dropdown-link'>Rebounds</a>
-                        <a href="{% url 'leaderboard' 'career assists' %}" class='dropdown-link'>Assists</a>
-                        <a href="{% url 'leaderboard' 'career steals' %}" class='dropdown-link'>Steals</a>
-                        <a href="{% url 'leaderboard' 'career blocks' %}" class='dropdown-link'>Blocks</a>
+            <p class='navbar-item navbar-dropdown'>Leaderboards</p>
+            <div class='dropdown-content bonus-width dropdown-two-column'>
+                <div class='dropdown-column dropdown-column-left'>
+                    <div class='dropdown-content-section'>
+                        <h3>Regular Season</h3>
+                    </div>
+                    <div class='dropdown-content-section'>
+                        <h3>Career Totals</h3>
+                        <div class='dropdown-content-links'>
+                            <a href="{% url 'leaderboard' 'career points' %}" class='dropdown-link'>Points</a>
+                            <a href="{% url 'leaderboard' 'career rebounds' %}" class='dropdown-link'>Rebounds</a>
+                            <a href="{% url 'leaderboard' 'career assists' %}" class='dropdown-link'>Assists</a>
+                            <a href="{% url 'leaderboard' 'career steals' %}" class='dropdown-link'>Steals</a>
+                            <a href="{% url 'leaderboard' 'career blocks' %}" class='dropdown-link'>Blocks</a>
+                        </div>
+                    </div>
+                    <div class='hr'></div>
+                    <div class='dropdown-content-section'>
+                        <h3>Season Totals</h3>
+                        <div class='dropdown-content-links'>
+                            <a href="{% url 'leaderboard' 'points' %}" class='dropdown-link'>Points</a>
+                            <a href="{% url 'leaderboard' 'rebounds' %}" class='dropdown-link'>Rebounds</a>
+                            <a href="{% url 'leaderboard' 'assists' %}" class='dropdown-link'>Assists</a>
+                            <a href="{% url 'leaderboard' 'steals' %}" class='dropdown-link'>Steals</a>
+                            <a href="{% url 'leaderboard' 'blocks' %}" class='dropdown-link'>Blocks</a>
+                        </div>
+                    </div>
+                    <div class='hr'></div>
+                    <div class='dropdown-content-section'>
+                        <h3>Per Game</h3>
+                        <div class='dropdown-content-links'>
+                            <a href="{% url 'leaderboard' 'ppg' %}" class='dropdown-link'>PPG</a>
+                            <a href="{% url 'leaderboard' 'rpg' %}" class='dropdown-link'>RPG</a>
+                            <a href="{% url 'leaderboard' 'apg' %}" class='dropdown-link'>APG</a>
+                            <a href="{% url 'leaderboard' 'spg' %}" class='dropdown-link'>SPG</a>
+                            <a href="{% url 'leaderboard' 'bpg' %}" class='dropdown-link'>BPG</a>
+                        </div>
                     </div>
                 </div>
-                <div class='hr'></div>
-                <div class='dropdown-content-section'>
-                    <h3>Season Totals</h3>
-                    <div class='dropdown-content-links'>
-                        <a href="{% url 'leaderboard' 'points' %}" class='dropdown-link'>Points</a>
-                        <a href="{% url 'leaderboard' 'rebounds' %}" class='dropdown-link'>Rebounds</a>
-                        <a href="{% url 'leaderboard' 'assists' %}" class='dropdown-link'>Assists</a>
-                        <a href="{% url 'leaderboard' 'steals' %}" class='dropdown-link'>Steals</a>
-                        <a href="{% url 'leaderboard' 'blocks' %}" class='dropdown-link'>Blocks</a>
+                <div class='dropdown-divider'></div>
+                <div class='dropdown-column dropdown-column-right'>
+                    <div class='dropdown-content-section'>
+                        <h3>Postseason</h3>
                     </div>
-                </div>
-                <div class='hr'></div>
-                <div class='dropdown-content-section'>
-                    <h3>Per Game</h3>
-                    <div class='dropdown-content-links'>
-                        <a href="{% url 'leaderboard' 'ppg' %}" class='dropdown-link'>PPG</a>
-                        <a href="{% url 'leaderboard' 'rpg' %}" class='dropdown-link'>RPG</a>
-                        <a href="{% url 'leaderboard' 'apg' %}" class='dropdown-link'>APG</a>
-                        <a href="{% url 'leaderboard' 'spg' %}" class='dropdown-link'>SPG</a>
-                        <a href="{% url 'leaderboard' 'bpg' %}" class='dropdown-link'>BPG</a>
+                    <div class='dropdown-content-section'>
+                        <h3>Career Totals</h3>
+                        <div class='dropdown-content-links'>
+                            <a href="{% url 'postseason_leaderboard' 'career points' %}" class='dropdown-link'>Points</a>
+                            <a href="{% url 'postseason_leaderboard' 'career rebounds' %}" class='dropdown-link'>Rebounds</a>
+                            <a href="{% url 'postseason_leaderboard' 'career assists' %}" class='dropdown-link'>Assists</a>
+                            <a href="{% url 'postseason_leaderboard' 'career steals' %}" class='dropdown-link'>Steals</a>
+                            <a href="{% url 'postseason_leaderboard' 'career blocks' %}" class='dropdown-link'>Blocks</a>
+                        </div>
                     </div>
-                </div>
-                <div class='hr'></div>
-                <div class='dropdown-content-section'>
-                    <h3>Other</h3>
-                    <div class='dropdown-content-links'>
-                        <a href="{%url 'region'%}" class='dropdown-link'>Region</a>
-                        <a href="{%url 'colleges'%}" class='dropdown-link'>School</a> 
+                    <div class='hr'></div>
+                    <div class='dropdown-content-section'>
+                        <h3>Season Totals</h3>
+                        <div class='dropdown-content-links'>
+                            <a href="{% url 'postseason_leaderboard' 'points' %}" class='dropdown-link'>Points</a>
+                            <a href="{% url 'postseason_leaderboard' 'rebounds' %}" class='dropdown-link'>Rebounds</a>
+                            <a href="{% url 'postseason_leaderboard' 'assists' %}" class='dropdown-link'>Assists</a>
+                            <a href="{% url 'postseason_leaderboard' 'steals' %}" class='dropdown-link'>Steals</a>
+                            <a href="{% url 'postseason_leaderboard' 'blocks' %}" class='dropdown-link'>Blocks</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class='dropdown-container'>
-            <p class='navbar-item navbar-dropdown'>Postseason Leaderboards</p>
-            <div class='dropdown-content'>
-                <div class='dropdown-content-section'>
-                    <h3>Career Totals</h3>
-                    <div class='dropdown-content-links'>
-                        <a href="{% url 'postseason_leaderboard' 'career points' %}" class='dropdown-link'>Points</a>
-                        <a href="{% url 'postseason_leaderboard' 'career rebounds' %}" class='dropdown-link'>Rebounds</a>
-                        <a href="{% url 'postseason_leaderboard' 'career assists' %}" class='dropdown-link'>Assists</a>
-                        <a href="{% url 'postseason_leaderboard' 'career steals' %}" class='dropdown-link'>Steals</a>
-                        <a href="{% url 'postseason_leaderboard' 'career blocks' %}" class='dropdown-link'>Blocks</a>
-                    </div>
-                </div>
-                <div class='hr'></div>
-                <div class='dropdown-content-section'>
-                    <h3>Season Totals</h3>
-                    <div class='dropdown-content-links'>
-                        <a href="{% url 'postseason_leaderboard' 'points' %}" class='dropdown-link'>Points</a>
-                        <a href="{% url 'postseason_leaderboard' 'rebounds' %}" class='dropdown-link'>Rebounds</a>
-                        <a href="{% url 'postseason_leaderboard' 'assists' %}" class='dropdown-link'>Assists</a>
-                        <a href="{% url 'postseason_leaderboard' 'steals' %}" class='dropdown-link'>Steals</a>
-                        <a href="{% url 'postseason_leaderboard' 'blocks' %}" class='dropdown-link'>Blocks</a>
-                    </div>
-                </div>
-                <div class='hr'></div>
-                <div class='dropdown-content-section'>
-                    <h3>Per Game</h3>
-                    <div class='dropdown-content-links'>
-                        <a href="{% url 'postseason_leaderboard' 'ppg' %}" class='dropdown-link'>PPG</a>
-                        <a href="{% url 'postseason_leaderboard' 'rpg' %}" class='dropdown-link'>RPG</a>
-                        <a href="{% url 'postseason_leaderboard' 'apg' %}" class='dropdown-link'>APG</a>
-                        <a href="{% url 'postseason_leaderboard' 'spg' %}" class='dropdown-link'>SPG</a>
-                        <a href="{% url 'postseason_leaderboard' 'bpg' %}" class='dropdown-link'>BPG</a>
+                    <div class='hr'></div>
+                    <div class='dropdown-content-section'>
+                        <h3>Per Game</h3>
+                        <div class='dropdown-content-links'>
+                            <a href="{% url 'postseason_leaderboard' 'ppg' %}" class='dropdown-link'>PPG</a>
+                            <a href="{% url 'postseason_leaderboard' 'rpg' %}" class='dropdown-link'>RPG</a>
+                            <a href="{% url 'postseason_leaderboard' 'apg' %}" class='dropdown-link'>APG</a>
+                            <a href="{% url 'postseason_leaderboard' 'spg' %}" class='dropdown-link'>SPG</a>
+                            <a href="{% url 'postseason_leaderboard' 'bpg' %}" class='dropdown-link'>BPG</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class='dropdown-container'>
             <p class='navbar-item navbar-dropdown'>Awards by Year</p>
-            <div class='dropdown-content bonus-width'>
+            <div class='dropdown-content bonus-width-awards'>
                 <div class='dropdown-content-section'>
                     <h3>Main Awards</h3>
                     <div class='dropdown-content-links'>
@@ -123,6 +121,18 @@
                         <a href="{%url 'awards' 'NBA'%}" class='dropdown-link'>All NBA</a> 
                         <a href="{%url 'awards' 'ROOK'%}" class='dropdown-link'>All Rookie</a> 
                         <a href="{%url 'awards' 'NBACUP'%}" class='dropdown-link'>All NBA Cup</a>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='dropdown-container'>
+            <p class='navbar-item navbar-dropdown'>Other</p>
+            <div class='dropdown-content'>
+                <div class='dropdown-content-section'>
+                    <h3>Other</h3>
+                    <div class='dropdown-content-links'>
+                        <a href="{%url 'region'%}" class='dropdown-link'>Region</a>
+                        <a href="{%url 'colleges'%}" class='dropdown-link'>School</a> 
                     </div>
                 </div>
             </div>
