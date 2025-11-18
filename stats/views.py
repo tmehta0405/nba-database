@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.exceptions import FieldError
-from django.db.models import Q, F, Case, When, Value, IntegerField, Sum, FloatField, ExpressionWrapper
+from django.db.models import Q, F, Case, When, Value, Count, Avg, IntegerField, Sum, FloatField, ExpressionWrapper
 from django.db.models.functions import Cast
 from .models import seasonData, awardsBySeason, PlayoffSeasonData
 from datetime import datetime
@@ -187,9 +187,6 @@ def search_suggestions(request):
 
     return JsonResponse({'suggestions': suggestions})
 
-from django.db.models.functions import Cast
-from django.db.models import IntegerField
-
 def draft(request, season):
     allcandidates = seasonData.objects.filter(draft_year=season)
     
@@ -222,6 +219,78 @@ def draft(request, season):
         'allcandidates': allcandidates  
     }
     return render(request, 'draft.html', context)
+
+def season(request, season):
+    current_season_id = season
+    min_games = 5
+    stats = ['pts', 'reb', 'ast', 'stl', 'blk']
+
+    season_stats = seasonData.objects.filter(season_id=current_season_id)
+
+    total_leaders = [
+        season_stats.order_by(f"-{stat}").values(
+            'player_name', 'team_abbreviation', 'gp', stat
+        )[:25]
+        for stat in stats             
+    ]
+    total_pts_leaders = season_stats.order_by('-pts').values(
+        'player_name', 'team_abbreviation', 'gp', 'pts'
+    )[:25]
+    
+    total_reb_leaders = season_stats.order_by('-reb').values(
+        'player_name', 'team_abbreviation', 'gp', 'reb'
+    )[:25]
+    
+    total_ast_leaders = season_stats.order_by('-ast').values(
+        'player_name', 'team_abbreviation', 'gp', 'ast'
+    )[:25]
+    
+    total_stl_leaders = season_stats.order_by('-stl').values(
+        'player_name', 'team_abbreviation', 'gp', 'stl'
+    )[:25]
+    
+    total_blk_leaders = season_stats.order_by('-blk').values(
+        'player_name', 'team_abbreviation', 'gp', 'blk'
+    )[:25]
+        
+    per_game_pts_leaders = season_stats.filter(gp__gte=min_games).annotate(
+        ppg=ExpressionWrapper(F('pts') / F('gp'), output_field=FloatField())
+    ).order_by('-ppg').values('player_name', 'team_abbreviation', 'gp', 'ppg')[:25]
+    
+    per_game_reb_leaders = season_stats.filter(gp__gte=min_games).annotate(
+        rpg=ExpressionWrapper(F('reb') / F('gp'), output_field=FloatField())
+    ).order_by('-rpg').values('player_name', 'team_abbreviation', 'gp', 'rpg')[:25]
+    
+    per_game_ast_leaders = season_stats.filter(gp__gte=min_games).annotate(
+        apg=ExpressionWrapper(F('ast') / F('gp'), output_field=FloatField())
+    ).order_by('-apg').values('player_name', 'team_abbreviation', 'gp', 'apg')[:25]
+    
+    per_game_stl_leaders = season_stats.filter(gp__gte=min_games).annotate(
+        spg=ExpressionWrapper(F('stl') / F('gp'), output_field=FloatField())
+    ).order_by('-spg').values('player_name', 'team_abbreviation', 'gp', 'spg')[:25]
+    
+    per_game_blk_leaders = season_stats.filter(gp__gte=min_games).annotate(
+        bpg=ExpressionWrapper(F('blk') / F('gp'), output_field=FloatField())
+    ).order_by('-bpg').values('player_name', 'team_abbreviation', 'gp', 'bpg')[:25]
+    
+    context = {
+        'total_pts_leaders': total_pts_leaders,
+        'total_reb_leaders': total_reb_leaders,
+        'total_ast_leaders': total_ast_leaders,
+        'total_stl_leaders': total_stl_leaders,
+        'total_blk_leaders': total_blk_leaders,
+        
+        'per_game_pts_leaders': per_game_pts_leaders,
+        'per_game_reb_leaders': per_game_reb_leaders,
+        'per_game_ast_leaders': per_game_ast_leaders,
+        'per_game_stl_leaders': per_game_stl_leaders,
+        'per_game_blk_leaders': per_game_blk_leaders,
+        
+        'current_season': current_season_id,
+        'min_games': min_games,
+    }
+    
+    return render(request, 'season.html', context)
 
 def player_stats(request, player_name):
     seasons = seasonData.objects.filter(

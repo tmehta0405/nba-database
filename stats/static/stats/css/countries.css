@@ -80,6 +80,7 @@ h1 {
     justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
+    width: 90%;
 }
 
 .stat-value {
