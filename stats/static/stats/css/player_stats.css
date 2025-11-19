@@ -176,6 +176,11 @@ h2 {
     margin-top: 0px;
 }
 
+.table-link {
+    text-decoration: none;
+    color: var(--text);
+}
+
 .content-table tbody .totals,
 .content-table thead tr {
     background-color: var(--table-header);

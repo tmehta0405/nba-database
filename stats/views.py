@@ -221,73 +221,29 @@ def draft(request, season):
     return render(request, 'draft.html', context)
 
 def season(request, season):
-    current_season_id = season
     min_games = 5
-    stats = ['pts', 'reb', 'ast', 'stl', 'blk']
-
-    season_stats = seasonData.objects.filter(season_id=current_season_id)
+    stats = {'pts': 'ppg', 'reb': 'rpg', 'ast': 'apg', 'stl': 'spg', 'blk': 'bpg'}
+    season_stats = seasonData.objects.filter(season_id=season)
 
     total_leaders = [
         season_stats.order_by(f"-{stat}").values(
             'player_name', 'team_abbreviation', 'gp', stat
         )[:25]
-        for stat in stats             
+        for stat in stats.keys()             
     ]
-    total_pts_leaders = season_stats.order_by('-pts').values(
-        'player_name', 'team_abbreviation', 'gp', 'pts'
-    )[:25]
     
-    total_reb_leaders = season_stats.order_by('-reb').values(
-        'player_name', 'team_abbreviation', 'gp', 'reb'
-    )[:25]
-    
-    total_ast_leaders = season_stats.order_by('-ast').values(
-        'player_name', 'team_abbreviation', 'gp', 'ast'
-    )[:25]
-    
-    total_stl_leaders = season_stats.order_by('-stl').values(
-        'player_name', 'team_abbreviation', 'gp', 'stl'
-    )[:25]
-    
-    total_blk_leaders = season_stats.order_by('-blk').values(
-        'player_name', 'team_abbreviation', 'gp', 'blk'
-    )[:25]
-        
-    per_game_pts_leaders = season_stats.filter(gp__gte=min_games).annotate(
-        ppg=ExpressionWrapper(F('pts') / F('gp'), output_field=FloatField())
-    ).order_by('-ppg').values('player_name', 'team_abbreviation', 'gp', 'ppg')[:25]
-    
-    per_game_reb_leaders = season_stats.filter(gp__gte=min_games).annotate(
-        rpg=ExpressionWrapper(F('reb') / F('gp'), output_field=FloatField())
-    ).order_by('-rpg').values('player_name', 'team_abbreviation', 'gp', 'rpg')[:25]
-    
-    per_game_ast_leaders = season_stats.filter(gp__gte=min_games).annotate(
-        apg=ExpressionWrapper(F('ast') / F('gp'), output_field=FloatField())
-    ).order_by('-apg').values('player_name', 'team_abbreviation', 'gp', 'apg')[:25]
-    
-    per_game_stl_leaders = season_stats.filter(gp__gte=min_games).annotate(
-        spg=ExpressionWrapper(F('stl') / F('gp'), output_field=FloatField())
-    ).order_by('-spg').values('player_name', 'team_abbreviation', 'gp', 'spg')[:25]
-    
-    per_game_blk_leaders = season_stats.filter(gp__gte=min_games).annotate(
-        bpg=ExpressionWrapper(F('blk') / F('gp'), output_field=FloatField())
-    ).order_by('-bpg').values('player_name', 'team_abbreviation', 'gp', 'bpg')[:25]
+    per_game_leaders = {
+        stat: season_stats.filter(gp__gte=min_games).annotate(
+            **{stats[stat]: ExpressionWrapper(F(stat) / F('gp'), output_field=FloatField())}
+        ).order_by(f"-{stats[stat]}").values('player_name', 'team_abbreviation', 'gp', stats[stat])[:25]
+        for stat in stats.keys()
+    }
     
     context = {
-        'total_pts_leaders': total_pts_leaders,
-        'total_reb_leaders': total_reb_leaders,
-        'total_ast_leaders': total_ast_leaders,
-        'total_stl_leaders': total_stl_leaders,
-        'total_blk_leaders': total_blk_leaders,
-        
-        'per_game_pts_leaders': per_game_pts_leaders,
-        'per_game_reb_leaders': per_game_reb_leaders,
-        'per_game_ast_leaders': per_game_ast_leaders,
-        'per_game_stl_leaders': per_game_stl_leaders,
-        'per_game_blk_leaders': per_game_blk_leaders,
-        
-        'current_season': current_season_id,
-        'min_games': min_games,
+        'total_leaders': total_leaders,
+        'per_game_leaders': per_game_leaders, #PRASB
+        'stats': stats,
+        'season': season,
     }
     
     return render(request, 'season.html', context)

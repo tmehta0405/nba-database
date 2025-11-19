@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+
+:root {
+  color-scheme: light dark;
+  
+  --bg: light-dark(#ffffff, #0d1117);
+  --surface: light-dark(#f6f8fa, #161b22);
+  --text: light-dark(#1f2328, #e6edf3);
+  --text-secondary: light-dark(#59636e, #848d97);
+  --accent-primary: light-dark(#1f883d, #56b167);
+  --accent-secondary: light-dark(#0969da, #4493f8);
+  --border: light-dark(#d1d9e0, #30363d);
+  --border-hover: light-dark(#56b167, #6cc177);
+  --card-bg: light-dark(#ffffff, #161b22);
+  --navbar-bg: light-dark(#ffffff, #161b22);
+  --dropdown-bg: light-dark(#ffffff, #0d1117);
+  --hover-bg: light-dark(#f3f4f6, #30363d);
+  --table-header: light-dark(#e5e7eb, #30363d);
+  --table-stripe: light-dark(#f9fafb, #0d1117);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+h1 {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 450;
+}
+
+h2 {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+h3 {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.total-stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 300px;
+    max-width: 400px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table thead tr {
+    background-color: var(--table-header);
+}
+
+table thead tr th {
+    color: var(--text);
+    font-weight: 500;
+    text-align: left;
+}
+
+table th, 
+table td {
+    padding: 4px 5px;
+    white-space: nowrap;
+}
+
+table tbody tr td a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+table th:first-child,
+table td:first-child {
+    min-width: 80px;
+}
+
+table tbody tr {
+    color: var(--text);
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+table tbody tr:hover {
+    transition: .3s;
+    border-left: 2px solid var(--border-hover);
+    transform: translateX(2px);
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: var(--table-stripe);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.center h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#typewriter-search {
+    min-height: 40px; 
+}
+
+.typewriter-search::after {
+    content: '_';
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}

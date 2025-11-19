@@ -1,0 +1,79 @@
+{% extends "template.html" %}
+{% load static %}
+{% load filters %}
+{% block title %}DataBall | Season {{season}} Info{% endblock %}
+{% block css %}<link rel='stylesheet' type='text/css' href="{% static 'stats/css/season.css' %}">{% endblock %}
+{% block script %}<script src="{% static 'stats/js/typewriter.js' %}"></script>{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class='center'>
+    <h1 id='typewriter-search'>SEASON {{ season }} INFO</h1>
+</div>
+<div class='center'>
+    <h2>TOTAL STATS</h2>
+</div>
+
+<div class='total-stats-container'>
+    {% for stat, per_game in stats.items %}
+    <div class='leaderboard-container'>
+        <h3>{{ stat|upper }}</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>GP</th>
+                    <th>{{ stat|upper }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in total_leaders|index:forloop.counter0 %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{%url 'player_stats' player.player_name%}">{{ player.player_name }}</a></td>
+                    <td>{{ player.team_abbreviation }}</td>
+                    <td>{{ player.gp }}</td>
+                    <td>{{ player|get_item:stat|floatformat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+<div class='center'>
+    <h2>PER GAME STATS</h2>
+</div>
+<div class='total-stats-container'>
+    {% for stat, per_game_stat in stats.items %}
+    <div class='leaderboard-container'>
+        <h3>{{ per_game_stat|upper }}</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>GP</th>
+                    <th>{{ per_game_stat|upper }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% with per_game_leaders|get_item:stat as leaders %}
+                {% for player in leaders %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{%url 'player_stats' player.player_name%}">{{ player.player_name }}</a></td>
+                    <td>{{ player.team_abbreviation }}</td>
+                    <td>{{ player.gp }}</td>
+                    <td>{{ player|get_item:per_game_stat|floatformat:1 }}</td>
+                </tr>
+                {% endfor %}
+                {% endwith %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

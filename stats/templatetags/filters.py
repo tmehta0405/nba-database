@@ -12,6 +12,10 @@ def divide(value, arg):
     return float(value) / arg
 
 @register.filter
+def index(lst, i):
+    return lst[i]
+
+@register.filter
 def getregions(model):
     rgns = []
     rgns = [i.country for i in model if i.country not in rgns]

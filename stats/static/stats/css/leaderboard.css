@@ -14,8 +14,9 @@
   --border: light-dark(#d1d9e0, #30363d);
   --border-hover: light-dark(#56b167, #6cc177);
   --card-bg: light-dark(#ffffff, #161b22);
-  --table-header: light-dark(#e5e7eb, #30363d);
-  --table-stripe: light-dark(#f9fafb, #0d1117);
+  --navbar-bg: light-dark(#ffffff, #161b22);
+  --dropdown-bg: light-dark(#ffffff, #0d1117);
+  --hover-bg: light-dark(#f3f4f6, #30363d);
 }
 
 ::-webkit-scrollbar {
@@ -30,84 +31,37 @@
 
 body {
     background: var(--bg);
-    font-family: 'Jetbrains Mono';
-}   
-
-h1 {
+    font-family: 'JetBrains Mono', monospace;
     color: var(--text);
-    font-family: 'Jetbrains Mono';
-    font-weight: 450;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
-.leaderboard-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-.leaderboard-table {
-    border-collapse: collapse;
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    font-size: 0.9em;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.leaderboard-table thead tr {
-    background-color: var(--table-header);
-}
-
-.leaderboard-table thead tr th {
-    color: var(--text);
-    font-weight: 500;
-    text-align: left;
-}
-
-.leaderboard-table th, 
-.leaderboard-table td {
-    padding: 4px 5px;
-    white-space: nowrap;
-}
-
-.leaderboard-table tbody tr td a {
+a {
     text-decoration: none;
     color: var(--text);
 }
 
-.leaderboard-table th:first-child,
-.leaderboard-table td:first-child {
-    min-width: 80px;
+.total-stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 30px;
 }
 
-.leaderboard-table tbody tr {
-    color: var(--text);
-    transition: all 0.3s ease;
-    border-left: 2px solid transparent;
-}
-
-.leaderboard-table tbody tr:hover {
-    transition: .3s;
-    border-left: 2px solid var(--border-hover);
-    transform: translateX(2px);
-}
-
-.leaderboard-table tbody tr:nth-of-type(even) {
-    background-color: var(--table-stripe);
+.leaderboard-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .center {
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.center h1 {
+    align-items: center;
     margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 #typewriter-search {

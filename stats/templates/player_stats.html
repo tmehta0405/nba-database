@@ -106,7 +106,7 @@
                         <tbody>
                             {%for season in seasons%}
                             <tr class='season-stat'>
-                                <td>{{season.season}}</td>
+                                <td><a class='table-link' href="{%url 'season' season.season%}">{{season.season}}</a></td>
                                 <td>{{season.player_age|floatformat}}</td>
                                 <td>{{season.team_abbreviation}}</td>
                                 <td>{{season.league_id|lformat}}</td>
@@ -217,7 +217,7 @@
                         <tbody>
                             {%for season in seasons%}
                             <tr class='season-stat'>
-                                <td>{{season.season}}</td>
+                                <td><a class='table-link' href="{%url 'season' season.season%}">{{season.season}}</a></td>
                                 <td>{{season.player_age|floatformat}}</td>
                                 <td>{{season.team_abbreviation}}</td>
                                 <td>{{season.league_id|lformat}}</td>
@@ -284,7 +284,7 @@
                         <tbody>
                             {%for season in postseasons%}
                             <tr class='season-stat'>
-                                <td>{{season.season}}</td>
+                                <td><a class='table-link' href="{%url 'season' season.season%}">{{season.season}}</a></td>
                                 <td>{{season.player_age|floatformat}}</td>
                                 <td>{{season.team_abbreviation}}</td>
                                 <td>{{season.league_id|lformat}}</td>
@@ -395,7 +395,7 @@
                         <tbody>
                             {%for season in postseasons%}
                             <tr class='season-stat'>
-                                <td>{{season.season}}</td>
+                                <td><a class='table-link' href="{%url 'season' season.season%}">{{season.season}}</a></td>
                                 <td>{{season.player_age|floatformat}}</td>
                                 <td>{{season.team_abbreviation}}</td>
                                 <td>{{season.league_id|lformat}}</td>
@@ -442,7 +442,7 @@
                         {% for season in seasons %}
                             {%if season.awards and season.show_awards%} 
                                 <tr class='season-stat'>
-                                    <td>{{ season.season }}</td>
+                                    <td><a class='table-link' href="{%url 'season' season.season%}">{{ season.season }}</a></td>
                                     <td>{{ season.awards|renderawards }}</td>
                                 </tr>
                             {% endif %}
