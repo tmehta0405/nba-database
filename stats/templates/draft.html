@@ -12,31 +12,24 @@
 </div>
 
 <div class="draft-container">
+    {% for round_num, players in rounds.items %}
     <div class="draft-round-card">
-        <div class="draft-round-title">ROUND 1</div>
+        <div class="draft-round-title">ROUND {{ round_num }}</div>
         <div class="draft-picks-container">
-            {% for player in round1 %}
+            {% for player in players %}
             <a href="{% url 'player_stats' player.player_name %}" class="draft-pick-item">
-                <span class="draft-pick-number">{{ forloop.counter }}.</span>
+                <span class="draft-pick-number">{{ player.draft_pick }}.</span>
                 <span class="draft-player-name">{{ player.player_name }}</span>
                 <span class="draft-team-badge">{{ player.team_abbreviation }}</span>
             </a>
             {% endfor %}
         </div>
     </div>
-
-    <div class="draft-round-card">
-        <div class="draft-round-title">ROUND 2</div>
-        <div class="draft-picks-container">
-            {% for player in round2 %}
-            <a href="{% url 'player_stats' player.player_name %}" class="draft-pick-item">
-                <span class="draft-pick-number">{{ forloop.counter|add:30 }}.</span>
-                <span class="draft-player-name">{{ player.player_name }}</span>
-                <span class="draft-team-badge">{{ player.team_abbreviation }}</span>
-            </a>
-            {% endfor %}
-        </div>
+    {% empty %}
+    <div class="no-draft-data">
+        <p>No draft data available for {{ season }}</p>
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %}

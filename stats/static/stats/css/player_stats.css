@@ -196,10 +196,19 @@ h2 {
     transition: all 0.3s ease;
 }
 
+.content-table tbody .selected-season .table-link {
+    color: var(--accent-secondary) !important;
+}
+
 .content-table tbody .season-stat:hover {
     transition: .3s;
     background-color: var(--bg);
     color: var(--border-hover);
+}
+
+.content-table tbody .season-stat:hover .table-link {
+    color: var(--border-hover);
+    transition: .3s;
 }
 
 .table-container {

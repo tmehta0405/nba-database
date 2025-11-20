@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.core.exceptions import FieldError
-from django.db.models import Q, F, Case, When, Value, Count, Avg, IntegerField, Sum, FloatField, ExpressionWrapper
+from django.db.models import Q, F, Max, IntegerField, Sum, FloatField, ExpressionWrapper
 from django.db.models.functions import Cast
 from .models import seasonData, awardsBySeason, PlayoffSeasonData
 from datetime import datetime
@@ -188,34 +188,33 @@ def search_suggestions(request):
     return JsonResponse({'suggestions': suggestions})
 
 def draft(request, season):
-    allcandidates = seasonData.objects.filter(draft_year=season)
+    allcandidates = seasonData.objects.filter(draft_year=season).exclude(team_abbreviation='TOT')
     
-    round1 = allcandidates.filter(draft_round='1').exclude(team_abbreviation='TOT').annotate(
-        pick_num=Cast('draft_pick', IntegerField())
-    ).order_by('pick_num')
+    max_round = allcandidates.aggregate(
+        max_round=Max(Cast('draft_round', IntegerField()))
+    )['max_round']
     
-    round2 = allcandidates.filter(draft_round='2').exclude(team_abbreviation='TOT').annotate(
-        pick_num=Cast('draft_pick', IntegerField())
-    ).order_by('pick_num')
+    if max_round is None:
+        max_round = 0
     
-    seen1 = set()
-    round1_unique = []
-    for player in round1:
-        if player.player_id not in seen1:
-            seen1.add(player.player_id)
-            round1_unique.append(player)
-    
-    seen2 = set()
-    round2_unique = []
-    for player in round2:
-        if player.player_id not in seen2:
-            seen2.add(player.player_id)
-            round2_unique.append(player)
+    rounds = {}
+    for round_num in range(1, max_round + 1):
+        round_players = allcandidates.filter(draft_round=str(round_num)).annotate(
+            pick_num=Cast('draft_pick', IntegerField())
+        ).order_by('pick_num')
+        
+        seen = set()
+        unique_players = []
+        for player in round_players:
+            if player.player_id not in seen:
+                seen.add(player.player_id)
+                unique_players.append(player)
+        
+        rounds[round_num] = unique_players
     
     context = {
         'season': season,
-        'round1': round1_unique,
-        'round2': round2_unique,
+        'rounds': rounds,
         'allcandidates': allcandidates  
     }
     return render(request, 'draft.html', context)
