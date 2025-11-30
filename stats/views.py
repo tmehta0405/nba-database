@@ -189,6 +189,7 @@ def search_suggestions(request):
 
 def draft(request, season):
     allcandidates = seasonData.objects.filter(draft_year=season).exclude(team_abbreviation='TOT')
+    total_stats = {}
     
     max_round = allcandidates.aggregate(
         max_round=Max(Cast('draft_round', IntegerField()))
@@ -268,20 +269,17 @@ def player_stats(request, player_name):
         else:
             season.show_awards = False #type: ignore
     
-    seen_postseasons = set()
     postseasons_list = list(postseasons)
-    for postseason in postseasons_list:
-        if postseason.season not in seen_postseasons:
-            postseason.show_awards = True #type: ignore
-            seen_postseasons.add(postseason.season)
-        else:
-            postseason.show_awards = False #type: ignore
 
+    show_postseasons = True
+    if not postseasons_list:
+        show_postseasons = False
 
     context = {
         'player_name': player_name,
         'seasons': seasons_list,
         'postseasons': postseasons_list,
+        'show_post': show_postseasons,
     }
     return render(request, 'player_stats.html', context)
 

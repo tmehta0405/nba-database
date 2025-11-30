@@ -17,6 +17,8 @@
   --navbar-bg: light-dark(#ffffff, #161b22);
   --dropdown-bg: light-dark(#ffffff, #0d1117);
   --hover-bg: light-dark(#f3f4f6, #30363d);
+  --table-header: light-dark(#e5e7eb, #30363d);
+  --table-stripe: light-dark(#f9fafb, #0d1117);
 }
 
 ::-webkit-scrollbar {
@@ -37,6 +39,22 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 450;
+}
+
+h2 {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+h3 {
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+}
+
 a {
     text-decoration: none;
     color: var(--text);
@@ -53,8 +71,63 @@ a {
 
 .leaderboard-container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 300px;
+    max-width: 400px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table thead tr {
+    background-color: var(--table-header);
+}
+
+table thead tr th {
+    color: var(--text);
+    font-weight: 500;
+    text-align: left;
+}
+
+table th, 
+table td {
+    padding: 4px 5px;
+    white-space: nowrap;
+}
+
+table tbody tr td a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+table th:first-child,
+table td:first-child {
+    min-width: 80px;
+}
+
+table tbody tr {
+    color: var(--text);
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+}
+
+table tbody tr:hover {
+    transition: .3s;
+    border-left: 2px solid var(--border-hover);
+    transform: translateX(2px);
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: var(--table-stripe);
 }
 
 .center {
@@ -62,6 +135,15 @@ a {
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+}
+
+.center h1 {
+    margin-bottom: 30px;
+}
+
+.center h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #typewriter-search {
