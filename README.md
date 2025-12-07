@@ -8,4 +8,4 @@ Features
 - Leaderboards for common stats/attributes (ex: countries/schools/PRA)
 - PostgreSQL backend
 
-Try it at: http://databall.ddns.net/
+Try it at: http://databall.ddns.net/ (moving servers so it'll be down for a bit)
