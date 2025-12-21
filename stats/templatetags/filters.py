@@ -193,10 +193,13 @@ def formatheight(height):
     
 @register.filter
 def si(value):
-    if "-" in value:
-        return f"{(int(value.split('-')[0]) * 12 + int(value.split('-')[1])) * 0.0254:.2f}m"
-    else:
-        return f"{.453592 * int(value[:3]):.2f}kg"
+    try:
+        if "-" in value:
+            return f"{(int(value.split('-')[0]) * 12 + int(value.split('-')[1])) * 0.0254:.2f}m"
+        else:
+            return f"{.453592 * int(value[:3]):.2f}kg"
+    except ValueError:
+        return value
 
 @register.filter
 def ry(model): #list, 
