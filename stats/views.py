@@ -300,7 +300,10 @@ def region(request):
     grouped_countries = {}
     for country in countries:
         if country:
-            first_letter = country[0].upper()
+            try:
+                first_letter = country_name_map[country][0].upper()
+            except:
+                first_letter = country[0].upper()
             if first_letter not in grouped_countries:
                 grouped_countries[first_letter] = []
             try:
