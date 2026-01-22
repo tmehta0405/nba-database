@@ -325,7 +325,7 @@ for player in playerList:
 save_cache(cache_data)
 print(f"\nTotal new players processed: {save_counter}")
 print(f"Players with playoff appearances: {players_with_playoffs}")
-'''
+
 
 import os
 import sys
@@ -355,5 +355,59 @@ player_ids = [p.player_id for p in usaplayers]
 for pid in player_ids:
     bp = commonplayerinfo.CommonPlayerInfo(player_id=pid).get_data_frames()[0]['BIRTHSTATE'].iloc[0]
     print(bp)
+'''
+import os
+import sys
+import django
+import json
+from pathlib import Path
 
-    
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nba_data_site.settings')
+django.setup()
+
+from nba_api.stats.endpoints import commonplayerinfo
+from nba_api.stats.static import players
+from stats.models import seasonData
+import pandas as pd
+import numpy as np
+import time
+
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', None)
+
+countries = seasonData.objects.values_list('country', flat=True).distinct().order_by('country')
+
+country_name_map = {
+    "Bosnia And Herzegovina": "Bosnia",
+    "Democratic Republic of the Congo": "DR Congo",
+    "Russian Federation": "Russia",
+    "Republic of the Congo": "Congo Republic",
+    "Republic of North Macedonia": "North Macedonia",
+    "Saint Vincent and the Grenadines": "Saint Vincent",
+    "United Republic of Tanzania": "Tanzania",
+    "Islamic Republic of Iran": "Iran"
+}
+
+grouped_countries = {}
+for country in countries:
+    if country:
+        first_letter = country[0].upper()
+        if first_letter not in grouped_countries:
+            grouped_countries[first_letter] = []
+        try:
+            grouped_countries[first_letter].append(country_name_map[country])
+        except:
+            grouped_countries[first_letter].append(country)
+
+alpha = sorted(grouped_countries.keys())
+
+context = {
+    'grouped_countries': grouped_countries,
+    'letters': alpha
+}
+
+print(grouped_countries)

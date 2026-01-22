@@ -285,17 +285,31 @@ def player_stats(request, player_name):
 
 def region(request):
     countries = seasonData.objects.values_list('country', flat=True).distinct().order_by('country')
-    
+
+    country_name_map = {
+        "Bosnia And Herzegovina": "Bosnia",
+        "Democratic Republic of the Congo": "DR Congo",
+        "Russian Federation": "Russia",
+        "Republic of the Congo": "Congo Republic",
+        "Republic of North Macedonia": "North Macedonia",
+        "Saint Vincent and the Grenadines": "Saint Vincent",
+        "United Republic of Tanzania": "Tanzania",
+        "Islamic Republic of Iran": "Iran"
+    }
+
     grouped_countries = {}
     for country in countries:
         if country:
             first_letter = country[0].upper()
             if first_letter not in grouped_countries:
                 grouped_countries[first_letter] = []
-            grouped_countries[first_letter].append(country)
-    
+            try:
+                grouped_countries[first_letter].append(country_name_map[country])
+            except:
+                grouped_countries[first_letter].append(country)
+
     alpha = sorted(grouped_countries.keys())
-    
+
     context = {
         'grouped_countries': grouped_countries,
         'letters': alpha
